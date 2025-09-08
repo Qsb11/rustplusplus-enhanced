@@ -180,13 +180,20 @@ class ConnectionHealthMonitor {
         // Mark as not operational to prevent further health checks
         rustplus.isOperational = false;
         
-        // Use the reconnection manager to handle the reconnection
-        this.client.reconnectionManager.attemptReconnection(guildId, 'health_check_failure', {
-            server: rustplus.server,
-            port: rustplus.port,
-            playerId: rustplus.playerId,
-            playerToken: rustplus.playerToken
-        });
+        // Use the AUTO-RECONNECTION MANAGER to handle the reconnection (more reliable)
+        if (this.client.autoReconnectManager) {
+            this.client.log(this.client.intlGet(null, 'infoCap'), 
+                `Health check failure detected for guild ${guildId}, triggering auto-reconnection manager`);
+            this.client.autoReconnectManager.forceReconnectGuild(guildId);
+        } else {
+            // Fallback to reconnection manager
+            this.client.reconnectionManager.attemptReconnection(guildId, 'health_check_failure', {
+                server: rustplus.server,
+                port: rustplus.port,
+                playerId: rustplus.playerId,
+                playerToken: rustplus.playerToken
+            });
+        }
     }
 
     /**
@@ -201,13 +208,20 @@ class ConnectionHealthMonitor {
         // Force disconnect the current connection
         rustplus.disconnect();
         
-        // Use the reconnection manager to handle the reconnection with immediate retry
-        this.client.reconnectionManager.attemptReconnection(guildId, 'server_restart_detected', {
-            server: rustplus.server,
-            port: rustplus.port,
-            playerId: rustplus.playerId,
-            playerToken: rustplus.playerToken
-        });
+        // Use the AUTO-RECONNECTION MANAGER for server restart (immediate reconnection)
+        if (this.client.autoReconnectManager) {
+            this.client.log(this.client.intlGet(null, 'infoCap'), 
+                `Server restart detected for guild ${guildId}, triggering immediate auto-reconnection`);
+            this.client.autoReconnectManager.forceReconnectGuild(guildId);
+        } else {
+            // Fallback to reconnection manager with immediate retry
+            this.client.reconnectionManager.attemptReconnection(guildId, 'server_restart_detected', {
+                server: rustplus.server,
+                port: rustplus.port,
+                playerId: rustplus.playerId,
+                playerToken: rustplus.playerToken
+            });
+        }
     }
 
     /**

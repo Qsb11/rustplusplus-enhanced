@@ -122,11 +122,17 @@ function buildCraftEntry(item, resolver) {
         time = ci.craftTimePerWorkbench[0].craftTime || 0;
     }
 
+    /* Number of items produced per craft operation (e.g. Gun Powder yields 10).
+       Consumers divide by this to get true per-item costs. */
+    const output = (typeof ci.receivesAmount === 'number' && ci.receivesAmount > 0)
+        ? ci.receivesAmount : 1;
+
     return {
         ingredients,
         workbench,
         time,
-        timeString: TimeFormat.formatCraftTime(time)
+        timeString: TimeFormat.formatCraftTime(time),
+        output
     };
 }
 

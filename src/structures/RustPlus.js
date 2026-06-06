@@ -955,18 +955,24 @@ class RustPlus extends RustPlusLib {
             return str;
         }
 
+        /* Recipes can produce multiple items per craft (e.g. Gun Powder x10) —
+           scale by craft operations needed, not by item count. */
+        const craftOutput = (typeof craftDetails[2].output === 'number' && craftDetails[2].output > 0)
+            ? craftDetails[2].output : 1;
+        const craftsNeeded = Math.ceil(quantity / craftOutput);
+
         let str = `${itemName} `;
-        if (quantity === 1) {
+        if (quantity === 1 && craftOutput === 1) {
             str += `(${craftDetails[2].timeString}): `;
         }
         else {
-            const time = Timer.secondsToFullScale(craftDetails[2].time * quantity, '', true);
+            const time = Timer.secondsToFullScale(craftDetails[2].time * craftsNeeded, '', true);
             str += `x${quantity} (${time}): `;
         }
 
         for (const ingredient of craftDetails[2].ingredients) {
             const ingredientName = Client.client.items.getName(ingredient.id);
-            str += `${ingredientName} x${ingredient.quantity * quantity}, `;
+            str += `${ingredientName} x${ingredient.quantity * craftsNeeded}, `;
         }
 
         str = str.slice(0, -2);

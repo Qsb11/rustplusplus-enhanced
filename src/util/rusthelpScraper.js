@@ -101,6 +101,10 @@ module.exports = {
      * Get base materials for an item by recursively decomposing the local crafting data.
      * No network calls are performed. Recursion stops at base materials (see BASE_MATERIALS)
      * or at items with no known crafting recipe.
+     *
+     * Recipes that produce multiple items per craft (craftData.output, e.g. Gun Powder
+     * yields 10) are normalized: ingredient costs are divided by the output amount so
+     * totals reflect true per-item cost. Final quantities are rounded up.
      * @param {Object} client - The Discord client (provides client.items and client.rustlabs)
      * @param {string} itemId - The item ID
      * @param {number} quantity - The quantity needed
@@ -108,6 +112,24 @@ module.exports = {
      * @returns {Object|null} Object mapping itemId -> { name, quantity } of base materials
      */
     getBaseMaterials: function (client, itemId, quantity, visited = {}) {
+        const collected = this._collectBaseMaterials(client, itemId, quantity, visited);
+        if (collected === null) return null;
+
+        /* Exact fractional totals are kept during recursion; round up for display. */
+        const rounded = {};
+        for (const [baseId, baseData] of Object.entries(collected)) {
+            rounded[baseId] = { name: baseData.name, quantity: Math.ceil(baseData.quantity) };
+        }
+        return rounded;
+    },
+
+    /**
+     * Internal recursion for getBaseMaterials — keeps fractional quantities exact.
+     * NOTE: visited is intentionally branch-local (spread copy). The same sub-item on
+     * two different recipe branches must be counted twice; visited only breaks cycles
+     * within a single decomposition path.
+     */
+    _collectBaseMaterials: function (client, itemId, quantity, visited = {}) {
         // Prevent infinite loops on cyclic recipes
         if (visited[itemId]) {
             return {};
@@ -137,10 +159,15 @@ module.exports = {
             return { [itemId]: { name: itemName, quantity: quantity } };
         }
 
+        /* Items produced per craft operation; recipes scraped before the output field
+           existed default to 1 (per-craft == per-item). */
+        const output = (typeof craftData.output === 'number' && craftData.output > 0)
+            ? craftData.output : 1;
+
         const baseMaterials = {};
         for (const ingredient of craftData.ingredients) {
             const ingredientId = ingredient.id;
-            const ingredientQuantity = ingredient.quantity * quantity;
+            const ingredientQuantity = (ingredient.quantity * quantity) / output;
             const ingredientName = client.items.getName(ingredientId);
 
             if (ingredientName && this.isBaseMaterial(ingredientName)) {
@@ -152,7 +179,7 @@ module.exports = {
                 continue;
             }
 
-            const sub = this.getBaseMaterials(client, ingredientId, ingredientQuantity, visited);
+            const sub = this._collectBaseMaterials(client, ingredientId, ingredientQuantity, visited);
             if (sub) {
                 for (const [baseId, baseData] of Object.entries(sub)) {
                     if (baseMaterials[baseId]) {

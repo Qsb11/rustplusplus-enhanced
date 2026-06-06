@@ -138,7 +138,9 @@ function renderItemData(client, itemId, name) {
             .map(ing => `${client.items.getName(ing.id)} x${ing.quantity}`).join(', ');
         const workbench = details.workbench !== null
             ? `, workbench: ${client.items.getName(details.workbench)}` : '';
-        lines.push(`Craft: ${ingredients} (${details.timeString}${workbench})`);
+        const output = (typeof details.output === 'number' && details.output > 1)
+            ? ` — produces x${details.output} per craft` : '';
+        lines.push(`Craft: ${ingredients} (${details.timeString}${workbench})${output}`);
     }
 
     const research = client.rustlabs.getResearchDetailsById(itemId);

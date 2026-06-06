@@ -61,16 +61,23 @@ function writeStaticAtomic(filename, data) {
  *  @param {Object} reference A reference (existing) entry.
  *  @return {string[]} An array of mismatch descriptions (empty when shapes match).
  */
+/* Keys that newer scrapes may add to entries even when older reference entries lack them. */
+const KNOWN_OPTIONAL_KEYS = new Set(['output']);
+
 function diffShape(label, generated, reference) {
     if (!reference || typeof reference !== 'object') return [];
     const gKeys = Object.keys(generated).sort();
     const rKeys = Object.keys(reference).sort();
     const issues = [];
     for (const k of rKeys) {
-        if (!gKeys.includes(k)) issues.push(`${label}: generated missing key "${k}"`);
+        if (!gKeys.includes(k) && !KNOWN_OPTIONAL_KEYS.has(k)) {
+            issues.push(`${label}: generated missing key "${k}"`);
+        }
     }
     for (const k of gKeys) {
-        if (!rKeys.includes(k)) issues.push(`${label}: generated has extra key "${k}"`);
+        if (!rKeys.includes(k) && !KNOWN_OPTIONAL_KEYS.has(k)) {
+            issues.push(`${label}: generated has extra key "${k}"`);
+        }
     }
     return issues;
 }

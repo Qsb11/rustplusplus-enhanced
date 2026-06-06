@@ -1100,13 +1100,19 @@ module.exports = {
         let title = '';
         let description = '';
 
-        if (quantity === 1) {
+        /* Recipes can produce multiple items per craft (e.g. Gun Powder x10) —
+           scale by craft operations needed, not by item count. */
+        const craftOutput = (typeof craftDetails[2].output === 'number' && craftDetails[2].output > 0)
+            ? craftDetails[2].output : 1;
+        const craftsNeeded = Math.ceil(quantity / craftOutput);
+
+        if (quantity === 1 && craftOutput === 1) {
             title = `${craftDetails[1].name}`;
             description += `__**${Client.client.intlGet(guildId, 'time')}:**__ ${craftDetails[2].timeString}`;
         }
         else {
             title = `${craftDetails[1].name} x${quantity}`;
-            const time = Timer.secondsToFullScale(craftDetails[2].time * quantity, '', true);
+            const time = Timer.secondsToFullScale(craftDetails[2].time * craftsNeeded, '', true);
             description += `__**${Client.client.intlGet(guildId, 'time')}:**__ ${time}`;
         }
 
@@ -1114,7 +1120,7 @@ module.exports = {
         for (const item of craftDetails[2].ingredients) {
             const itemName = Client.client.items.getName(item.id);
             items += `${itemName}\n`;
-            quantities += `${item.quantity * quantity}\n`;
+            quantities += `${item.quantity * craftsNeeded}\n`;
         }
 
         if (items === '') {

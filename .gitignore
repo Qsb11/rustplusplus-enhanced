@@ -5,3 +5,5 @@ credentials
 maps
 logs
 temp
+
+src/util/scraper.log

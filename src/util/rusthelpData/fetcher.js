@@ -25,7 +25,9 @@ const Path = require('path');
 
 const BASE_URL = 'https://rusthelp.com';
 const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) rustplusplus-bot';
-const RATE_LIMIT_MS = 300;
+const RATE_LIMIT_MS = 1100; /* rusthelp rate-limits to roughly 1 req/s — stay under it. */
+const RATE_LIMIT_MAX_MS = 5000;
+const RATE_LIMIT_STEP_MS = 250; /* Added to the interval after each 429. */
 const MAX_RETRIES = 3;
 const REQUEST_TIMEOUT_MS = 30000;
 const CACHE_DIR = Path.join(__dirname, '.cache');
@@ -54,6 +56,7 @@ class Fetcher {
         this.useCache = options.useCache !== false;
         this.log = typeof options.log === 'function' ? options.log : (() => { });
         this._lastRequestTime = 0;
+        this._rateLimitMs = RATE_LIMIT_MS;
 
         if (this.useCache && !Fs.existsSync(CACHE_DIR)) {
             Fs.mkdirSync(CACHE_DIR, { recursive: true });
@@ -76,8 +79,8 @@ class Fetcher {
      */
     async _throttle() {
         const elapsed = Date.now() - this._lastRequestTime;
-        if (elapsed < RATE_LIMIT_MS) {
-            await sleep(RATE_LIMIT_MS - elapsed);
+        if (elapsed < this._rateLimitMs) {
+            await sleep(this._rateLimitMs - elapsed);
         }
         this._lastRequestTime = Date.now();
     }
@@ -158,8 +161,24 @@ class Fetcher {
                     this.log('error', `Failed to fetch ${url} after ${MAX_RETRIES + 1} attempts: ${error.message}`);
                     return null;
                 }
-                const backoff = RATE_LIMIT_MS * Math.pow(2, attempt + 1);
-                this.log('warning', `Fetch error for ${url} (attempt ${attempt + 1}): ${error.message}, retrying in ${backoff}ms`);
+
+                let backoff;
+                if (status === 429) {
+                    /* We are being rate limited — permanently slow down the base interval
+                       and honor Retry-After when the server provides one. */
+                    this._rateLimitMs = Math.min(this._rateLimitMs + RATE_LIMIT_STEP_MS, RATE_LIMIT_MAX_MS);
+                    const retryAfter = parseInt(error.response?.headers?.['retry-after'], 10);
+                    backoff = !isNaN(retryAfter) && retryAfter > 0
+                        ? retryAfter * 1000
+                        : 2000 * Math.pow(2, attempt); /* 2s, 4s, 8s */
+                    this.log('warning', `HTTP 429 for ${url} (attempt ${attempt + 1}), ` +
+                        `slowing to ${this._rateLimitMs}ms/req, retrying in ${backoff}ms`);
+                }
+                else {
+                    backoff = 1000 * Math.pow(2, attempt + 1);
+                    this.log('warning', `Fetch error for ${url} (attempt ${attempt + 1}): ` +
+                        `${error.message}, retrying in ${backoff}ms`);
+                }
                 await sleep(backoff);
             }
         }

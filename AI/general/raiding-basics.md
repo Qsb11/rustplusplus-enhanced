@@ -21,10 +21,18 @@ Common eco raid picks (cheapest sulfur for the job):
 - Sheet metal wall (1000 HP): 4 C4 / 8 rockets — expensive; go through doors instead
 - Armored wall (2000 HP): 8 C4 — almost never worth it
 
+Siege weapons (see siege-weapons.md for details):
+- Catapult + Propane Explosive Bombs / Boulders: usually the cheapest way to
+  break stone-tier structures — far less sulfur than rockets.
+- Battering Ram: breaks doors with fuel + repairs instead of sulfur.
+- Siege Tower / ladders: bypass high externals entirely, near-zero cost.
+
 Rules of thumb:
 - Doors are almost always cheaper than walls. Raid through doors/windows first.
 - Soft-side stone (the smooth side) can be picked with melee tools for free.
 - Mixing one rocket + explosive ammo "finishing" often beats whole rockets.
 - Ladders/twig towers bypass walls entirely — costs nearly nothing.
+- Check siege weapon options before defaulting to explosives — post-2025 they
+  are often the eco answer for stone-tier targets.
 - Exact destroy tables per target come from live game data; trust those numbers
   over this file when they disagree.

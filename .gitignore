@@ -9,3 +9,6 @@ temp
 src/util/scraper.log
 src/util/rusthelpData/scraper.log
 src/util/rusthelpData/.cache
+
+# Generated AI knowledge files (rebuilt by scraper)
+AI/items/

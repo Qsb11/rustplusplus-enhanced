@@ -253,6 +253,17 @@ async function runFullUpdate(client = null, options = {}) {
         try { client.reloadItemData(); } catch (error) { log('warning', `reloadItemData failed: ${error.message}`); }
     }
 
+    /* ---- AI knowledge export: one JSON per item into AI/items/ ---- */
+    if (!dryRun) {
+        try {
+            const AiExport = require('./aiExport.js');
+            AiExport.exportAiItems({ log });
+        }
+        catch (error) {
+            log('warning', `AI items export failed: ${error.message}`);
+        }
+    }
+
     const summary = {
         success: itemOk > 0 || buildingOk > 0,
         itemsScraped: itemOk,

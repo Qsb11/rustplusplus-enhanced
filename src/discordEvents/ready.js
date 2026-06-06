@@ -80,13 +80,9 @@ module.exports = {
         client.log(client.intlGet(null, 'infoCap'), 'Creating RustPlus instances from configuration...');
         client.createRustplusInstancesFromConfig();
         
-        // Start connection health monitoring
-        client.log(client.intlGet(null, 'infoCap'), 'Starting connection health monitoring...');
-        client.connectionHealthMonitor.start();
-        
-        // Start auto-reconnection manager
-        client.log(client.intlGet(null, 'infoCap'), 'Starting auto-reconnection manager...');
-        client.autoReconnectManager.start();
+        // Start connection manager (health monitoring + reconnection + watchdog)
+        client.log(client.intlGet(null, 'infoCap'), 'Starting connection manager...');
+        client.connectionManager.start();
         
         // Start scheduled scraper for weekly data updates
         client.log(client.intlGet(null, 'infoCap'), 'Starting scheduled scraper...');

@@ -122,11 +122,6 @@ function triggerReconnection(rustplus, client, reason) {
 
     const guildId = rustplus.guildId;
     
-    // Use the new reconnection manager with exponential backoff
-    client.reconnectionManager.attemptReconnection(guildId, reason, {
-        server: rustplus.server,
-        port: rustplus.port,
-        playerId: rustplus.playerId,
-        playerToken: rustplus.playerToken
-    });
+    // Schedule reconnection with exponential backoff
+    client.connectionManager.scheduleReconnect(guildId, reason);
 }

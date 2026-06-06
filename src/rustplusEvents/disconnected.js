@@ -76,13 +76,8 @@ module.exports = {
                 client.rustplusReconnectTimers[guildId] = null;
             }
 
-            // Use the new reconnection manager with exponential backoff
-            client.reconnectionManager.attemptReconnection(guildId, 'disconnected', {
-                server: rustplus.server,
-                port: rustplus.port,
-                playerId: rustplus.playerId,
-                playerToken: rustplus.playerToken
-            });
+            // Schedule reconnection with exponential backoff
+            client.connectionManager.scheduleReconnect(guildId, 'disconnected');
         }
     },
 };

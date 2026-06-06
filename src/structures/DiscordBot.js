@@ -32,9 +32,7 @@ const InstanceUtils = require('../util/instanceUtils.js');
 const Items = require('./Items');
 const Logger = require('./Logger.js');
 const PermissionHandler = require('../handlers/permissionHandler.js');
-const ReconnectionManager = require('../util/reconnectionManager.js');
-const ConnectionHealthMonitor = require('../util/connectionHealthMonitor.js');
-const AutoReconnectManager = require('../util/autoReconnectManager.js');
+const ConnectionManager = require('../util/connectionManager.js');
 const RustLabs = require('../structures/RustLabs');
 const RustPlus = require('../structures/RustPlus');
 const ScheduledScraper = require('../util/scheduledScraper.js');
@@ -68,9 +66,7 @@ class DiscordBot extends Discord.Client {
             this.items = new Items();
             this.rustlabs = new RustLabs();
             this.cctv = new Cctv();
-            this.reconnectionManager = new ReconnectionManager(this);
-            this.connectionHealthMonitor = new ConnectionHealthMonitor(this);
-            this.autoReconnectManager = new AutoReconnectManager(this);
+            this.connectionManager = new ConnectionManager(this);
             this.scheduledScraper = new ScheduledScraper();
             this.firecrawlScraper = new FirecrawlScraper();
         } catch (error) {

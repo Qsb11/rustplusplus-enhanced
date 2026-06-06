@@ -71,7 +71,7 @@ module.exports = {
 
 	async handleStatusCommand(client, interaction, guildId) {
 		const instance = client.getInstance(guildId);
-		const reconnectionStatus = client.reconnectionManager.getReconnectionStatus(guildId);
+		const reconnectionStatus = client.connectionManager.getReconnectionStatus(guildId);
 		const rustplus = client.rustplusInstances[guildId];
 
 		let description = '';
@@ -127,24 +127,15 @@ module.exports = {
 			return;
 		}
 
-		// Reset reconnection state and attempt connection
-		client.reconnectionManager.resetState(guildId);
-		client.rustplusReconnecting[guildId] = false;
-
-		const serverInfo = instance.serverList[instance.activeServer];
-		client.reconnectionManager.attemptReconnection(guildId, 'manual_retry', {
-			server: serverInfo.serverIp,
-			port: serverInfo.appPort,
-			playerId: serverInfo.steamId,
-			playerToken: serverInfo.playerToken
-		});
+		// Reset reconnection state and attempt connection immediately
+		await client.connectionManager.forceReconnect(guildId);
 
 		const embed = DiscordEmbeds.getActionInfoEmbed(0, client.intlGet(guildId, 'reconnectionAttemptStarted'));
 		await client.interactionEditReply(interaction, embed);
 	},
 
 	async handleHealthCommand(client, interaction, guildId) {
-		const healthStats = client.connectionHealthMonitor.getHealthCheckStats();
+		const healthStats = client.connectionManager.getHealthCheckStats();
 		const lastCheck = healthStats.lastHealthChecks[guildId];
 		const consecutiveFailures = healthStats.consecutiveFailures[guildId] || 0;
 
@@ -175,7 +166,7 @@ module.exports = {
 
 	async handleAutoReconnectCommand(client, interaction, guildId) {
 		const instance = client.getInstance(guildId);
-		const autoReconnectStats = client.autoReconnectManager.getStats();
+		const autoReconnectStats = client.connectionManager.getStats();
 		
 		let description = '';
 		description += `🔄 **Auto-Reconnection Status:** ${autoReconnectStats.isRunning ? 'Active' : 'Inactive'}\n`;
@@ -199,7 +190,7 @@ module.exports = {
 				description += `\n🚀 **Forcing reconnection attempt...**\n`;
 				
 				// Force reconnection
-				await client.autoReconnectManager.forceReconnectGuild(guildId);
+				await client.connectionManager.forceReconnect(guildId);
 			}
 		} else {
 			description += `❌ **No active server configured**\n`;

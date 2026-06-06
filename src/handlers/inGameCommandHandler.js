@@ -28,8 +28,12 @@ module.exports = {
         const instance = client.getInstance(guildId);
 
         let command = message.broadcast.teamMessage.message.message;
+        /* Replace aliases only as whole tokens — substring replacement would corrupt
+           commands (alias 'c' must not rewrite every letter c in the message). */
+        const escapeRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         for (const alias of instance.aliases) {
-            command = command.replace(alias.alias, alias.value);
+            const pattern = new RegExp(`(^|\\s)${escapeRegExp(alias.alias)}(?=\\s|$)`);
+            command = command.replace(pattern, `$1${alias.value}`);
         }
 
         const callerSteamId = message.broadcast.teamMessage.message.steamId.toString();
@@ -65,13 +69,14 @@ module.exports = {
                 commandLowerCase.startsWith(`${prefix}${client.intlGet(guildId, 'commandSyntaxConnections')}`))) {
             rustplus.sendInGameMessage(rustplus.getCommandConnection(command));
         }
-        else if (commandLowerCase.startsWith(`${prefix}${client.intlGet('en', 'commandSyntaxCraft')}`) ||
-            commandLowerCase.startsWith(`${prefix}${client.intlGet(guildId, 'commandSyntaxCraft')}`)) {
-            rustplus.sendInGameMessage(rustplus.getCommandCraft(command));
-        }
+        /* Craftchain must be matched before craft — 'craftchain' starts with 'craft'. */
         else if (commandLowerCase.startsWith(`${prefix}${client.intlGet('en', 'commandSyntaxCraftchain')}`) ||
             commandLowerCase.startsWith(`${prefix}${client.intlGet(guildId, 'commandSyntaxCraftchain')}`)) {
             rustplus.sendInGameMessage(await rustplus.getCommandCraftchain(command));
+        }
+        else if (commandLowerCase.startsWith(`${prefix}${client.intlGet('en', 'commandSyntaxCraft')}`) ||
+            commandLowerCase.startsWith(`${prefix}${client.intlGet(guildId, 'commandSyntaxCraft')}`)) {
+            rustplus.sendInGameMessage(rustplus.getCommandCraft(command));
         }
         else if (commandLowerCase.startsWith(`${prefix}${client.intlGet('en', 'commandSyntaxChaincraft')}`) ||
             commandLowerCase.startsWith(`${prefix}${client.intlGet(guildId, 'commandSyntaxChaincraft')}`)) {

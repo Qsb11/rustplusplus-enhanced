@@ -63,12 +63,16 @@ module.exports = {
             for (const material of materials) {
                 const materialId = material.id || material.itemId;
                 const requiredQuantity = material.quantity;
+
+                /* Zero-cost ingredients (malformed data) should not block crafting. */
+                if (!requiredQuantity || requiredQuantity <= 0) continue;
+
                 const availableQuantity = availableQuantities.get(materialId.toString()) || 0;
-                
+
                 if (availableQuantity === 0) {
                     return 0; // Can't craft if any material is missing
                 }
-                
+
                 const possibleFromThisMaterial = Math.floor(availableQuantity / requiredQuantity);
                 maxCraftable = Math.min(maxCraftable, possibleFromThisMaterial);
             }

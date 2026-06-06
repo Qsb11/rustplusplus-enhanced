@@ -20,7 +20,6 @@
 
 const Constants = require('../util/constants.js');
 const DiscordMessages = require('../discordTools/discordMessages.js');
-const RecyclerHandler = require('./recyclerHandler.js');
 
 module.exports = {
     handler: async function (rustplus, client) {
@@ -39,6 +38,7 @@ module.exports = {
 
         if (rustplus.storageMonitorIntervalCounter === 0) {
             let instance = client.getInstance(guildId);
+            const updatedEntityIds = [];
             for (const entityId in instance.serverList[serverId].storageMonitors) {
                 instance = client.getInstance(guildId);
 
@@ -102,9 +102,26 @@ module.exports = {
                 }
 
                 await DiscordMessages.sendStorageMonitorMessage(guildId, serverId, entityId);
-                
-                // Update any recycler displays linked to this storage monitor
-                await RecyclerHandler.updateRecyclerForStorage(client, guildId, serverId, entityId);
+                updatedEntityIds.push(entityId);
+            }
+
+            /* Update each linked recycler display once, not once per storage monitor. */
+            const recyclers = instance.serverList[serverId].recyclers ?? {};
+            const recyclerIdsToUpdate = new Set();
+            for (const recyclerId in recyclers) {
+                const linked = recyclers[recyclerId].linkedStorages ?? [];
+                if (updatedEntityIds.some(entityId => linked.includes(entityId))) {
+                    recyclerIdsToUpdate.add(recyclerId);
+                }
+            }
+            for (const recyclerId of recyclerIdsToUpdate) {
+                try {
+                    await DiscordMessages.sendRecyclerMessage(guildId, serverId, recyclerId);
+                }
+                catch (error) {
+                    client.log(client.intlGet(null, 'errorCap'),
+                        `Failed to update recycler ${recyclerId}: ${error.message}`, 'error');
+                }
             }
         }
     },

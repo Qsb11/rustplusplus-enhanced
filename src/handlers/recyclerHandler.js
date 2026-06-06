@@ -101,12 +101,11 @@ module.exports = {
      * @returns {string} Unique recycler ID
      */
     generateRecyclerId: function (instance, serverId) {
-        let recyclerId;
-        do {
-            recyclerId = Math.floor(Math.random() * 10000).toString();
-        } while (instance.serverList[serverId].recyclers && 
-                 instance.serverList[serverId].recyclers[recyclerId]);
-        return recyclerId;
+        const recyclers = instance.serverList[serverId].recyclers ?? {};
+        /* Monotonic counter — immune to collisions, no unbounded loop. */
+        const existingIds = Object.keys(recyclers).map(id => parseInt(id, 10)).filter(n => !isNaN(n));
+        const nextId = existingIds.length === 0 ? 0 : Math.max(...existingIds) + 1;
+        return nextId.toString();
     },
 
     /**

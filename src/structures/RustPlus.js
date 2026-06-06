@@ -925,13 +925,14 @@ class RustPlus extends RustPlusLib {
         const restString = command.slice(0, -(lastWordLength)).trim();
 
         let itemSearchName = null, itemSearchQuantity = null;
-        if (isNaN(lastWord)) {
-            itemSearchName = command;
+        const parsedQuantity = Number(lastWord.trim());
+        if (lastWord.trim() === '' || Number.isNaN(parsedQuantity)) {
+            itemSearchName = command.trim();
             itemSearchQuantity = 1;
         }
         else {
             itemSearchName = restString;
-            itemSearchQuantity = parseInt(lastWord);
+            itemSearchQuantity = Math.max(1, Math.floor(parsedQuantity));
         }
 
         const item = Client.client.items.getClosestItemIdByName(itemSearchName)
@@ -981,7 +982,8 @@ class RustPlus extends RustPlusLib {
                 this.sendTeamMessage(`Craftable in linked chests: ${craftable}`);
             }
         } catch (error) {
-            // Silently ignore errors
+            this.log(Client.client.intlGet(null, 'warningCap'),
+                `calculateCraftableQuantity failed: ${error.message}`);
         }
 
         return str;
@@ -1005,13 +1007,14 @@ class RustPlus extends RustPlusLib {
         const restString = command.slice(0, -(lastWordLength)).trim();
 
         let itemSearchName = null, itemSearchQuantity = null;
-        if (isNaN(lastWord)) {
-            itemSearchName = command;
+        const parsedQuantity = Number(lastWord.trim());
+        if (lastWord.trim() === '' || Number.isNaN(parsedQuantity)) {
+            itemSearchName = command.trim();
             itemSearchQuantity = 1;
         }
         else {
             itemSearchName = restString;
-            itemSearchQuantity = parseInt(lastWord);
+            itemSearchQuantity = Math.max(1, Math.floor(parsedQuantity));
         }
 
         const item = Client.client.items.getClosestItemIdByName(itemSearchName)
@@ -1065,7 +1068,8 @@ class RustPlus extends RustPlusLib {
                 this.sendTeamMessage(`Craftable in linked chests: ${craftable}`);
             }
         } catch (error) {
-            // Silently ignore errors
+            this.log(Client.client.intlGet(null, 'warningCap'),
+                `calculateCraftableQuantity failed: ${error.message}`);
         }
 
         return str;
@@ -1089,13 +1093,14 @@ class RustPlus extends RustPlusLib {
         const restString = command.slice(0, -(lastWordLength)).trim();
 
         let itemSearchName = null, itemSearchQuantity = null;
-        if (isNaN(lastWord)) {
-            itemSearchName = command;
+        const parsedQuantity = Number(lastWord.trim());
+        if (lastWord.trim() === '' || Number.isNaN(parsedQuantity)) {
+            itemSearchName = command.trim();
             itemSearchQuantity = 1;
         }
         else {
             itemSearchName = restString;
-            itemSearchQuantity = parseInt(lastWord);
+            itemSearchQuantity = Math.max(1, Math.floor(parsedQuantity));
         }
 
         const item = Client.client.items.getClosestItemIdByName(itemSearchName)
@@ -1149,7 +1154,8 @@ class RustPlus extends RustPlusLib {
                 this.sendTeamMessage(`Craftable in linked chests: ${craftable}`);
             }
         } catch (error) {
-            // Silently ignore errors
+            this.log(Client.client.intlGet(null, 'warningCap'),
+                `calculateCraftableQuantity failed: ${error.message}`);
         }
 
         return str;
@@ -1168,22 +1174,35 @@ class RustPlus extends RustPlusLib {
         }
 
         const CraftingCalculator = require('../util/craftingCalculator.js');
-        const searchResults = CraftingCalculator.findItemsInStorage(
-            Client.client, this, this.guildId, this.serverId, command
-        );
+        let searchResults;
+        try {
+            searchResults = CraftingCalculator.findItemsInStorage(
+                Client.client, this, this.guildId, this.serverId, command
+            );
+        }
+        catch (error) {
+            this.log(Client.client.intlGet(null, 'warningCap'),
+                `findItemsInStorage failed: ${error.message}`);
+            return `Could not search storage for ${command}.`;
+        }
+
+        if (!searchResults || !Array.isArray(searchResults.locations)) {
+            return `Could not search storage for ${command}.`;
+        }
 
         if (!searchResults.found) {
             return `No ${searchResults.itemName} found in linked storage containers.`;
         }
 
         let result = `${searchResults.itemName}: ${searchResults.totalQuantity} total`;
-        
+
         if (searchResults.locations.length > 1) {
             result += ` in ${searchResults.locations.length} containers`;
         }
-        
+
         // Send detailed breakdown as separate messages
         setTimeout(() => {
+            if (this.isDeleted || !this.isOperational) return;
             for (const location of searchResults.locations) {
                 this.sendTeamMessage(`${location.name}: ${location.quantity}`);
             }
@@ -2380,13 +2399,14 @@ class RustPlus extends RustPlusLib {
         const restString = command.slice(0, -(lastWordLength)).trim();
 
         let itemSearchName = null, itemSearchQuantity = null;
-        if (isNaN(lastWord)) {
-            itemSearchName = command;
+        const parsedQuantity = Number(lastWord.trim());
+        if (lastWord.trim() === '' || Number.isNaN(parsedQuantity)) {
+            itemSearchName = command.trim();
             itemSearchQuantity = 1;
         }
         else {
             itemSearchName = restString;
-            itemSearchQuantity = parseInt(lastWord);
+            itemSearchQuantity = Math.max(1, Math.floor(parsedQuantity));
         }
 
         const item = Client.client.items.getClosestItemIdByName(itemSearchName)

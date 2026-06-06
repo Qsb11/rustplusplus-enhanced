@@ -629,8 +629,13 @@ module.exports = {
             instance.channelId.recycler, interaction);
 
         if (!interaction && message) {
-            instance.serverList[serverId].recyclers[recyclerId].messageId = message.id;
-            Client.client.setInstance(guildId, instance);
+            /* Re-read instance — another handler may have persisted changes during the await. */
+            const freshInstance = Client.client.getInstance(guildId);
+            const freshRecycler = freshInstance.serverList[serverId]?.recyclers?.[recyclerId];
+            if (freshRecycler) {
+                freshRecycler.messageId = message.id;
+                Client.client.setInstance(guildId, freshInstance);
+            }
         }
     },
 

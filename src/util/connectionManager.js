@@ -135,8 +135,11 @@ class ConnectionManager {
             return;
         }
 
-        /* Watchdog: should be connected but is not, and nothing is in flight. */
-        if (!isOperational && state.phase === PHASE.IDLE) {
+        /* Watchdog: should be connected but is not, and nothing is in flight.
+           Grace window: a just-executed reconnect may still be establishing its
+           websocket — don't double-fire while it settles. */
+        const settling = state.lastAttempt && (Date.now() - state.lastAttempt) < this.config.checkInterval * 2;
+        if (!isOperational && state.phase === PHASE.IDLE && !settling) {
             this.client.log(this.client.intlGet(null, 'infoCap'),
                 `Watchdog: guild ${guildId} should be connected to ${instance.activeServer} but is not`);
             this.scheduleReconnect(guildId, 'watchdog');
@@ -259,6 +262,7 @@ class ConnectionManager {
         if (state.retryCount >= this.config.maxRetries) {
             state.phase = PHASE.EXHAUSTED;
             state.exhaustedAt = Date.now();
+            this.client.rustplusReconnecting[guildId] = false;
             this.client.log(this.client.intlGet(null, 'errorCap'),
                 `Maximum reconnection attempts (${this.config.maxRetries}) reached for guild ${guildId}, ` +
                 `cooling down for ${Math.floor(this.config.exhaustedCooldown / 1000)}s`);
@@ -366,6 +370,7 @@ class ConnectionManager {
      */
     onConnectionSuccess(guildId) {
         const state = this.getState(guildId);
+        this.client.rustplusReconnecting[guildId] = false;
 
         if (state.retryCount > 0) {
             this.client.log(this.client.intlGet(null, 'infoCap'),

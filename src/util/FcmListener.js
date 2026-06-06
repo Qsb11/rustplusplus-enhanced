@@ -89,7 +89,14 @@ module.exports = async (client, guild) => {
             return;
         }
 
-        const body = JSON.parse(bodyCheck.value);
+        let body;
+        try {
+            body = JSON.parse(bodyCheck.value);
+        }
+        catch (error) {
+            client.log('FCM Host', `GuildID: ${guild.id}, SteamID: ${hoster}, malformed body JSON: ${error.message}`);
+            return;
+        }
 
         if (!body.type && channelId !== 'alarm') {
             client.log('FCM Host', `GuildID: ${guild.id}, SteamID: ${hoster}, body type could not be found.`)

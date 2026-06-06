@@ -1117,6 +1117,11 @@ module.exports = {
             quantities += `${item.quantity * quantity}\n`;
         }
 
+        if (items === '') {
+            items = '​';
+            quantities = '​';
+        }
+
         const fields = [
             { name: Client.client.intlGet(guildId, 'item'), value: items, inline: true },
             { name: Client.client.intlGet(guildId, 'quantity'), value: quantities, inline: true }
@@ -1126,20 +1131,16 @@ module.exports = {
         if (itemId && Client.client.rustplusInstances) {
             try {
                 const instance = Client.client.getInstance(guildId);
-                const serverIds = Object.keys(instance.serverList);
-                
-                if (serverIds.length > 0) {
-                    const serverId = serverIds[0]; // Use first server for now
-                    const rustplus = Client.client.rustplusInstances[guildId];
-                    
-                    if (rustplus && rustplus[serverId]) {
-                        const craftable = CraftingCalculator.calculateCraftableQuantity(
-                            Client.client, rustplus[serverId], guildId, serverId, itemId, craftDetails[2].ingredients
-                        );
-                        
-                        if (craftable > 0) {
-                            description += `\n\n**Craftable in linked chests:** ${craftable}`;
-                        }
+                const serverId = instance.activeServer;
+                const rustplus = Client.client.rustplusInstances[guildId];
+
+                if (serverId && rustplus && rustplus.serverId === serverId && rustplus.isOperational) {
+                    const craftable = CraftingCalculator.calculateCraftableQuantity(
+                        Client.client, rustplus, guildId, serverId, itemId, craftDetails[2].ingredients
+                    );
+
+                    if (craftable > 0) {
+                        description += `\n\n**Craftable in linked chests:** ${craftable}`;
                     }
                 }
             } catch (error) {
@@ -1186,26 +1187,22 @@ module.exports = {
         if (itemId && Client.client.rustplusInstances) {
             try {
                 const instance = Client.client.getInstance(guildId);
-                const serverIds = Object.keys(instance.serverList);
-                
-                if (serverIds.length > 0) {
-                    const serverId = serverIds[0]; // Use first server for now
-                    const rustplus = Client.client.rustplusInstances[guildId];
-                    
-                    if (rustplus && rustplus[serverId]) {
-                        // Convert baseMaterials to the format expected by calculateCraftableQuantity
-                        const materials = Object.entries(baseMaterials).map(([id, data]) => ({
-                            id: id,
-                            quantity: data.quantity
-                        }));
-                        
-                        const craftable = CraftingCalculator.calculateCraftableQuantity(
-                            Client.client, rustplus[serverId], guildId, serverId, itemId, materials
-                        );
-                        
-                        if (craftable > 0) {
-                            description += `\n\n**Craftable in linked chests:** ${craftable}`;
-                        }
+                const serverId = instance.activeServer;
+                const rustplus = Client.client.rustplusInstances[guildId];
+
+                if (serverId && rustplus && rustplus.serverId === serverId && rustplus.isOperational) {
+                    // Convert baseMaterials to the format expected by calculateCraftableQuantity
+                    const materials = Object.entries(baseMaterials).map(([id, data]) => ({
+                        id: id,
+                        quantity: data.quantity
+                    }));
+
+                    const craftable = CraftingCalculator.calculateCraftableQuantity(
+                        Client.client, rustplus, guildId, serverId, itemId, materials
+                    );
+
+                    if (craftable > 0) {
+                        description += `\n\n**Craftable in linked chests:** ${craftable}`;
                     }
                 }
             } catch (error) {
@@ -1292,16 +1289,21 @@ module.exports = {
         ]);
 
         let items0 = '', quantities0 = '';
-        for (const item of recycleDetails[2][recyclerType]['yield']) {
+        const recyclerYield = recycleDetails[2][recyclerType];
+        for (const item of (recyclerYield ? recyclerYield['yield'] : [])) {
             items0 += `${Client.client.items.getName(item.id)}\n`;
             quantities0 += (item.probability !== 1) ? `${parseInt(item.probability * 100)}%\n` : `${item.quantity}\n`;
         }
 
         let items1 = '', quantities1 = '';
-        for (const item of recycleData[recyclerType]) {
+        for (const item of (recycleData[recyclerType] ?? [])) {
             items1 += `${Client.client.items.getName(item.itemId)}\n`;
             quantities1 += `${item.quantity}\n`;
         }
+
+        /* Discord rejects empty embed field values. */
+        if (items0 === '') { items0 = '​'; quantities0 = '​'; }
+        if (items1 === '') { items1 = '​'; quantities1 = '​'; }
 
         return module.exports.getEmbed({
             title: title,
@@ -1545,9 +1547,9 @@ module.exports = {
 
     getRecyclerEmbed: function (guildId, serverId, recyclerId) {
         const instance = Client.client.getInstance(guildId);
-        const recycler = instance.serverList[serverId].recyclers[recyclerId];
+        const recycler = instance.serverList[serverId]?.recyclers?.[recyclerId];
         const rustplus = Client.client.rustplusInstances[guildId];
-        
+
         if (!recycler || !rustplus) {
             return module.exports.getEmbed({
                 title: 'Recycler - Error',

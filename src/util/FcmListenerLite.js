@@ -66,7 +66,7 @@ module.exports = async (client, guild, steamId) => {
         const appData = data.appData;
 
         if (!appData) {
-            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${hoster}, appData could not be found.`)
+            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${steamId}, appData could not be found.`)
             return;
         }
 
@@ -75,21 +75,28 @@ module.exports = async (client, guild, steamId) => {
         const channelId = appData.find(item => item.key === 'channelId')?.value;
 
         if (!channelId) {
-            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${hoster}, channelId could not be found.`)
+            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${steamId}, channelId could not be found.`)
             return;
         }
 
         const bodyCheck = appData.find(item => item.key === 'body');
 
         if (!bodyCheck) {
-            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${hoster}, body could not be found.`)
+            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${steamId}, body could not be found.`)
             return;
         }
 
-        const body = JSON.parse(bodyCheck.value);
+        let body;
+        try {
+            body = JSON.parse(bodyCheck.value);
+        }
+        catch (error) {
+            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${steamId}, malformed body JSON: ${error.message}`);
+            return;
+        }
 
         if (!body.type && channelId !== 'alarm') {
-            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${hoster}, body type could not be found.`)
+            client.log('FCM LITE', `GuildID: ${guild.id}, SteamID: ${steamId}, body type could not be found.`)
             return;
         }
 

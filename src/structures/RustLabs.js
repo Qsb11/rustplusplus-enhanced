@@ -367,9 +367,11 @@ class RustLabs {
         recycleData['shredder'] = [];
         recycleData['safe-zone-recycler'] = [];
 
+        const MAX_RECYCLE_ITERATIONS = 100; /* Guard against cyclic recycle data. */
         for (const recyclerType in recycleData) {
             let recycledItems = items.slice();
-            while (true) {
+            let iterations = 0;
+            while (iterations++ < MAX_RECYCLE_ITERATIONS) {
                 let noMoreIterations = true;
 
                 const expandedItems = [];
@@ -887,10 +889,10 @@ class RustLabs {
             // Reload items instance
             this._items.reload();
 
-            console.log(`Successfully reloaded RustLabs data from static files`);
             return true;
         } catch (error) {
-            console.error('Failed to reload RustLabs data:', error);
+            /* No client logger available here; rethrowing would break callers. */
+            process.stderr.write(`Failed to reload RustLabs data: ${error.message}\n`);
             return false;
         }
     }

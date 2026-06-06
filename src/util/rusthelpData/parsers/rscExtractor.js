@@ -134,10 +134,106 @@ function extractBuildingObject(payload) {
         raw => raw.includes('raidingTable') || raw.includes('raidingCostCalculatorTable'));
 }
 
+/**
+ *  Extract the balanced array/object starting at the given index.
+ *  @param {string} str The source string.
+ *  @param {number} start Index of the opening '[' or '{'.
+ *  @return {string|null} The balanced substring, or null.
+ */
+function extractBalancedValue(str, start) {
+    const open = str[start];
+    if (open !== '[' && open !== '{') return null;
+    const close = open === '[' ? ']' : '}';
+    let depth = 0;
+    let inString = false;
+    let escaped = false;
+    for (let i = start; i < str.length; i++) {
+        const c = str[i];
+        if (inString) {
+            if (escaped) escaped = false;
+            else if (c === '\\') escaped = true;
+            else if (c === '"') inString = false;
+        } else {
+            if (c === '"') inString = true;
+            else if (c === open) depth++;
+            else if (c === close) {
+                depth--;
+                if (depth === 0) return str.substring(start, i + 1);
+            }
+        }
+    }
+    return null;
+}
+
+/**
+ *  Parse an RSC payload row (lines of the form `<hexId>:<json>`).
+ *  @param {string} payload The decoded RSC payload.
+ *  @param {string} rowId The row id (hex string).
+ *  @return {*} The parsed row value, or null.
+ */
+function getPayloadRow(payload, rowId) {
+    const re = new RegExp(`(?:^|\\n)${rowId}:`);
+    const idx = payload.search(re);
+    if (idx === -1) return null;
+    const start = payload.indexOf(':', idx === 0 ? 0 : idx + 1) + 1;
+    const raw = extractBalancedValue(payload, start);
+    if (!raw) return null;
+    try {
+        return JSON.parse(raw);
+    } catch (error) {
+        return null;
+    }
+}
+
+/**
+ *  Walk a path of segments through an RSC tree. React element nodes are encoded as
+ *  ["$", tag, key, props]; a "props" segment on such a node resolves to index 3.
+ *  @param {*} node The starting node.
+ *  @param {string[]} segments Path segments.
+ *  @return {*} The resolved value, or null.
+ */
+function walkRscPath(node, segments) {
+    for (const seg of segments) {
+        if (node === null || node === undefined) return null;
+        if (Array.isArray(node) && node.length === 4 && node[0] === '$' && seg === 'props') {
+            node = node[3];
+            continue;
+        }
+        if (Array.isArray(node) && /^\d+$/.test(seg)) {
+            node = node[Number(seg)];
+            continue;
+        }
+        if (typeof node === 'object') {
+            node = node[seg];
+            continue;
+        }
+        return null;
+    }
+    return node;
+}
+
+/**
+ *  Resolve an RSC string reference (e.g. "$52:1:props:children:0:props:data") against
+ *  the payload it appears in. Some object fields (notably craftInfo.cost) are streamed
+ *  as references into other payload rows instead of inline values.
+ *  @param {string} payload The decoded RSC payload.
+ *  @param {string} ref The reference string (must start with '$').
+ *  @return {*} The resolved value, or null.
+ */
+function resolveReference(payload, ref) {
+    if (typeof ref !== 'string' || !ref.startsWith('$')) return null;
+    const parts = ref.slice(1).split(':');
+    if (parts.length === 0) return null;
+    const row = getPayloadRow(payload, parts[0]);
+    if (row === null) return null;
+    return walkRscPath(row, parts.slice(1));
+}
+
 module.exports = {
     decodeRscPayload,
     extractBalancedObject,
     findObjectByMarker,
     extractItemObject,
-    extractBuildingObject
+    extractBuildingObject,
+    resolveReference
 };

@@ -99,14 +99,23 @@ function buildItemEntry(item, numericId, existingEntry) {
  *  Build the craft data entry from craftInfo.
  *  @param {Object} item The rusthelp item object.
  *  @param {Object} resolver The IdResolver.
+ *  @param {string} [payload] The decoded RSC payload, used to resolve cost references.
  *  @return {Object|null} The craft entry, or null if not craftable.
  */
-function buildCraftEntry(item, resolver) {
+function buildCraftEntry(item, resolver, payload = '') {
     const ci = item.craftInfo;
-    if (!ci || !Array.isArray(ci.cost) || ci.cost.length === 0) return null;
+    if (!ci) return null;
+
+    /* craftInfo.cost is sometimes streamed as an RSC reference into another
+       payload row (e.g. "$52:1:props:...:data") instead of an inline array. */
+    let costList = ci.cost;
+    if (typeof costList === 'string' && payload !== '') {
+        costList = Rsc.resolveReference(payload, costList);
+    }
+    if (!Array.isArray(costList) || costList.length === 0) return null;
 
     const ingredients = [];
-    for (const cost of ci.cost) {
+    for (const cost of costList) {
         const id = resolver.resolve(cost);
         if (!id) return null; /* Cannot faithfully represent an unresolved ingredient. */
         ingredients.push({ id, quantity: cost.amount });
@@ -247,11 +256,19 @@ function parseItemPage(html, resolver, existingItems = {}) {
     const numericId = item.ingameId !== undefined && item.ingameId !== null ? String(item.ingameId) : null;
     if (!numericId) return null;
 
+    /* Some fields stream as RSC references instead of inline arrays — resolve them. */
+    for (const key of ['recycleInfo', 'shreddingYield']) {
+        if (typeof item[key] === 'string') {
+            const resolved = Rsc.resolveReference(payload, item[key]);
+            if (resolved) item[key] = resolved;
+        }
+    }
+
     const result = { id: numericId };
 
     result.items = buildItemEntry(item, numericId, existingItems[numericId]);
 
-    const craft = buildCraftEntry(item, resolver);
+    const craft = buildCraftEntry(item, resolver, payload);
     if (craft) result.craft = craft;
 
     const research = buildResearchEntry(item, resolver);

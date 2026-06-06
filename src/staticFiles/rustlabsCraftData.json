@@ -7,8 +7,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "14241751": {
         "ingredients": [
@@ -26,8 +27,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 1.875,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "15388698": {
         "ingredients": [
@@ -37,8 +39,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "20489901": {
         "ingredients": [
@@ -48,8 +51,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "21402876": {
         "ingredients": [
@@ -59,8 +63,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "23352662": {
         "ingredients": [
@@ -74,8 +79,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "23391694": {
         "ingredients": [
@@ -85,8 +91,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "39600618": {
         "ingredients": [
@@ -96,8 +103,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "42535890": {
         "ingredients": [
@@ -111,8 +119,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 11.25,
-        "timeString": "7–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "51984655": {
         "ingredients": [
@@ -130,8 +139,21 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 2.25,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 3
+    },
+    "54436981": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 10
     },
     "60528587": {
         "ingredients": [
@@ -145,8 +167,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "95950017": {
         "ingredients": [
@@ -161,7 +184,8 @@
         ],
         "workbench": "-1607980696",
         "time": 1,
-        "timeString": "1 sec"
+        "timeString": "1 sec",
+        "output": 1
     },
     "98508942": {
         "ingredients": [
@@ -175,19 +199,33 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "99588025": {
         "ingredients": [
             {
                 "id": "-151838493",
-                "quantity": 1500
+                "quantity": 4000
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 3
+    },
+    "104856514": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 10
     },
     "121049755": {
         "ingredients": [
@@ -201,8 +239,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "140006625": {
         "ingredients": [
@@ -216,8 +255,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 0.75,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "143803535": {
         "ingredients": [
@@ -231,8 +271,21 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "146221721": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "170758448": {
         "ingredients": [
@@ -250,8 +303,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "171931394": {
         "ingredients": [
@@ -265,8 +319,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "177226991": {
         "ingredients": [
@@ -280,8 +335,25 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "184516676": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "-1994909036",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "190184021": {
         "ingredients": [
@@ -299,8 +371,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "196700171": {
         "ingredients": [
@@ -310,8 +383,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "198438816": {
         "ingredients": [
@@ -325,8 +399,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "200773292": {
         "ingredients": [
@@ -336,8 +411,25 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "210787554": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 500
+            },
+            {
+                "id": "69511070",
+                "quantity": 100
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "215754713": {
         "ingredients": [
@@ -351,8 +443,9 @@
             }
         ],
         "workbench": null,
-        "time": 1.875,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 3
     },
     "223891266": {
         "ingredients": [
@@ -362,8 +455,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "237239288": {
         "ingredients": [
@@ -377,8 +471,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "240752557": {
         "ingredients": [
@@ -392,8 +487,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "254522515": {
         "ingredients": [
@@ -407,8 +503,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 11.25,
-        "timeString": "7–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "261913429": {
         "ingredients": [
@@ -422,8 +519,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "268565518": {
         "ingredients": [
@@ -437,8 +535,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "271048478": {
         "ingredients": [
@@ -452,8 +551,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "273172220": {
         "ingredients": [
@@ -463,8 +563,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "282103175": {
         "ingredients": [
@@ -474,8 +575,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "286648290": {
         "ingredients": [
@@ -485,8 +587,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "304481038": {
         "ingredients": [
@@ -500,8 +603,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "352321488": {
         "ingredients": [
@@ -534,8 +638,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "359723196": {
         "ingredients": [
@@ -549,8 +654,21 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "362863314": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 15
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "363163265": {
         "ingredients": [
@@ -560,23 +678,69 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
+    },
+    "381595627": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "385645417": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 10
+            },
+            {
+                "id": "1660145984",
+                "quantity": 2
+            }
+        ],
+        "workbench": null,
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 20
+    },
+    "405905095": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            },
+            {
+                "id": "2019042823",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "418081930": {
         "ingredients": [
             {
-                "id": "1414245522",
-                "quantity": 1
+                "id": "-858312878",
+                "quantity": 20
             },
             {
                 "id": "-151838493",
-                "quantity": 300
+                "quantity": 250
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "442289265": {
         "ingredients": [
@@ -590,8 +754,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "442886268": {
         "ingredients": [
@@ -605,8 +770,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 45,
-        "timeString": "30 sec – 1 min "
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "443432036": {
         "ingredients": [
@@ -616,8 +782,21 @@
             }
         ],
         "workbench": "1524187186",
-        "time": null,
-        "timeString": "<a href=\"/item/fluid-switch-&amp;-pump\">Fluid Switch &amp; Pump Blueprint</a>"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "445662288": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "446206234": {
         "ingredients": [
@@ -631,8 +810,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "476066818": {
         "ingredients": [
@@ -642,8 +822,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "479143914": {
         "ingredients": [
@@ -658,7 +839,8 @@
         ],
         "workbench": "-1607980696",
         "time": 1,
-        "timeString": "1 sec"
+        "timeString": "1 sec",
+        "output": 1
     },
     "492357192": {
         "ingredients": [
@@ -668,8 +850,25 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "504109620": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 500
+            },
+            {
+                "id": "69511070",
+                "quantity": 100
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "528668503": {
         "ingredients": [
@@ -687,8 +886,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "553270375": {
         "ingredients": [
@@ -702,8 +902,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "553887414": {
         "ingredients": [
@@ -717,8 +918,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "559147458": {
         "ingredients": [
@@ -732,8 +934,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "567235583": {
         "ingredients": [
@@ -744,7 +947,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "567871954": {
         "ingredients": [
@@ -758,8 +962,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "576509618": {
         "ingredients": [
@@ -769,8 +974,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "588596902": {
         "ingredients": [
@@ -784,8 +990,9 @@
             }
         ],
         "workbench": null,
-        "time": 1.875,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "593465182": {
         "ingredients": [
@@ -795,8 +1002,21 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "594041190": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "596469572": {
         "ingredients": [
@@ -806,8 +1026,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "602628465": {
         "ingredients": [
@@ -825,8 +1046,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 11.25,
-        "timeString": "7–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "602741290": {
         "ingredients": [
@@ -836,8 +1058,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "605467368": {
         "ingredients": [
@@ -856,7 +1079,8 @@
         ],
         "workbench": "-1607980696",
         "time": 3,
-        "timeString": "3 sec"
+        "timeString": "3 sec",
+        "output": 2
     },
     "607400343": {
         "ingredients": [
@@ -866,8 +1090,29 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "607785075": {
+        "ingredients": [
+            {
+                "id": "-316250604",
+                "quantity": 1
+            },
+            {
+                "id": "317398316",
+                "quantity": 35
+            },
+            {
+                "id": "479143914",
+                "quantity": 6
+            }
+        ],
+        "workbench": "-1607980696",
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
     },
     "610102428": {
         "ingredients": [
@@ -877,8 +1122,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "613961768": {
         "ingredients": [
@@ -888,8 +1134,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "615112838": {
         "ingredients": [
@@ -903,8 +1150,29 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
+    },
+    "625599716": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 300
+            },
+            {
+                "id": "1381010055",
+                "quantity": 10
+            },
+            {
+                "id": "-858312878",
+                "quantity": 50
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "649912614": {
         "ingredients": [
@@ -922,8 +1190,25 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "652793345": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "656371026": {
         "ingredients": [
@@ -933,8 +1218,9 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 10,
-        "timeString": "10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "656371027": {
         "ingredients": [
@@ -944,8 +1230,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "656371028": {
         "ingredients": [
@@ -955,8 +1242,25 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "656829501": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 250
+            },
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "657352755": {
         "ingredients": [
@@ -966,8 +1270,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "665332906": {
         "ingredients": [
@@ -977,8 +1282,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "671063303": {
         "ingredients": [
@@ -992,8 +1298,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "671706427": {
         "ingredients": [
@@ -1004,7 +1311,8 @@
         ],
         "workbench": "-1607980696",
         "time": 15,
-        "timeString": "15 sec"
+        "timeString": "15 sec",
+        "output": 1
     },
     "674734128": {
         "ingredients": [
@@ -1014,8 +1322,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "709206314": {
         "ingredients": [
@@ -1029,8 +1338,21 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "721798950": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 120
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "722955039": {
         "ingredients": [
@@ -1040,8 +1362,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "742745918": {
         "ingredients": [
@@ -1051,8 +1374,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "762289806": {
         "ingredients": [
@@ -1062,8 +1386,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "782422285": {
         "ingredients": [
@@ -1092,8 +1417,21 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 1.875,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 4
+    },
+    "786458957": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 40
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "794356786": {
         "ingredients": [
@@ -1103,8 +1441,25 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "794443127": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            },
+            {
+                "id": "-858312878",
+                "quantity": 20
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "795236088": {
         "ingredients": [
@@ -1122,8 +1477,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "795371088": {
         "ingredients": [
@@ -1141,8 +1497,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 30,
-        "timeString": "20–40 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "803222026": {
         "ingredients": [
@@ -1152,8 +1509,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "818877484": {
         "ingredients": [
@@ -1171,8 +1529,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "826309791": {
         "ingredients": [
@@ -1186,23 +1545,37 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "829641693": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 250
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "832133926": {
         "ingredients": [
             {
-                "id": "1414245522",
-                "quantity": 1
+                "id": "-858312878",
+                "quantity": 15
             },
             {
                 "id": "-151838493",
-                "quantity": 200
+                "quantity": 150
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "833533164": {
         "ingredients": [
@@ -1216,8 +1589,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "850280505": {
         "ingredients": [
@@ -1227,8 +1601,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "853471967": {
         "ingredients": [
@@ -1238,8 +1613,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "866332017": {
         "ingredients": [
@@ -1249,8 +1625,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "866889860": {
         "ingredients": [
@@ -1264,8 +1641,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "884424049": {
         "ingredients": [
@@ -1283,8 +1661,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "888415708": {
         "ingredients": [
@@ -1294,8 +1673,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "895374329": {
         "ingredients": [
@@ -1309,8 +1689,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "926800282": {
         "ingredients": [
@@ -1320,8 +1701,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "935692442": {
         "ingredients": [
@@ -1331,8 +1713,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "936496778": {
         "ingredients": [
@@ -1342,8 +1725,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "952603248": {
         "ingredients": [
@@ -1353,8 +1737,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "960673498": {
         "ingredients": [
@@ -1364,8 +1749,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "962186730": {
         "ingredients": [
@@ -1378,13 +1764,42 @@
                 "quantity": 1
             },
             {
-                "id": "-1557377697",
-                "quantity": 2
+                "id": "69511070",
+                "quantity": 30
             }
         ],
         "workbench": "1524187186",
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "963150711": {
+        "ingredients": [
+            {
+                "id": "95950017",
+                "quantity": 1
+            },
+            {
+                "id": "-265876753",
+                "quantity": 300
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 2
+    },
+    "963400638": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 15
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "963906841": {
         "ingredients": [
@@ -1394,8 +1809,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "968019378": {
         "ingredients": [
@@ -1405,8 +1821,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "968421290": {
         "ingredients": [
@@ -1416,8 +1833,29 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "969768382": {
+        "ingredients": [
+            {
+                "id": "1199391518",
+                "quantity": 1
+            },
+            {
+                "id": "-858312878",
+                "quantity": 10
+            },
+            {
+                "id": "-151838493",
+                "quantity": 200
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "975983052": {
         "ingredients": [
@@ -1427,8 +1865,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "980333378": {
         "ingredients": [
@@ -1438,8 +1877,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "988652725": {
         "ingredients": [
@@ -1453,8 +1893,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1058261682": {
         "ingredients": [
@@ -1468,8 +1909,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1072924620": {
         "ingredients": [
@@ -1479,8 +1921,9 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 10,
-        "timeString": "10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1079279582": {
         "ingredients": [
@@ -1498,8 +1941,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1081315464": {
         "ingredients": [
@@ -1513,8 +1957,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1099314009": {
         "ingredients": [
@@ -1528,8 +1973,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1104520648": {
         "ingredients": [
@@ -1547,8 +1993,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1110385766": {
         "ingredients": [
@@ -1566,8 +2013,21 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 45,
-        "timeString": "45 sec"
+        "time": 35,
+        "timeString": "35 sec",
+        "output": 1
+    },
+    "1115193056": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1132603396": {
         "ingredients": [
@@ -1581,8 +2041,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1142993169": {
         "ingredients": [
@@ -1592,8 +2053,33 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1145722690": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 500
+            },
+            {
+                "id": "317398316",
+                "quantity": 20
+            },
+            {
+                "id": "1414245522",
+                "quantity": 1
+            },
+            {
+                "id": "479143914",
+                "quantity": 1
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1149964039": {
         "ingredients": [
@@ -1607,8 +2093,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1153652756": {
         "ingredients": [
@@ -1618,8 +2105,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1158340331": {
         "ingredients": [
@@ -1629,8 +2117,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1158340332": {
         "ingredients": [
@@ -1640,8 +2129,9 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 10,
-        "timeString": "10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1158340334": {
         "ingredients": [
@@ -1651,8 +2141,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1159991980": {
         "ingredients": [
@@ -1662,8 +2153,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1160881421": {
         "ingredients": [
@@ -1673,8 +2165,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1168856825": {
         "ingredients": [
@@ -1692,8 +2185,25 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1168916338": {
+        "ingredients": [
+            {
+                "id": "-1811234677",
+                "quantity": 1
+            },
+            {
+                "id": "-858312878",
+                "quantity": 30
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1171735914": {
         "ingredients": [
@@ -1703,8 +2213,21 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "1174484438": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1177596584": {
         "ingredients": [
@@ -1722,8 +2245,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1181207482": {
         "ingredients": [
@@ -1737,8 +2261,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 33.75,
-        "timeString": "22–45 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1186655046": {
         "ingredients": [
@@ -1752,8 +2277,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1199391518": {
         "ingredients": [
@@ -1768,7 +2294,8 @@
         ],
         "workbench": "-1607980696",
         "time": 1,
-        "timeString": "1 sec"
+        "timeString": "1 sec",
+        "output": 1
     },
     "1205084994": {
         "ingredients": [
@@ -1778,8 +2305,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1205607945": {
         "ingredients": [
@@ -1789,8 +2317,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1221063409": {
         "ingredients": [
@@ -1805,7 +2334,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "1234878710": {
         "ingredients": [
@@ -1823,8 +2353,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1234880403": {
         "ingredients": [
@@ -1839,7 +2370,8 @@
         ],
         "workbench": "-1607980696",
         "time": 1,
-        "timeString": "1 sec"
+        "timeString": "1 sec",
+        "output": 1
     },
     "1242482355": {
         "ingredients": [
@@ -1849,8 +2381,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1242522330": {
         "ingredients": [
@@ -1860,8 +2393,9 @@
             }
         ],
         "workbench": null,
-        "time": 15.625,
-        "timeString": "6–25 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1248356124": {
         "ingredients": [
@@ -1880,7 +2414,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "1259919256": {
         "ingredients": [
@@ -1894,8 +2429,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1263920163": {
         "ingredients": [
@@ -1909,8 +2445,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1266491000": {
         "ingredients": [
@@ -1928,8 +2465,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 15,
-        "timeString": "10–20 sec"
+        "time": 20,
+        "timeString": "20 sec",
+        "output": 1
     },
     "1268178466": {
         "ingredients": [
@@ -1939,8 +2477,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
     },
     "1272430949": {
         "ingredients": [
@@ -1954,8 +2493,25 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1285226495": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 25
+            },
+            {
+                "id": "-151838493",
+                "quantity": 200
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1293102274": {
         "ingredients": [
@@ -1965,8 +2521,21 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1295301598": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 15
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1296788329": {
         "ingredients": [
@@ -1984,8 +2553,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 2
     },
     "1305578813": {
         "ingredients": [
@@ -1995,8 +2565,25 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1305765685": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1307626005": {
         "ingredients": [
@@ -2010,8 +2597,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1315082560": {
         "ingredients": [
@@ -2025,8 +2613,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1318558775": {
         "ingredients": [
@@ -2045,7 +2634,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "1324203999": {
         "ingredients": [
@@ -2063,8 +2653,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1326180354": {
         "ingredients": [
@@ -2078,8 +2669,21 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1327005675": {
+        "ingredients": [
+            {
+                "id": "-2099697608",
+                "quantity": 300
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
     },
     "1330084809": {
         "ingredients": [
@@ -2089,8 +2693,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1353298668": {
         "ingredients": [
@@ -2105,7 +2710,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "1358643074": {
         "ingredients": [
@@ -2123,8 +2729,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1361520181": {
         "ingredients": [
@@ -2134,23 +2741,21 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1366282552": {
         "ingredients": [
             {
                 "id": "1381010055",
                 "quantity": 20
-            },
-            {
-                "id": "1234880403",
-                "quantity": 1
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1371909803": {
         "ingredients": [
@@ -2164,8 +2769,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1373240771": {
         "ingredients": [
@@ -2175,8 +2781,9 @@
             }
         ],
         "workbench": null,
-        "time": 15.625,
-        "timeString": "6–25 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1373971859": {
         "ingredients": [
@@ -2194,8 +2801,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1376065505": {
         "ingredients": [
@@ -2209,8 +2817,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1382263453": {
         "ingredients": [
@@ -2228,8 +2837,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1390353317": {
         "ingredients": [
@@ -2239,8 +2849,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1400460850": {
         "ingredients": [
@@ -2250,19 +2861,21 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1413014235": {
         "ingredients": [
             {
                 "id": "69511070",
-                "quantity": 75
+                "quantity": 150
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1414245162": {
         "ingredients": [
@@ -2272,8 +2885,25 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "1420547167": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 25
+            },
+            {
+                "id": "-151838493",
+                "quantity": 200
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1424075905": {
         "ingredients": [
@@ -2283,8 +2913,25 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1428574144": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 200
+            },
+            {
+                "id": "479143914",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1430085198": {
         "ingredients": [
@@ -2298,8 +2945,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1443579727": {
         "ingredients": [
@@ -2313,8 +2961,21 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1447138977": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1451568081": {
         "ingredients": [
@@ -2324,8 +2985,45 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1456143403": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 200
+            },
+            {
+                "id": "-2099697608",
+                "quantity": 200
+            },
+            {
+                "id": "-151838493",
+                "quantity": 100
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "1459828804": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 20
+            },
+            {
+                "id": "95950017",
+                "quantity": 3
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1478091698": {
         "ingredients": [
@@ -2335,8 +3033,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1491189398": {
         "ingredients": [
@@ -2354,8 +3053,21 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1494014226": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "1516985844": {
         "ingredients": [
@@ -2365,8 +3077,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1521286012": {
         "ingredients": [
@@ -2376,8 +3089,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1523403414": {
         "ingredients": [
@@ -2387,8 +3101,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 5
     },
     "1524187186": {
         "ingredients": [
@@ -2399,15 +3114,12 @@
             {
                 "id": "69511070",
                 "quantity": 100
-            },
-            {
-                "id": "-932201673",
-                "quantity": 50
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1524980732": {
         "ingredients": [
@@ -2417,8 +3129,9 @@
             }
         ],
         "workbench": null,
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "1525520776": {
         "ingredients": [
@@ -2428,8 +3141,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1534542921": {
         "ingredients": [
@@ -2443,8 +3157,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1538126328": {
         "ingredients": [
@@ -2454,8 +3169,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1540934679": {
         "ingredients": [
@@ -2465,8 +3181,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1542290441": {
         "ingredients": [
@@ -2476,8 +3193,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1545779598": {
         "ingredients": [
@@ -2500,7 +3218,8 @@
         ],
         "workbench": "-1607980696",
         "time": 35,
-        "timeString": "35 sec"
+        "timeString": "35 sec",
+        "output": 1
     },
     "1556365900": {
         "ingredients": [
@@ -2514,8 +3233,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1559779253": {
         "ingredients": [
@@ -2529,8 +3249,25 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "1562867678": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 175
+            },
+            {
+                "id": "-858312878",
+                "quantity": 30
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1569882109": {
         "ingredients": [
@@ -2547,6 +3284,30 @@
         "time": 6.25,
         "timeString": "2–10 sec"
     },
+    "1575635062": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 200
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1578317134": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
+    },
     "1581210395": {
         "ingredients": [
             {
@@ -2559,8 +3320,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1588298435": {
         "ingredients": [
@@ -2582,8 +3344,9 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 45,
-        "timeString": "45 sec"
+        "time": 35,
+        "timeString": "35 sec",
+        "output": 1
     },
     "1588492232": {
         "ingredients": [
@@ -2597,8 +3360,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1602646136": {
         "ingredients": [
@@ -2612,8 +3376,41 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "1604092540": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            },
+            {
+                "id": "-858312878",
+                "quantity": 30
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1604837581": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 250
+            },
+            {
+                "id": "-858312878",
+                "quantity": 20
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1608640313": {
         "ingredients": [
@@ -2623,8 +3420,25 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1609921845": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 175
+            },
+            {
+                "id": "-858312878",
+                "quantity": 30
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1619039771": {
         "ingredients": [
@@ -2634,8 +3448,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1623701499": {
         "ingredients": [
@@ -2645,8 +3460,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1629293099": {
         "ingredients": [
@@ -2664,8 +3480,21 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1629564540": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 10
+            }
+        ],
+        "workbench": null,
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1638322904": {
         "ingredients": [
@@ -2683,8 +3512,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1643667218": {
         "ingredients": [
@@ -2698,8 +3528,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 11.25,
-        "timeString": "7–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1655650836": {
         "ingredients": [
@@ -2713,8 +3544,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1658229558": {
         "ingredients": [
@@ -2728,8 +3560,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1659447559": {
         "ingredients": [
@@ -2743,8 +3576,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1675639563": {
         "ingredients": [
@@ -2754,8 +3588,33 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1680793490": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "1691223771": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1696050067": {
         "ingredients": [
@@ -2773,8 +3632,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1697996440": {
         "ingredients": [
@@ -2784,8 +3644,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1711033574": {
         "ingredients": [
@@ -2795,8 +3656,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1712070256": {
         "ingredients": [
@@ -2811,7 +3673,8 @@
         ],
         "workbench": "-1607980696",
         "time": 3,
-        "timeString": "3 sec"
+        "timeString": "3 sec",
+        "output": 3
     },
     "1714496074": {
         "ingredients": [
@@ -2825,8 +3688,57 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1714509152": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 250
+            },
+            {
+                "id": "479143914",
+                "quantity": 1
+            },
+            {
+                "id": "-1994909036",
+                "quantity": 2
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "1717250161": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1719587208": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 10
+            },
+            {
+                "id": "73681876",
+                "quantity": 1
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1722154847": {
         "ingredients": [
@@ -2836,8 +3748,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1729120840": {
         "ingredients": [
@@ -2848,7 +3761,8 @@
         ],
         "workbench": null,
         "time": 15,
-        "timeString": "15 sec"
+        "timeString": "15 sec",
+        "output": 1
     },
     "1729712564": {
         "ingredients": [
@@ -2858,8 +3772,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1744298439": {
         "ingredients": [
@@ -2877,8 +3792,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1746956556": {
         "ingredients": [
@@ -2892,8 +3808,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1751045826": {
         "ingredients": [
@@ -2907,8 +3824,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1784406797": {
         "ingredients": [
@@ -2918,8 +3836,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1796682209": {
         "ingredients": [
@@ -2937,8 +3856,21 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "1801656689": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1803831286": {
         "ingredients": [
@@ -2952,8 +3884,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1814288539": {
         "ingredients": [
@@ -2963,8 +3896,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1819863051": {
         "ingredients": [
@@ -2978,8 +3912,21 @@
             }
         ],
         "workbench": null,
-        "time": 1.25,
-        "timeString": "1–2 sec"
+        "time": 2,
+        "timeString": "2 sec",
+        "output": 1
+    },
+    "1831249347": {
+        "ingredients": [
+            {
+                "id": "-2099697608",
+                "quantity": 200
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1840570710": {
         "ingredients": [
@@ -2997,8 +3944,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 37.5,
-        "timeString": "15 sec – 1 min "
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1840822026": {
         "ingredients": [
@@ -3013,7 +3961,20 @@
         ],
         "workbench": "1524187186",
         "time": 10,
-        "timeString": "10 sec"
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "1849409072": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 10
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1849887541": {
         "ingredients": [
@@ -3027,8 +3988,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1850456855": {
         "ingredients": [
@@ -3046,8 +4008,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1865253052": {
         "ingredients": [
@@ -3057,8 +4020,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1874610722": {
         "ingredients": [
@@ -3073,7 +4037,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "1877339384": {
         "ingredients": [
@@ -3083,8 +4048,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1882709339": {
         "ingredients": [
@@ -3098,8 +4064,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 0.75,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "1883981798": {
         "ingredients": [
@@ -3109,8 +4076,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1883981800": {
         "ingredients": [
@@ -3120,8 +4088,9 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 10,
-        "timeString": "10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1883981801": {
         "ingredients": [
@@ -3131,8 +4100,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1885488976": {
         "ingredients": [
@@ -3150,8 +4120,21 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1892536031": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1895235349": {
         "ingredients": [
@@ -3161,8 +4144,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1903654061": {
         "ingredients": [
@@ -3176,8 +4160,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1946219319": {
         "ingredients": [
@@ -3187,8 +4172,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1948067030": {
         "ingredients": [
@@ -3206,8 +4192,21 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "1950013766": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1950721418": {
         "ingredients": [
@@ -3217,8 +4216,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "1951603367": {
         "ingredients": [
@@ -3228,8 +4228,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1953903201": {
         "ingredients": [
@@ -3243,8 +4244,25 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1954597876": {
+        "ingredients": [
+            {
+                "id": "1168916338",
+                "quantity": 2
+            },
+            {
+                "id": "-151838493",
+                "quantity": 200
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "1965232394": {
         "ingredients": [
@@ -3262,8 +4280,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1973949960": {
         "ingredients": [
@@ -3277,8 +4296,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1975934948": {
         "ingredients": [
@@ -3300,8 +4320,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 11.25,
-        "timeString": "7–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1983621560": {
         "ingredients": [
@@ -3311,8 +4332,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "1989785143": {
         "ingredients": [
@@ -3322,8 +4344,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "1992974553": {
         "ingredients": [
@@ -3333,8 +4356,25 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "1993693904": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 200
+            },
+            {
+                "id": "2019042823",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2005491391": {
         "ingredients": [
@@ -3344,8 +4384,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "2009734114": {
         "ingredients": [
@@ -3355,8 +4396,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2023888403": {
         "ingredients": [
@@ -3370,8 +4412,25 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "2036395619": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 25
+            },
+            {
+                "id": "-2099697608",
+                "quantity": 10
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "2040726127": {
         "ingredients": [
@@ -3385,8 +4444,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2041899972": {
         "ingredients": [
@@ -3404,8 +4464,21 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "2047789913": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 4
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "2068884361": {
         "ingredients": [
@@ -3419,8 +4492,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2070189026": {
         "ingredients": [
@@ -3438,8 +4512,29 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "2083256995": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 5
+            },
+            {
+                "id": "69511070",
+                "quantity": 200
+            },
+            {
+                "id": "-1021495308",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2087678962": {
         "ingredients": [
@@ -3453,8 +4548,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "2090395347": {
         "ingredients": [
@@ -3468,8 +4564,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2100007442": {
         "ingredients": [
@@ -3479,8 +4576,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2104517339": {
         "ingredients": [
@@ -3494,8 +4592,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2114754781": {
         "ingredients": [
@@ -3513,8 +4612,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "2126889441": {
         "ingredients": [
@@ -3524,8 +4624,33 @@
             }
         ],
         "workbench": null,
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
+    },
+    "2130820932": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
+    },
+    "2130820933": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-1685290200": {
         "ingredients": [
@@ -3539,8 +4664,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 2.25,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "-1036635990": {
         "ingredients": [
@@ -3558,8 +4684,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 2.25,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "-727717969": {
         "ingredients": [
@@ -3573,8 +4700,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 2.25,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "-1211166256": {
         "ingredients": [
@@ -3588,8 +4716,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 2.25,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 3
     },
     "-2124352573": {
         "ingredients": [
@@ -3603,8 +4732,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1615281216": {
         "ingredients": [
@@ -3619,7 +4749,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "-2139580305": {
         "ingredients": [
@@ -3637,8 +4768,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 33.75,
-        "timeString": "22–45 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-2072273936": {
         "ingredients": [
@@ -3648,8 +4780,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "-702051347": {
         "ingredients": [
@@ -3659,8 +4792,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1022661119": {
         "ingredients": [
@@ -3670,8 +4804,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1211268013": {
         "ingredients": [
@@ -3681,8 +4816,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1274093662": {
         "ingredients": [
@@ -3692,8 +4828,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-321431890": {
         "ingredients": [
@@ -3707,8 +4844,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1621539785": {
         "ingredients": [
@@ -3722,8 +4860,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-8312704": {
         "ingredients": [
@@ -3733,8 +4872,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1273339005": {
         "ingredients": [
@@ -3752,23 +4892,21 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1262185308": {
         "ingredients": [
             {
                 "id": "69511070",
                 "quantity": 40
-            },
-            {
-                "id": "479143914",
-                "quantity": 1
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-690968985": {
         "ingredients": [
@@ -3778,8 +4916,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-515830359": {
         "ingredients": [
@@ -3793,8 +4932,9 @@
             }
         ],
         "workbench": null,
-        "time": 37.5,
-        "timeString": "15 sec – 1 min "
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1903165497": {
         "ingredients": [
@@ -3808,8 +4948,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1478094705": {
         "ingredients": [
@@ -3823,8 +4964,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1113501606": {
         "ingredients": [
@@ -3842,8 +4984,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-23994173": {
         "ingredients": [
@@ -3853,8 +4996,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1549739227": {
         "ingredients": [
@@ -3872,8 +5016,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-761829530": {
         "ingredients": [
@@ -3883,8 +5028,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1778897469": {
         "ingredients": [
@@ -3894,8 +5040,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1040518150": {
         "ingredients": [
@@ -3909,8 +5056,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1379036069": {
         "ingredients": [
@@ -3920,8 +5068,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-912398867": {
         "ingredients": [
@@ -3931,8 +5080,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 3
     },
     "-1530414568": {
         "ingredients": [
@@ -3942,8 +5092,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1117626326": {
         "ingredients": [
@@ -3953,8 +5104,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-152332823": {
         "ingredients": [
@@ -3968,8 +5120,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1916473915": {
         "ingredients": [
@@ -3983,8 +5136,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-770304148": {
         "ingredients": [
@@ -3998,8 +5152,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1501451746": {
         "ingredients": [
@@ -4013,8 +5168,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-803263829": {
         "ingredients": [
@@ -4032,8 +5188,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1488398114": {
         "ingredients": [
@@ -4047,8 +5204,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1588628467": {
         "ingredients": [
@@ -4070,8 +5228,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1950721390": {
         "ingredients": [
@@ -4081,8 +5240,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-216999575": {
         "ingredients": [
@@ -4092,8 +5252,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1049881973": {
         "ingredients": [
@@ -4103,8 +5264,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-151387974": {
         "ingredients": [
@@ -4114,8 +5276,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 10
     },
     "-502177121": {
         "ingredients": [
@@ -4125,8 +5288,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-765183617": {
         "ingredients": [
@@ -4140,8 +5304,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 25,
-        "timeString": "10–40 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-854270928": {
         "ingredients": [
@@ -4151,8 +5316,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-22883916": {
         "ingredients": [
@@ -4166,8 +5332,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1519126340": {
         "ingredients": [
@@ -4177,8 +5344,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-979302481": {
         "ingredients": [
@@ -4188,8 +5356,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-747743875": {
         "ingredients": [
@@ -4203,8 +5372,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1196547867": {
         "ingredients": [
@@ -4218,8 +5388,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-784870360": {
         "ingredients": [
@@ -4229,8 +5400,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1448252298": {
         "ingredients": [
@@ -4240,8 +5412,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1673693549": {
         "ingredients": [
@@ -4255,8 +5428,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 0.75,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-75944661": {
         "ingredients": [
@@ -4270,8 +5444,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1321651331": {
         "ingredients": [
@@ -4290,7 +5465,8 @@
         ],
         "workbench": "-1607980696",
         "time": 3,
-        "timeString": "3 sec"
+        "timeString": "3 sec",
+        "output": 2
     },
     "-592016202": {
         "ingredients": [
@@ -4313,7 +5489,8 @@
         ],
         "workbench": "-1607980696",
         "time": 5,
-        "timeString": "5 sec"
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1230433643": {
         "ingredients": [
@@ -4323,8 +5500,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1379835144": {
         "ingredients": [
@@ -4334,8 +5512,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1913996738": {
         "ingredients": [
@@ -4345,8 +5524,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1215753368": {
         "ingredients": [
@@ -4368,8 +5548,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 30,
-        "timeString": "20–40 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-936921910": {
         "ingredients": [
@@ -4383,8 +5564,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-939424778": {
         "ingredients": [
@@ -4394,8 +5576,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-196667575": {
         "ingredients": [
@@ -4405,8 +5588,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1880231361": {
         "ingredients": [
@@ -4420,8 +5604,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-265292885": {
         "ingredients": [
@@ -4431,8 +5616,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1166712463": {
         "ingredients": [
@@ -4442,8 +5628,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1973785141": {
         "ingredients": [
@@ -4461,8 +5648,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1000573653": {
         "ingredients": [
@@ -4472,8 +5660,9 @@
             }
         ],
         "workbench": null,
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-52398594": {
         "ingredients": [
@@ -4483,8 +5672,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-849373693": {
         "ingredients": [
@@ -4494,8 +5684,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1999722522": {
         "ingredients": [
@@ -4513,8 +5704,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-148794216": {
         "ingredients": [
@@ -4528,8 +5720,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1767794021": {
         "ingredients": [
@@ -4539,8 +5732,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-695124222": {
         "ingredients": [
@@ -4550,8 +5744,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-656349006": {
         "ingredients": [
@@ -4569,8 +5764,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1306288356": {
         "ingredients": [
@@ -4584,8 +5780,9 @@
             }
         ],
         "workbench": null,
-        "time": 37.5,
-        "timeString": "15 sec – 1 min "
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-265876753": {
         "ingredients": [
@@ -4599,8 +5796,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 1.25,
-        "timeString": "1–2 sec"
+        "time": 2,
+        "timeString": "2 sec",
+        "output": 10
     },
     "-839576748": {
         "ingredients": [
@@ -4610,8 +5808,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 11.25,
-        "timeString": "7–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1252059217": {
         "ingredients": [
@@ -4625,8 +5824,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1696379844": {
         "ingredients": [
@@ -4636,8 +5836,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1507239837": {
         "ingredients": [
@@ -4647,8 +5848,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1569700847": {
         "ingredients": [
@@ -4658,8 +5860,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1102429027": {
         "ingredients": [
@@ -4673,8 +5876,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 33.75,
-        "timeString": "22–45 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1778159885": {
         "ingredients": [
@@ -4688,8 +5892,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 33.75,
-        "timeString": "22–45 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-722629980": {
         "ingredients": [
@@ -4699,8 +5904,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1773144852": {
         "ingredients": [
@@ -4710,8 +5916,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-691113464": {
         "ingredients": [
@@ -4725,19 +5932,25 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 26.25,
-        "timeString": "17–35 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-967648160": {
         "ingredients": [
             {
                 "id": "-2099697608",
-                "quantity": 1500
+                "quantity": 4000
+            },
+            {
+                "id": "-1994909036",
+                "quantity": 1
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 3
     },
     "-335089230": {
         "ingredients": [
@@ -4751,8 +5964,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 21.875,
-        "timeString": "8–35 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1802083073": {
         "ingredients": [
@@ -4762,8 +5976,9 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 10,
-        "timeString": "10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1023065463": {
         "ingredients": [
@@ -4777,8 +5992,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 1.875,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "-1841918730": {
         "ingredients": [
@@ -4792,8 +6008,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1214542497": {
         "ingredients": [
@@ -4816,7 +6033,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "-1442559428": {
         "ingredients": [
@@ -4826,8 +6044,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1663759755": {
         "ingredients": [
@@ -4841,8 +6060,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 15,
-        "timeString": "10–20 sec"
+        "time": 20,
+        "timeString": "20 sec",
+        "output": 1
     },
     "-218009552": {
         "ingredients": [
@@ -4864,8 +6084,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-246672609": {
         "ingredients": [
@@ -4879,8 +6100,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1989600732": {
         "ingredients": [
@@ -4890,8 +6112,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-143132326": {
         "ingredients": [
@@ -4901,8 +6124,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1691396643": {
         "ingredients": [
@@ -4916,8 +6140,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 2.25,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 4
     },
     "-44876289": {
         "ingredients": [
@@ -4927,8 +6152,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2012470695": {
         "ingredients": [
@@ -4938,8 +6164,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-697981032": {
         "ingredients": [
@@ -4953,8 +6180,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2001260025": {
         "ingredients": [
@@ -4968,8 +6196,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1824943010": {
         "ingredients": [
@@ -4979,8 +6208,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1163532624": {
         "ingredients": [
@@ -4994,8 +6224,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-979951147": {
         "ingredients": [
@@ -5009,8 +6240,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1330640246": {
         "ingredients": [
@@ -5024,8 +6256,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-850982208": {
         "ingredients": [
@@ -5035,8 +6268,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-845557339": {
         "ingredients": [
@@ -5050,8 +6284,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-489848205": {
         "ingredients": [
@@ -5065,8 +6300,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1693832478": {
         "ingredients": [
@@ -5080,8 +6316,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1992717673": {
         "ingredients": [
@@ -5099,8 +6336,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 30,
-        "timeString": "20–40 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1100168350": {
         "ingredients": [
@@ -5118,8 +6356,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-798293154": {
         "ingredients": [
@@ -5129,8 +6368,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-110921842": {
         "ingredients": [
@@ -5144,8 +6384,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1469578201": {
         "ingredients": [
@@ -5159,8 +6400,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-946369541": {
         "ingredients": [
@@ -5174,8 +6416,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 4
     },
     "-89874794": {
         "ingredients": [
@@ -5185,8 +6428,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1966748496": {
         "ingredients": [
@@ -5200,8 +6444,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1137865085": {
         "ingredients": [
@@ -5215,8 +6460,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-586784898": {
         "ingredients": [
@@ -5230,8 +6476,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1423304443": {
         "ingredients": [
@@ -5241,8 +6488,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-493159321": {
         "ingredients": [
@@ -5252,8 +6500,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1819233322": {
         "ingredients": [
@@ -5263,8 +6512,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-583379016": {
         "ingredients": [
@@ -5278,8 +6528,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-746647361": {
         "ingredients": [
@@ -5289,8 +6540,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-194953424": {
         "ingredients": [
@@ -5308,8 +6560,9 @@
             }
         ],
         "workbench": "-1607980696",
-        "time": 45,
-        "timeString": "45 sec"
+        "time": 35,
+        "timeString": "35 sec",
+        "output": 1
     },
     "-1199897169": {
         "ingredients": [
@@ -5319,8 +6572,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-148229307": {
         "ingredients": [
@@ -5330,8 +6584,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1021495308": {
         "ingredients": [
@@ -5346,7 +6601,8 @@
         ],
         "workbench": "-1607980696",
         "time": 1,
-        "timeString": "1 sec"
+        "timeString": "1 sec",
+        "output": 1
     },
     "-1199897172": {
         "ingredients": [
@@ -5356,8 +6612,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-819720157": {
         "ingredients": [
@@ -5367,8 +6624,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1539025626": {
         "ingredients": [
@@ -5386,8 +6644,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-20045316": {
         "ingredients": [
@@ -5397,8 +6656,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2047081330": {
         "ingredients": [
@@ -5408,8 +6668,9 @@
             }
         ],
         "workbench": null,
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-1405508498": {
         "ingredients": [
@@ -5419,8 +6680,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-2097376851": {
         "ingredients": [
@@ -5430,8 +6692,9 @@
             }
         ],
         "workbench": null,
-        "time": 1.25,
-        "timeString": "1–2 sec"
+        "time": 2,
+        "timeString": "2 sec",
+        "output": 5
     },
     "-961457160": {
         "ingredients": [
@@ -5445,8 +6708,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1518883088": {
         "ingredients": [
@@ -5460,8 +6724,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1506417026": {
         "ingredients": [
@@ -5475,8 +6740,9 @@
             }
         ],
         "workbench": null,
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-1832422579": {
         "ingredients": [
@@ -5486,8 +6752,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1286302544": {
         "ingredients": [
@@ -5497,8 +6764,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-7270019": {
         "ingredients": [
@@ -5516,8 +6784,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-733625651": {
         "ingredients": [
@@ -5531,8 +6800,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2040817543": {
         "ingredients": [
@@ -5546,8 +6816,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-379734527": {
         "ingredients": [
@@ -5565,8 +6836,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1302129395": {
         "ingredients": [
@@ -5580,8 +6852,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-144513264": {
         "ingredients": [
@@ -5591,8 +6864,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-1370759135": {
         "ingredients": [
@@ -5606,8 +6880,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-365097295": {
         "ingredients": [
@@ -5625,8 +6900,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-2049214035": {
         "ingredients": [
@@ -5644,8 +6920,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-956706906": {
         "ingredients": [
@@ -5655,8 +6932,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1429456799": {
         "ingredients": [
@@ -5666,8 +6944,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-892718768": {
         "ingredients": [
@@ -5677,8 +6956,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-986782031": {
         "ingredients": [
@@ -5692,8 +6972,9 @@
             }
         ],
         "workbench": null,
-        "time": 3.125,
-        "timeString": "1–5 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1736356576": {
         "ingredients": [
@@ -5711,8 +6992,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1553999294": {
         "ingredients": [
@@ -5730,8 +7012,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1160621614": {
         "ingredients": [
@@ -5741,8 +7024,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
     },
     "-1486461488": {
         "ingredients": [
@@ -5756,8 +7040,9 @@
             }
         ],
         "workbench": null,
-        "time": 37.5,
-        "timeString": "15 sec – 1 min "
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-454370658": {
         "ingredients": [
@@ -5771,8 +7056,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1861522751": {
         "ingredients": [
@@ -5786,8 +7072,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1044468317": {
         "ingredients": [
@@ -5797,8 +7084,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-566907190": {
         "ingredients": [
@@ -5808,8 +7096,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 15,
-        "timeString": "10–20 sec"
+        "time": 20,
+        "timeString": "20 sec",
+        "output": 1
     },
     "-2002277461": {
         "ingredients": [
@@ -5827,8 +7116,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-699558439": {
         "ingredients": [
@@ -5846,8 +7136,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-742865266": {
         "ingredients": [
@@ -5866,7 +7157,8 @@
         ],
         "workbench": "-1607980696",
         "time": 5,
-        "timeString": "5 sec"
+        "timeString": "5 sec",
+        "output": 1
     },
     "-1863063690": {
         "ingredients": [
@@ -5876,8 +7168,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-458565393": {
         "ingredients": [
@@ -5887,8 +7180,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1985799200": {
         "ingredients": [
@@ -5898,8 +7192,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1104881824": {
         "ingredients": [
@@ -5909,8 +7204,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-173268132": {
         "ingredients": [
@@ -5920,8 +7216,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-173268125": {
         "ingredients": [
@@ -5931,8 +7228,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-173268126": {
         "ingredients": [
@@ -5942,8 +7240,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-173268131": {
         "ingredients": [
@@ -5953,8 +7252,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-173268129": {
         "ingredients": [
@@ -5964,8 +7264,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-173268128": {
         "ingredients": [
@@ -5975,8 +7276,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-262590403": {
         "ingredients": [
@@ -5990,8 +7292,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1978999529": {
         "ingredients": [
@@ -6005,8 +7308,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1506397857": {
         "ingredients": [
@@ -6020,8 +7324,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1780802565": {
         "ingredients": [
@@ -6035,8 +7340,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-384243979": {
         "ingredients": [
@@ -6050,8 +7356,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 6
     },
     "-559599960": {
         "ingredients": [
@@ -6065,8 +7372,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1878475007": {
         "ingredients": [
@@ -6085,7 +7393,8 @@
         ],
         "workbench": "1524187186",
         "time": 5,
-        "timeString": "5 sec"
+        "timeString": "5 sec",
+        "output": 1
     },
     "-948291630": {
         "ingredients": [
@@ -6099,8 +7408,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-904863145": {
         "ingredients": [
@@ -6122,8 +7432,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-2067472972": {
         "ingredients": [
@@ -6134,7 +7445,8 @@
         ],
         "workbench": null,
         "time": 15,
-        "timeString": "15 sec"
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2025184684": {
         "ingredients": [
@@ -6144,8 +7456,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-796583652": {
         "ingredients": [
@@ -6155,8 +7468,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1695367501": {
         "ingredients": [
@@ -6166,8 +7480,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2107018088": {
         "ingredients": [
@@ -6181,8 +7496,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1850571427": {
         "ingredients": [
@@ -6203,8 +7519,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2073432256": {
         "ingredients": [
@@ -6214,8 +7531,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-216116642": {
         "ingredients": [
@@ -6225,8 +7543,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1073015016": {
         "ingredients": [
@@ -6240,8 +7559,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-769647921": {
         "ingredients": [
@@ -6255,8 +7575,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1754948969": {
         "ingredients": [
@@ -6266,8 +7587,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2058362263": {
         "ingredients": [
@@ -6281,8 +7603,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-869598982": {
         "ingredients": [
@@ -6292,8 +7615,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1293296287": {
         "ingredients": [
@@ -6311,8 +7635,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-692338819": {
         "ingredients": [
@@ -6322,8 +7647,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-369760990": {
         "ingredients": [
@@ -6333,8 +7659,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-132247350": {
         "ingredients": [
@@ -6352,8 +7679,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1138208076": {
         "ingredients": [
@@ -6363,8 +7691,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-695978112": {
         "ingredients": [
@@ -6378,8 +7707,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-582782051": {
         "ingredients": [
@@ -6393,8 +7723,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-48090175": {
         "ingredients": [
@@ -6408,8 +7739,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-842267147": {
         "ingredients": [
@@ -6419,8 +7751,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-555122905": {
         "ingredients": [
@@ -6434,8 +7767,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-343857907": {
         "ingredients": [
@@ -6445,8 +7779,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1517740219": {
         "ingredients": [
@@ -6460,8 +7795,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1800345240": {
         "ingredients": [
@@ -6471,8 +7807,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 1.875,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 3
     },
     "-1100422738": {
         "ingredients": [
@@ -6482,8 +7819,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-563624462": {
         "ingredients": [
@@ -6493,8 +7831,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-596876839": {
         "ingredients": [
@@ -6504,8 +7843,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-781014061": {
         "ingredients": [
@@ -6515,8 +7855,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1535621066": {
         "ingredients": [
@@ -6530,8 +7871,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1583967946": {
         "ingredients": [
@@ -6545,8 +7887,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1049172752": {
         "ingredients": [
@@ -6556,8 +7899,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1421257350": {
         "ingredients": [
@@ -6571,8 +7915,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1614955425": {
         "ingredients": [
@@ -6582,8 +7927,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 11.25,
-        "timeString": "7–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1785231475": {
         "ingredients": [
@@ -6596,9 +7942,10 @@
                 "quantity": 2
             }
         ],
-        "workbench": "1524187186",
-        "time": 0.625,
-        "timeString": "1 sec"
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-626174997": {
         "ingredients": [
@@ -6616,8 +7963,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1758372725": {
         "ingredients": [
@@ -6639,8 +7987,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-97956382": {
         "ingredients": [
@@ -6650,8 +7999,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
     },
     "-1671551935": {
         "ingredients": [
@@ -6665,8 +8015,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 7.5,
-        "timeString": "5–10 sec"
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 5
     },
     "-1478445584": {
         "ingredients": [
@@ -6684,8 +8035,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-901370585": {
         "ingredients": [
@@ -6695,8 +8047,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1647846966": {
         "ingredients": [
@@ -6706,8 +8059,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-280223496": {
         "ingredients": [
@@ -6725,8 +8079,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-99886070": {
         "ingredients": [
@@ -6740,8 +8095,9 @@
             }
         ],
         "workbench": null,
-        "time": 37.5,
-        "timeString": "15 sec – 1 min "
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1538109120": {
         "ingredients": [
@@ -6755,8 +8111,9 @@
             }
         ],
         "workbench": null,
-        "time": 6.25,
-        "timeString": "2–10 sec"
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     },
     "-1501434104": {
         "ingredients": [
@@ -6777,8 +8134,9 @@
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-463122489": {
         "ingredients": [
@@ -6788,8 +8146,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1863559151": {
         "ingredients": [
@@ -6803,8 +8162,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1815301988": {
         "ingredients": [
@@ -6814,8 +8174,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1284169891": {
         "ingredients": [
@@ -6833,8 +8194,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-1367281941": {
         "ingredients": [
@@ -6848,8 +8210,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-132516482": {
         "ingredients": [
@@ -6864,7 +8227,8 @@
         ],
         "workbench": "-1607980696",
         "time": 30,
-        "timeString": "30 sec"
+        "timeString": "30 sec",
+        "output": 1
     },
     "-96256997": {
         "ingredients": [
@@ -6878,8 +8242,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1819763926": {
         "ingredients": [
@@ -6901,8 +8266,9 @@
             }
         ],
         "workbench": "-41896755",
-        "time": 22.5,
-        "timeString": "15–30 sec"
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-144417939": {
         "ingredients": [
@@ -6912,8 +8278,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 0.625,
-        "timeString": "1 sec"
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
     },
     "-1478212975": {
         "ingredients": [
@@ -6927,8 +8294,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-2094954543": {
         "ingredients": [
@@ -6938,12 +8306,13 @@
             },
             {
                 "id": "-151838493",
-                "quantity": 200
+                "quantity": 150
             }
         ],
         "workbench": null,
-        "time": 12.5,
-        "timeString": "5–20 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1336109173": {
         "ingredients": [
@@ -6953,8 +8322,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1023374709": {
         "ingredients": [
@@ -6964,8 +8334,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-180129657": {
         "ingredients": [
@@ -6975,8 +8346,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1234735557": {
         "ingredients": [
@@ -6990,8 +8362,9 @@
             }
         ],
         "workbench": null,
-        "time": 1.875,
-        "timeString": "1–3 sec"
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
     },
     "-92759291": {
         "ingredients": [
@@ -7001,8 +8374,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1151332840": {
         "ingredients": [
@@ -7012,8 +8386,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-316250604": {
         "ingredients": [
@@ -7027,8 +8402,9 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1183726687": {
         "ingredients": [
@@ -7038,8 +8414,9 @@
             }
         ],
         "workbench": null,
-        "time": 9.375,
-        "timeString": "3–15 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-41896755": {
         "ingredients": [
@@ -7052,13 +8429,14 @@
                 "quantity": 20
             },
             {
-                "id": "-932201673",
-                "quantity": 500
+                "id": "-143481979",
+                "quantity": 5
             }
         ],
         "workbench": "1524187186",
-        "time": 28.125,
-        "timeString": "11–45 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-1607980696": {
         "ingredients": [
@@ -7071,13 +8449,14 @@
                 "quantity": 100
             },
             {
-                "id": "-932201673",
-                "quantity": 1250
+                "id": "-1896395719",
+                "quantity": 5
             }
         ],
         "workbench": "-41896755",
-        "time": 45,
-        "timeString": "30 sec – 1 min "
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
     },
     "-996185386": {
         "ingredients": [
@@ -7091,8 +8470,9 @@
             }
         ],
         "workbench": null,
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
     },
     "-211235948": {
         "ingredients": [
@@ -7102,7 +8482,1220 @@
             }
         ],
         "workbench": "1524187186",
-        "time": 18.75,
-        "timeString": "7–30 sec"
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-486432631": {
+        "ingredients": [
+            {
+                "id": "95950017",
+                "quantity": 1
+            },
+            {
+                "id": "-265876753",
+                "quantity": 150
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 3
+    },
+    "-19318653": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 5
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "-1987565603": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            },
+            {
+                "id": "-858312878",
+                "quantity": 10
+            },
+            {
+                "id": "-946369541",
+                "quantity": 10
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "-1127003365": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 5
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "-357442017": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            },
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "-759279626": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 250
+            },
+            {
+                "id": "479143914",
+                "quantity": 1
+            },
+            {
+                "id": "-1994909036",
+                "quantity": 2
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "-187304968": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 500
+            },
+            {
+                "id": "-1994909036",
+                "quantity": 2
+            },
+            {
+                "id": "2019042823",
+                "quantity": 1
+            },
+            {
+                "id": "317398316",
+                "quantity": 100
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "-851288382": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 200
+            },
+            {
+                "id": "95950017",
+                "quantity": 1
+            },
+            {
+                "id": "-858312878",
+                "quantity": 25
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-321247698": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 20
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-34498533": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            },
+            {
+                "id": "69511070",
+                "quantity": 200
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-411735114": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            },
+            {
+                "id": "-265876753",
+                "quantity": 15
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 2
+    },
+    "-1827561369": {
+        "ingredients": [
+            {
+                "id": "-1673693549",
+                "quantity": 1
+            },
+            {
+                "id": "-265876753",
+                "quantity": 450
+            },
+            {
+                "id": "-946369541",
+                "quantity": 20
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-484006286": {
+        "ingredients": [
+            {
+                "id": "-265876753",
+                "quantity": 150
+            },
+            {
+                "id": "-946369541",
+                "quantity": 50
+            },
+            {
+                "id": "1414245522",
+                "quantity": 2
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-2018158920": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "1414245522",
+                "quantity": 1
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-903796529": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "-593892112": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-963819285": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 5
+            },
+            {
+                "id": "-870140677",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
+    },
+    "-594596146": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 25
+            },
+            {
+                "id": "69511070",
+                "quantity": 5
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
+    },
+    "-274709858": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 25
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 3,
+        "timeString": "3 sec",
+        "output": 2
+    },
+    "-258574361": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 50
+            },
+            {
+                "id": "1234880403",
+                "quantity": 2
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-478923685": {
+        "ingredients": [
+            {
+                "id": "-316250604",
+                "quantity": 1
+            },
+            {
+                "id": "317398316",
+                "quantity": 35
+            },
+            {
+                "id": "479143914",
+                "quantity": 6
+            }
+        ],
+        "workbench": "-1607980696",
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
+    },
+    "-379403794": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 500
+            },
+            {
+                "id": "479143914",
+                "quantity": 2
+            },
+            {
+                "id": "-1994909036",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-418359052": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 10
+            },
+            {
+                "id": "2048317869",
+                "quantity": 1
+            }
+        ],
+        "workbench": null,
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "-1314079879": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 10
+            },
+            {
+                "id": "2048317869",
+                "quantity": 1
+            }
+        ],
+        "workbench": null,
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "-507248640": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 10
+            }
+        ],
+        "workbench": null,
+        "time": 5,
+        "timeString": "5 sec",
+        "output": 1
+    },
+    "-482348853": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 200
+            },
+            {
+                "id": "69511070",
+                "quantity": 150
+            },
+            {
+                "id": "1414245522",
+                "quantity": 1
+            },
+            {
+                "id": "479143914",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-952411326": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-280812482": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            },
+            {
+                "id": "2019042823",
+                "quantity": 1
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-92315244": {
+        "ingredients": [
+            {
+                "id": "95950017",
+                "quantity": 4
+            },
+            {
+                "id": "-1021495308",
+                "quantity": 1
+            },
+            {
+                "id": "479143914",
+                "quantity": 1
+            },
+            {
+                "id": "317398316",
+                "quantity": 6
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "-348232115": {
+        "ingredients": [
+            {
+                "id": "573926264",
+                "quantity": 1
+            },
+            {
+                "id": "-1021495308",
+                "quantity": 2
+            },
+            {
+                "id": "69511070",
+                "quantity": 200
+            },
+            {
+                "id": "317398316",
+                "quantity": 12
+            }
+        ],
+        "workbench": "-1607980696",
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
+    },
+    "-173268127": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 2
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-173268138": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 2
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1290278434": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 500
+            },
+            {
+                "id": "69511070",
+                "quantity": 250
+            },
+            {
+                "id": "479143914",
+                "quantity": 1
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1056824343": {
+        "ingredients": [
+            {
+                "id": "73681876",
+                "quantity": 1
+            },
+            {
+                "id": "69511070",
+                "quantity": 150
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "-2115299615": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 5
+            },
+            {
+                "id": "479143914",
+                "quantity": 2
+            },
+            {
+                "id": "-946369541",
+                "quantity": 50
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "-158718378": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 250
+            },
+            {
+                "id": "1414245522",
+                "quantity": 2
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1866909924": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-781866273": {
+        "ingredients": [
+            {
+                "id": "317398316",
+                "quantity": 10
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 25,
+        "timeString": "25 sec",
+        "output": 1
+    },
+    "-1659598760": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 40
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-880494890": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-919882824": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1652561344": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-424687710": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-105343718": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 15
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-1800102806": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 1,
+        "timeString": "1 sec",
+        "output": 1
+    },
+    "-1779203452": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-1510616686": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 100
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1258821205": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-2134097299": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-996235148": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1836526520": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1528767189": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1430299277": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1322332389": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1923843855": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 40
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-1019111952": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-883975138": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1440443161": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 15
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-1035206446": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            },
+            {
+                "id": "69511070",
+                "quantity": 50
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-707792719": {
+        "ingredients": [
+            {
+                "id": "69511070",
+                "quantity": 50
+            },
+            {
+                "id": "95950017",
+                "quantity": 1
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1014934560": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 60
+            },
+            {
+                "id": "1234880403",
+                "quantity": 2
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-430416124": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 200
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1094453063": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-498301781": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1774190142": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1244287686": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1211801774": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-946599114": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 175
+            },
+            {
+                "id": "-858312878",
+                "quantity": 30
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-946599113": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 175
+            },
+            {
+                "id": "-858312878",
+                "quantity": 30
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-816769770": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 175
+            },
+            {
+                "id": "-858312878",
+                "quantity": 30
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-193519904": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-333406828": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 150
+            },
+            {
+                "id": "69511070",
+                "quantity": 25
+            }
+        ],
+        "workbench": null,
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 1
+    },
+    "-1850297170": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 80
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-1782127806": {
+        "ingredients": [
+            {
+                "id": "-858312878",
+                "quantity": 15
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-985781766": {
+        "ingredients": [
+            {
+                "id": "-2099697608",
+                "quantity": 3000
+            }
+        ],
+        "workbench": "-41896755",
+        "time": 30,
+        "timeString": "30 sec",
+        "output": 3
+    },
+    "-1679267738": {
+        "ingredients": [
+            {
+                "id": "-2099697608",
+                "quantity": 250
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-265202949": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            }
+        ],
+        "workbench": null,
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
+    },
+    "-526026171": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 300
+            },
+            {
+                "id": "69511070",
+                "quantity": 75
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-459159118": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            },
+            {
+                "id": "-858312878",
+                "quantity": 15
+            }
+        ],
+        "workbench": null,
+        "time": 15,
+        "timeString": "15 sec",
+        "output": 1
+    },
+    "-2027793839": {
+        "ingredients": [
+            {
+                "id": "-151838493",
+                "quantity": 100
+            },
+            {
+                "id": "-858312878",
+                "quantity": 20
+            }
+        ],
+        "workbench": "1524187186",
+        "time": 10,
+        "timeString": "10 sec",
+        "output": 1
     }
 }

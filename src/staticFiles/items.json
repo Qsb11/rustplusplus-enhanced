@@ -14,6 +14,11 @@
         "name": "Apple Pie",
         "description": "A delicious apple pie, always too hot. Provides a boost to hunger, health and hydration. Gives better night vision, including tree markings and ore hotspots, for a short time."
     },
+    "4474927": {
+        "shortname": "industrial.torch",
+        "name": "Industrial Torch",
+        "description": ""
+    },
     "14241751": {
         "shortname": "arrow.fire",
         "name": "Fire Arrow",
@@ -169,6 +174,11 @@
         "name": "Ice Metal Facemask",
         "description": "A protective facemask which provides the user with excellent head protection from all forms of attacks."
     },
+    "112268546": {
+        "shortname": "workbench.upgrade.reinforced",
+        "name": "Reinforced Workbench Upgrade",
+        "description": ""
+    },
     "120820987": {
         "shortname": "pie.chicken",
         "name": "Chicken Pie",
@@ -308,6 +318,11 @@
         "shortname": "tshirt",
         "name": "T-Shirt",
         "description": "A tshirt, simple undergarment. Good protection from damage and the elements."
+    },
+    "225892284": {
+        "shortname": "industrial.electric.furnace",
+        "name": "Industrial Electric Furnace",
+        "description": ""
     },
     "236677901": {
         "shortname": "lumberjack.pickaxe",
@@ -672,7 +687,7 @@
     "553967074": {
         "shortname": "wallpaper.wall",
         "name": "Wallpaper Wall",
-        "description": null
+        "description": ""
     },
     "559147458": {
         "shortname": "fishtrap.small",
@@ -733,6 +748,11 @@
         "shortname": "rf.detonator",
         "name": "RF Transmitter",
         "description": "A hand held RF signal broadcaster. Left click to broadcast. Configurable with right mouse."
+    },
+    "599591861": {
+        "shortname": "m16a2",
+        "name": "M16A2",
+        "description": ""
     },
     "602628465": {
         "shortname": "parachute",
@@ -979,6 +999,11 @@
         "name": "Pistol Bullet",
         "description": "Ammunition for a Pistol. Loses velocity when fired over long distances resulting in slightly decreased damage."
     },
+    "786458957": {
+        "shortname": "halfheight.industrial.shelves",
+        "name": "halfheight-industrial-shelves",
+        "description": "Half height industrial shelves for stacking"
+    },
     "789333045": {
         "shortname": "sunken.knife",
         "name": "Sunken Combat Knife",
@@ -1003,6 +1028,11 @@
         "shortname": "shotgun.pump",
         "name": "Pump Shotgun",
         "description": "A Shotgun. Fires 8 rounds."
+    },
+    "798382300": {
+        "shortname": "workbench.upgrade.accelerated",
+        "name": "Accelerated Workbench Upgrade",
+        "description": ""
     },
     "803222026": {
         "shortname": "box.repair.bench",
@@ -1222,7 +1252,12 @@
     "962186730": {
         "shortname": "tincan.alarm",
         "name": "Tin Can Alarm",
-        "description": "A primitive perimeter alarm made from hanging tin cans. Clatters loudly when disturbed, alerting you to any trespassers. Simple but effective."
+        "description": "A primitive perimeter alarm made from hanging tin cans. Clatters loudly when disturbed, alerting you to any trespassers. Can be rigged with grenades or other throwables."
+    },
+    "963150711": {
+        "shortname": "ammo.mortar.basic",
+        "name": "ammo-mortar-basic",
+        "description": "A high explosive mortar shell that deals minor structural damage on impact."
     },
     "963400638": {
         "shortname": "speechbubbleballoon2025",
@@ -1449,6 +1484,11 @@
         "name": "Armoured Ladder Hatch",
         "description": "An armoured hatch that opens and changes into a ladder."
     },
+    "1127732084": {
+        "shortname": "ballistic.helmet",
+        "name": "Ballistic helmet",
+        "description": ""
+    },
     "1130729138": {
         "shortname": "fish.spoiled",
         "name": "Spoiled Fish Meat",
@@ -1579,6 +1619,11 @@
         "name": "Two Sided Hanging Sign",
         "description": "A double sided hanging sign, to attach to buildings."
     },
+    "1215602244": {
+        "shortname": "workbench.upgrade.efficiency",
+        "name": "Efficiency Workbench Upgrade",
+        "description": ""
+    },
     "1221063409": {
         "shortname": "door.double.hinged.toptier",
         "name": "Armored Double Door",
@@ -1692,7 +1737,7 @@
     "1293102274": {
         "shortname": "electric.xorswitch",
         "name": "XOR Switch",
-        "description": "An exclusive-or logic gate that allows electrical passthrough if ONLY ONE input receives power, passthrough amount is whichever single input is active. If BOTH inputs recieve power, passthrough will be zero."
+        "description": "An exclusive-or logic gate that allows electrical passthrough if ONLY ONE input receives power, passthrough amount is whichever single input is active. If BOTH inputs receive power, passthrough will be zero."
     },
     "1295301598": {
         "shortname": "latexballoon2025",
@@ -1959,6 +2004,11 @@
         "name": "Cooking Workbench",
         "description": "Used to cook advanced recipes for food, fuel, ammunition and explosives."
     },
+    "1459828804": {
+        "shortname": "mortar.deployable",
+        "name": "mortar-deployable",
+        "description": "The Mortar fires in an arcing trajectory and favors volume over precision. Pairs well with binoculars."
+    },
     "1463862472": {
         "shortname": "wantedposter.wantedposter4",
         "name": "Wanted Poster 4",
@@ -1973,6 +2023,16 @@
         "shortname": "pie.pork",
         "name": "Pork Pie",
         "description": "Tempting pork pie, provides a boost to hunger, health and hydration. Improves healing rate from other sources for a short time."
+    },
+    "1468749025": {
+        "shortname": "bdu.pants",
+        "name": "BDU pants",
+        "description": ""
+    },
+    "1470387662": {
+        "shortname": "workbench.upgrade.range",
+        "name": "Range Workbench Upgrade",
+        "description": ""
     },
     "1478091698": {
         "shortname": "weapon.mod.muzzlebrake",
@@ -2407,7 +2467,7 @@
     "1730664641": {
         "shortname": "wallpaper.ceiling",
         "name": "Wallpaper Ceiling",
-        "description": null
+        "description": ""
     },
     "1732236518": {
         "shortname": "caboose",
@@ -2789,6 +2849,11 @@
         "name": "Survey Charge",
         "description": "Use this on the terrain to see which resources are available for mining."
     },
+    "1983541158": {
+        "shortname": "ballistic.legarmor",
+        "name": "Ballistic leg armour",
+        "description": ""
+    },
     "1983621560": {
         "shortname": "floor.triangle.grill",
         "name": "Floor triangle grill",
@@ -2833,6 +2898,11 @@
         "shortname": "radiationremovetea.advanced",
         "name": "Advanced Rad. Removal Tea",
         "description": "A tea that removes some radiation."
+    },
+    "2022157467": {
+        "shortname": "crossbowbowless",
+        "name": "Bowless Crossbow",
+        "description": ""
     },
     "2023888403": {
         "shortname": "electric.battery.rechargable.medium",
@@ -4381,7 +4451,7 @@
     },
     "-2068194497": {
         "shortname": "horse.armor.lny26",
-        "name": "Lunar New Year Horse Armor",
+        "name": "horse.armor.lny26.name",
         "description": "A full body Lunar New Year themed armor for a horse. Provides strong protection for you and your steed, at the cost of greatly reduced movement speed."
     },
     "-1323101799": {
@@ -5302,7 +5372,7 @@
     "-193519904": {
         "shortname": "single.shallow.wall.shelves",
         "name": "Single Shallow Wall Shelves",
-        "description": "Single Shallow Wall Shelves"
+        "description": "A shallow bamboo wall shelf for small item stacking"
     },
     "-1056824343": {
         "shortname": "skidoo",
@@ -5756,12 +5826,12 @@
     },
     "-450890885": {
         "shortname": "wall.frame.lunar2025_b",
-        "name": "Wall Divider Pack",
+        "name": "Lunar Wall Frame Inlay",
         "description": "A Lunar New Year themed decorative wall divider with swirling inlay"
     },
     "-2016974826": {
         "shortname": "wall.frame.lunar2025_c",
-        "name": "Wall Divider Pack",
+        "name": "Lunar Wall Frame Inlay",
         "description": "A Lunar New Year themed decorative wall divider with floral inlay"
     },
     "-796583652": {
@@ -5797,7 +5867,7 @@
     "-551431036": {
         "shortname": "wallpaper.flooring",
         "name": "Wallpaper Flooring",
-        "description": null
+        "description": ""
     },
     "-1344017968": {
         "shortname": "wantedposter",
@@ -6058,5 +6128,75 @@
         "shortname": "wallpaper",
         "name": "Wallpaper",
         "description": "Transform your base from a rusty shack to a cozy hideout with this sleek wallpaper. A nice touch of style - until the next raid, at least."
+    },
+    "-486432631": {
+        "shortname": "ammo.mortar.fragment",
+        "name": "ammo-mortar-fragment",
+        "description": "A fragmentation mortar shell, dealing lethal damage in a large area on impact."
+    },
+    "-1780402255": {
+        "shortname": "ballistic.vest",
+        "name": "Ballistic vest",
+        "description": ""
+    },
+    "-2127311451": {
+        "shortname": "bdu.shirt",
+        "name": "BDU shirt",
+        "description": ""
+    },
+    "-1800102806": {
+        "shortname": "discord.plushie",
+        "name": "discord-plushie",
+        "description": "Exclusive to the Rust Shop on Discord!"
+    },
+    "-1019111952": {
+        "shortname": "industrial.storage.horizontal",
+        "name": "industrial-storage-horizontal",
+        "description": "Horizontal barrel to store industrial materials"
+    },
+    "-883975138": {
+        "shortname": "industrial.storage.vertical",
+        "name": "industrial-storage-vertical",
+        "description": "Vertical barrel to store industrial materials"
+    },
+    "-1018026008": {
+        "shortname": "salvaged.industrial.shelves",
+        "name": "Salvaged Industrial Shelves",
+        "description": ""
+    },
+    "-265202949": {
+        "shortname": "wall.shallow.industrial.shelves",
+        "name": "wall-shallow-industrial-shelves",
+        "description": "A shallow industrial wall shelf for small item stacking"
+    },
+    "-770390391": {
+        "shortname": "workbench.upgrade.comfort",
+        "name": "Comfort Workbench Upgrade",
+        "description": ""
+    },
+    "-1953279770": {
+        "shortname": "workbench.upgrade.defensive",
+        "name": "Defensive Workbench Upgrade",
+        "description": ""
+    },
+    "-180862419": {
+        "shortname": "workbench.upgrade.prototype",
+        "name": "Prototype Workbench Upgrade",
+        "description": ""
+    },
+    "-286541059": {
+        "shortname": "workbench.upgrade.recyclebin",
+        "name": "Recycle Bin Workbench Upgrade",
+        "description": ""
+    },
+    "-160105346": {
+        "shortname": "workbench.upgrade.salvage",
+        "name": "Salvage Workbench Upgrade",
+        "description": ""
+    },
+    "-1536343135": {
+        "shortname": "workbench.upgrade.surplus",
+        "name": "Surplus Workbench Upgrade",
+        "description": ""
     }
 }

@@ -21,7 +21,7 @@
 const Builder = require('@discordjs/builders');
 
 const DiscordEmbeds = require('../discordTools/discordEmbeds.js');
-const FirecrawlScraper = require('../util/firecrawlScraper.js');
+const { runFullUpdate } = require('../util/rusthelpData/index.js');
 
 module.exports = {
     name: 'updatedatabase',
@@ -73,73 +73,38 @@ module.exports = {
             return;
         }
 
-        const scraper = new FirecrawlScraper();
-        
-        // Check API key configuration
-        const status = scraper.getStatus();
-        if (!status.apiKeyConfigured) {
-            const str = client.intlGet(guildId, 'commandsUpdateDatabaseNoApiKey') || 'Firecrawl API key not configured. Please set the RPP_FIRECRAWL_API_KEY environment variable.';
-            await client.interactionEditReply(interaction, DiscordEmbeds.getActionInfoEmbed(1, str, null, guildId));
-            client.log(client.intlGet(guildId, 'warningCap'), str);
-            return;
-        }
-
-        // Check rate limiting
-        if (status.isRateLimited) {
-            const retryTime = Math.ceil((status.rateLimitedUntil - Date.now()) / 60000);
-            const str = client.intlGet(guildId, 'commandsUpdateDatabaseRateLimited', { minutes: retryTime }) || 
-                       `Database updates are currently rate limited. Please try again in ${retryTime} minutes.`;
-            await client.interactionEditReply(interaction, DiscordEmbeds.getActionInfoEmbed(1, str, null, guildId));
-            client.log(client.intlGet(guildId, 'warningCap'), str);
-            return;
-        }
-
         // Initial response
         const initialMessage = this.getInitialMessage(client, guildId, target, itemName);
         await client.interactionEditReply(interaction, DiscordEmbeds.getActionInfoEmbed(0, initialMessage, null, guildId));
 
         try {
-            let result;
+            const options = { progress: (level, message) => client.log(client.intlGet(guildId, 'infoCap'), message) };
 
-            switch (target) {
-                case 'ALL':
-                    result = await scraper.scrapeAllItems();
-                    break;
-                
-                case 'NEW':
-                    result = await scraper.scrapeNewItems();
-                    break;
-                
-                case 'ITEM':
-                    result = await scraper.scrapeSingleItem(itemName);
-                    break;
+            if (target === 'ITEM') {
+                /* Scrape a single item by its rusthelp slug derived from the provided name. */
+                const slug = itemName.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                options.test = false;
+                options.itemSlugs = [slug];
             }
+            /* ALL and NEW both perform a full merge-based update (merge never drops existing entries). */
 
-            // Create result message
-            if (result.success) {
-                // Reload item data to make new items available immediately
-                const reloadSuccess = client.reloadItemData();
-                
-                let successMessage = this.getSuccessMessage(client, guildId, target, result);
-                if (reloadSuccess) {
-                    successMessage += '\n\n🔄 Item data reloaded - new items are now available in commands!';
-                } else {
-                    successMessage += '\n\n⚠️ Database updated but data reload failed - restart the bot to use new items.';
-                }
-                
+            const summary = await runFullUpdate(client, options);
+
+            if (summary && summary.success) {
+                let successMessage = this.getSuccessMessage(client, guildId, target, summary, itemName);
+                successMessage += '\n\n🔄 Item data reloaded - new items are now available in commands!';
                 await client.interactionEditReply(interaction, DiscordEmbeds.getActionInfoEmbed(0, successMessage, null, guildId));
                 client.log(client.intlGet(guildId, 'infoCap'), successMessage);
             } else {
-                const errorMessage = this.getErrorMessage(client, guildId, result);
+                const errorMessage = client.intlGet(guildId, 'commandsUpdateDatabaseNotSuccessful') ||
+                    '❌ The database update was not successful. Please try again later.';
                 await client.interactionEditReply(interaction, DiscordEmbeds.getActionInfoEmbed(1, errorMessage, null, guildId));
                 client.log(client.intlGet(guildId, 'warningCap'), errorMessage);
             }
-
         } catch (error) {
             client.log(client.intlGet(guildId, 'errorCap'), `Database update error: ${error.message}`);
-
-            const errorMessage = client.intlGet(guildId, 'commandsUpdateDatabaseError') || 
-                                'An unexpected error occurred during the database update.';
+            const errorMessage = client.intlGet(guildId, 'commandsUpdateDatabaseError') ||
+                'An unexpected error occurred during the database update.';
             await client.interactionEditReply(interaction, DiscordEmbeds.getActionInfoEmbed(1, errorMessage, null, guildId));
         }
     },
@@ -147,57 +112,40 @@ module.exports = {
     getInitialMessage(client, guildId, target, itemName) {
         switch (target) {
             case 'ALL':
-                return client.intlGet(guildId, 'commandsUpdateDatabaseStartingAll') || 
-                       '🔄 Starting full database update. This may take several minutes...';
+                return client.intlGet(guildId, 'commandsUpdateDatabaseStartingAll') ||
+                    '🔄 Starting full database update. This may take several minutes...';
             case 'NEW':
-                return client.intlGet(guildId, 'commandsUpdateDatabaseStartingNew') || 
-                       '🔄 Checking for new items in the database...';
+                return client.intlGet(guildId, 'commandsUpdateDatabaseStartingNew') ||
+                    '🔄 Checking for new items in the database...';
             case 'ITEM':
-                return client.intlGet(guildId, 'commandsUpdateDatabaseStartingItem', { item: itemName }) || 
-                       `🔄 Updating item "${itemName}"...`;
+                return client.intlGet(guildId, 'commandsUpdateDatabaseStartingItem', { item: itemName }) ||
+                    `🔄 Updating item "${itemName}"...`;
             default:
                 return 'Starting database update...';
         }
     },
 
-    getSuccessMessage(client, guildId, target, result) {
+    getSuccessMessage(client, guildId, target, summary, itemName) {
         switch (target) {
             case 'ALL':
-                return client.intlGet(guildId, 'commandsUpdateDatabaseSuccessAll', { 
-                    total: result.totalItems || result.itemsScraped,
-                    errors: result.errors || 0
-                }) || `✅ Successfully updated the complete item database with ${result.totalItems || result.itemsScraped} items.${result.errors ? ` (${result.errors} errors)` : ''}`;
-                
+                return client.intlGet(guildId, 'commandsUpdateDatabaseSuccessAll', {
+                    total: summary.totalItems,
+                    errors: summary.itemErrors || 0
+                }) || `✅ Successfully updated the item database (${summary.totalItems} items, ${summary.itemErrors || 0} errors).`;
             case 'NEW':
-                if (result.newItems > 0) {
-                    return client.intlGet(guildId, 'commandsUpdateDatabaseSuccessNew', { count: result.newItems }) || 
-                           `✅ Found and added ${result.newItems} new items to the database.`;
-                } else {
-                    return client.intlGet(guildId, 'commandsUpdateDatabaseNoNewItems') || 
-                           '✅ No new items found. The database is up to date.';
+                if (summary.newItems > 0) {
+                    return client.intlGet(guildId, 'commandsUpdateDatabaseSuccessNew', { count: summary.newItems }) ||
+                        `✅ Found and added ${summary.newItems} new items to the database.`;
                 }
-                
+                return client.intlGet(guildId, 'commandsUpdateDatabaseNoNewItems') ||
+                    '✅ No new items found. The database is up to date.';
             case 'ITEM':
-                return client.intlGet(guildId, 'commandsUpdateDatabaseSuccessItem', { 
-                    item: result.item.name,
-                    id: result.item.identifier || 'N/A'
-                }) || `✅ Successfully updated item: **${result.item.name}** (ID: ${result.item.identifier || 'N/A'})`;
-                
+                return client.intlGet(guildId, 'commandsUpdateDatabaseSuccessItem', {
+                    item: itemName,
+                    id: 'updated'
+                }) || `✅ Successfully updated item: **${itemName}** (${summary.updatedItems} entries refreshed).`;
             default:
                 return 'Database update completed successfully.';
-        }
-    },
-
-    getErrorMessage(client, guildId, result) {
-        if (result.reason === 'rate_limited') {
-            return client.intlGet(guildId, 'commandsUpdateDatabaseRateLimitedRetry', { minutes: result.retryIn }) || 
-                   `⏳ The update was paused due to API rate limits. It will automatically resume in ${result.retryIn} minutes.`;
-        } else if (result.reason === 'error') {
-            return client.intlGet(guildId, 'commandsUpdateDatabaseFailed') || 
-                   '❌ The update failed due to an error. Please check the bot logs for more details.';
-        } else {
-            return client.intlGet(guildId, 'commandsUpdateDatabaseNotSuccessful') || 
-                   '❌ The database update was not successful. Please try again later.';
         }
     }
 };

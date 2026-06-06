@@ -36,7 +36,6 @@ const ConnectionManager = require('../util/connectionManager.js');
 const RustLabs = require('../structures/RustLabs');
 const RustPlus = require('../structures/RustPlus');
 const ScheduledScraper = require('../util/scheduledScraper.js');
-const FirecrawlScraper = require('../util/firecrawlScraper.js');
 
 class DiscordBot extends Discord.Client {
     constructor(props) {
@@ -67,8 +66,7 @@ class DiscordBot extends Discord.Client {
             this.rustlabs = new RustLabs();
             this.cctv = new Cctv();
             this.connectionManager = new ConnectionManager(this);
-            this.scheduledScraper = new ScheduledScraper();
-            this.firecrawlScraper = new FirecrawlScraper();
+            this.scheduledScraper = new ScheduledScraper(this);
         } catch (error) {
             this.logger.log('ERROR', `Failed to initialize bot components: ${error.message || error.toString()} | Stack: ${error.stack || 'No stack trace'}`, 'error');
             throw error;
@@ -179,24 +177,15 @@ class DiscordBot extends Discord.Client {
         }, variables);
     }
 
-    build() {
+    build(loginAttempt = 1) {
+        const maxLoginAttempts = 10;
+        const retryDelayMs = Math.min(15000 * Math.pow(2, loginAttempt - 1), 300000);
+
         this.login(Config.discord.token).catch(error => {
             const errorMessage = error.message || error.toString();
             const errorStack = error.stack || 'No stack trace';
-            
+
             switch (error.code) {
-                case 502: {
-                    this.log(this.intlGet(null, 'errorCap'),
-                        this.intlGet(null, 'badGateway', { error: errorMessage }), 'error');
-                    // Don't exit - let Discord.js retry
-                } break;
-
-                case 503: {
-                    this.log(this.intlGet(null, 'errorCap'),
-                        this.intlGet(null, 'serviceUnavailable', { error: errorMessage }), 'error');
-                    // Don't exit - let Discord.js retry
-                } break;
-
                 case 'TOKEN_INVALID': {
                     this.log(this.intlGet(null, 'errorCap'), 'Invalid Discord token - cannot continue', 'error');
                     process.exit(1);
@@ -208,8 +197,20 @@ class DiscordBot extends Discord.Client {
                 } break;
 
                 default: {
-                    this.log(this.intlGet(null, 'errorCap'), `Discord login error: ${errorMessage} | Stack: ${errorStack}`, 'error');
-                    // Don't exit for rate limits or temporary issues - let Discord.js handle it
+                    /* Transient errors (502/503/rate limits). discord.js does NOT retry
+                       a failed login() by itself — retry here with backoff, or exit so a
+                       supervisor (Docker) can restart the process. */
+                    this.log(this.intlGet(null, 'errorCap'),
+                        `Discord login error (attempt ${loginAttempt}/${maxLoginAttempts}): ` +
+                        `${errorMessage} | Stack: ${errorStack}`, 'error');
+
+                    if (loginAttempt >= maxLoginAttempts) {
+                        this.log(this.intlGet(null, 'errorCap'), 'Max Discord login attempts reached, exiting', 'error');
+                        process.exit(1);
+                    }
+
+                    this.log(this.intlGet(null, 'infoCap'), `Retrying Discord login in ${retryDelayMs / 1000}s`);
+                    setTimeout(() => this.build(loginAttempt + 1), retryDelayMs);
                 } break;
             }
         });

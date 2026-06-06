@@ -7,3 +7,5 @@ logs
 temp
 
 src/util/scraper.log
+src/util/rusthelpData/scraper.log
+src/util/rusthelpData/.cache

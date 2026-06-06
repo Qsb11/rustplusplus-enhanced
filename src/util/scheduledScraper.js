@@ -1,15 +1,39 @@
 /*
     Scheduled Item Scraper
-    Runs the item scraper on a weekly schedule
+
+    Runs the free rusthelp.com data scraper on a weekly schedule. The Firecrawl-based
+    implementation has been removed; this delegates to src/util/rusthelpData (no API key
+    required). The public surface (start/stop/runNow) is unchanged so existing callers
+    (DiscordBot, ready event) keep working.
 */
 
 const cron = require('node-cron');
-const ItemScraper = require('./itemScraper.js');
+const { runFullUpdate } = require('./rusthelpData/index.js');
 
 class ScheduledScraper {
-    constructor() {
-        this.scraper = new ItemScraper();
+    constructor(client = null) {
+        this.client = client;
         this.cronJob = null;
+        this.running = false;
+    }
+
+    /**
+     *  Run the full update once, guarding against overlapping runs.
+     *  @return {Promise<Object|null>} The run summary, or null if a run was already in progress.
+     */
+    async run() {
+        if (this.running) {
+            console.log('Scheduled scraper already running, skipping overlap.');
+            return null;
+        }
+        this.running = true;
+        try {
+            return await runFullUpdate(this.client, {
+                progress: (level, message) => console.log(`[scraper:${level}] ${message}`)
+            });
+        } finally {
+            this.running = false;
+        }
     }
 
     start() {
@@ -17,8 +41,8 @@ class ScheduledScraper {
         this.cronJob = cron.schedule('0 2 * * 0', async () => {
             console.log('Starting scheduled item scraping...');
             try {
-                await this.scraper.run();
-                console.log('Scheduled item scraping completed successfully');
+                const summary = await this.run();
+                console.log('Scheduled item scraping completed:', JSON.stringify(summary));
             } catch (error) {
                 console.error('Scheduled item scraping failed:', error);
             }
@@ -37,10 +61,12 @@ class ScheduledScraper {
     async runNow() {
         console.log('Running item scraper immediately...');
         try {
-            await this.scraper.run();
-            console.log('Manual item scraping completed successfully');
+            const summary = await this.run();
+            console.log('Manual item scraping completed:', JSON.stringify(summary));
+            return summary;
         } catch (error) {
             console.error('Manual item scraping failed:', error);
+            throw error;
         }
     }
 }

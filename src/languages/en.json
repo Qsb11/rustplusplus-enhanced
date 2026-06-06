@@ -824,7 +824,6 @@
     "commandsUpdateDatabaseTargetDesc": "What to update: ALL (full refresh), NEW (new items only), or ITEM (specific item)",
     "commandsUpdateDatabaseItemDesc": "Name of specific item to update (required when target is ITEM)",
     "commandsUpdateDatabaseMissingItem": "You must specify an item name when updating a specific item.",
-    "commandsUpdateDatabaseNoApiKey": "Firecrawl API key not configured. Please set the RPP_FIRECRAWL_API_KEY environment variable.",
     "commandsUpdateDatabaseRateLimited": "Database updates are currently rate limited. Please try again in {minutes} minutes.",
     "commandsUpdateDatabaseStartingAll": "🔄 Starting full database update. This may take several minutes...",
     "commandsUpdateDatabaseStartingNew": "🔄 Checking for new items in the database...",

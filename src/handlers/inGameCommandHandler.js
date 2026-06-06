@@ -85,6 +85,18 @@ module.exports = {
         else if (commandLowerCase.startsWith(`${prefix}find `)) {
             rustplus.sendInGameMessage(rustplus.getCommandFind(command));
         }
+        else if (commandLowerCase.startsWith(`${prefix}ai `)) {
+            const Ai = require('../util/ai');
+            const question = command.slice(`${prefix}ai `.length).trim();
+            /* Answer asynchronously — AI calls can take a while, don't block the handler. */
+            Ai.askAi(client, question, { source: 'ingame' }).then(result => {
+                if (!rustplus.isDeleted && rustplus.isOperational) {
+                    rustplus.sendInGameMessage(result.answer);
+                }
+            }).catch(error => {
+                client.log(client.intlGet(null, 'errorCap'), `AI command failed: ${error.message}`, 'error');
+            });
+        }
         else if ((commandLowerCase.startsWith(`${prefix}${client.intlGet('en', 'commandSyntaxDeath')} `) ||
             commandLowerCase.startsWith(`${prefix}${client.intlGet('en', 'commandSyntaxDeaths')}`)) ||
             (commandLowerCase.startsWith(`${prefix}${client.intlGet(guildId, 'commandSyntaxDeath')} `) ||

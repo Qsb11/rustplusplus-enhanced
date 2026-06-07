@@ -65,6 +65,15 @@ module.exports = async (client, guild) => {
     const androidId = credentials[hoster].gcm.android_id;
     const securityToken = credentials[hoster].gcm.security_token;
     client.fcmListeners[guild.id] = new PushReceiverClient(androidId, securityToken, [])
+
+    /* Lifecycle logging so a silent/failed FCM connection is observable. */
+    client.fcmListeners[guild.id].on('connect', () => {
+        client.log('FCM Host', `GuildID: ${guild.id}, SteamID: ${hoster}, FCM connected and listening.`);
+    });
+    client.fcmListeners[guild.id].on('disconnect', () => {
+        client.log('FCM Host', `GuildID: ${guild.id}, SteamID: ${hoster}, FCM disconnected (will auto-retry).`);
+    });
+
     client.fcmListeners[guild.id].on('ON_DATA_RECEIVED', (data) => {
         const appData = data.appData;
 
@@ -72,6 +81,11 @@ module.exports = async (client, guild) => {
             client.log('FCM Host', `GuildID: ${guild.id}, SteamID: ${hoster}, appData could not be found.`)
             return;
         }
+
+        /* Trace every received push so pairing notifications are visible even if
+           later parsing/routing drops them. */
+        const channelIdTrace = appData.find(item => item.key === 'channelId')?.value;
+        client.log('FCM Host', `GuildID: ${guild.id}, SteamID: ${hoster}, push received (channelId: ${channelIdTrace}).`);
 
         const title = appData.find(item => item.key === 'title')?.value;
         const message = appData.find(item => item.key === 'message')?.value;
@@ -215,7 +229,13 @@ module.exports = async (client, guild) => {
         }
     });
 
-    client.fcmListeners[guild.id].connect();
+    const connectResult = client.fcmListeners[guild.id].connect();
+    if (connectResult && typeof connectResult.catch === 'function') {
+        connectResult.catch(error => {
+            client.log('FCM Host',
+                `GuildID: ${guild.id}, SteamID: ${hoster}, FCM connect failed: ${error.message || error}`, 'error');
+        });
+    }
 };
 
 function isValidUrl(url) {

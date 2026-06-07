@@ -55,7 +55,7 @@ module.exports = {
            markers, devices) and search the AI/ knowledge folder. Requires a
            model that supports OpenAI tool calling (llama3.1, qwen2.5, ...). */
         toolsEnabled: process.env.RPP_AI_TOOLS_ENABLED !== 'false',
-        maxToolIterations: parseInt(process.env.RPP_AI_MAX_TOOL_ITERATIONS || '5', 10),
+        maxToolIterations: parseInt(process.env.RPP_AI_MAX_TOOL_ITERATIONS || '8', 10),
         /* Control tools (toggle smart switches) — destructive, so gated.
            In-game callers are team members (trusted); Discord control is
            additionally restricted to admins. */

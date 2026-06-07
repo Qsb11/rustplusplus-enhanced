@@ -62,33 +62,63 @@ async function execGetItem(ctx, args) {
 
     let best = null;
     let bestScore = -Infinity;
+    const partials = [];
     for (const file of Fs.readdirSync(AI_ITEMS_DIR)) {
         if (!file.endsWith('.json')) continue;
-        const label = norm(file.slice(0, -5).replace(/_/g, ' '));
+        const display = file.slice(0, -5).replace(/_/g, ' ');
+        const label = norm(display);
         const labelWords = label.split(' ').filter(Boolean);
         const labelJoined = labelWords.join('');
 
-        let score;
         if (labelJoined === wantedJoined) { best = file; break; } /* exact */
-        else {
-            /* Word-overlap scoring: count query words present as whole words,
-               then prefer the most specific (fewest extra words). */
-            const matched = wantedWords.filter(w => labelWords.includes(w)).length;
-            if (matched === 0) continue;
-            const allWanted = matched === wantedWords.length;
-            score = matched * 100 - Math.abs(labelWords.length - wantedWords.length)
-                + (allWanted ? 50 : 0);
-        }
+
+        /* Word-overlap scoring: count query words present as whole words,
+           then prefer the most specific (fewest extra words). */
+        const matched = wantedWords.filter(w => labelWords.includes(w)).length;
+        /* Substring fallback catches "ak" -> nothing-as-word but helps partials. */
+        const substr = labelJoined.includes(wantedJoined) || wantedJoined.includes(labelJoined);
+        if (matched === 0 && !substr) continue;
+
+        const allWanted = matched === wantedWords.length;
+        const score = matched * 100 - Math.abs(labelWords.length - wantedWords.length)
+            + (allWanted ? 50 : 0) + (substr ? 5 : 0);
+        partials.push({ display, score });
         if (score > bestScore) { bestScore = score; best = file; }
     }
 
-    if (!best) return `No item file found for "${name}".`;
+    if (!best) {
+        /* No confident match — return suggestions so the model can retry with a
+           corrected name instead of giving up. */
+        const suggestions = partials.sort((a, b) => b.score - a.score).slice(0, 8).map(p => p.display);
+        if (suggestions.length > 0) {
+            return `No exact match for "${name}". Did you mean one of: ${suggestions.join(', ')}? ` +
+                `Call get_item again with the correct name.`;
+        }
+        return `No item found for "${name}". Try search_items to find the correct name.`;
+    }
     try {
         return Fs.readFileSync(Path.join(AI_ITEMS_DIR, best), 'utf8');
     }
     catch (error) {
         return `Failed to read item data: ${error.message}`;
     }
+}
+
+async function execSearchItems(ctx, args) {
+    const query = (args.query || '').trim().toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (query === '') return 'No query provided.';
+    if (!Fs.existsSync(AI_ITEMS_DIR)) return 'Item knowledge folder not found.';
+
+    const words = query.split(' ').filter(Boolean);
+    const matches = [];
+    for (const file of Fs.readdirSync(AI_ITEMS_DIR)) {
+        if (!file.endsWith('.json')) continue;
+        const display = file.slice(0, -5).replace(/_/g, ' ');
+        const hay = display.toLowerCase();
+        if (words.every(w => hay.includes(w))) matches.push(display);
+    }
+    if (matches.length === 0) return `No item names matching "${args.query}".`;
+    return JSON.stringify(matches.slice(0, 25));
 }
 
 async function execGetServerInfo(ctx) {
@@ -258,6 +288,21 @@ const TOOLS = [
             }
         },
         execute: execGetItem
+    },
+    {
+        definition: {
+            type: 'function',
+            function: {
+                name: 'search_items',
+                description: 'Find exact item/building-block names that contain the given words. Use when get_item did not find a name, or to resolve slang/abbreviations to the real name before calling get_item.',
+                parameters: {
+                    type: 'object',
+                    properties: { query: { type: 'string', description: 'Words to match against item names, e.g. "metal chest" or "rifle".' } },
+                    required: ['query']
+                }
+            }
+        },
+        execute: execSearchItems
     },
     {
         definition: {

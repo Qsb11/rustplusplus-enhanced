@@ -25,7 +25,14 @@ const RULES =
     'sulfurCost. Quote tool, quantity, time and sulfur exactly. ' +
     'To answer what is for sale, who sells an item, or where to buy something, call ' +
     'get_map_markers with type "vending" and read the "sells" lists — that is live ' +
-    'vending machine data, not "player sales you cannot see".';
+    'vending machine data, not "player sales you cannot see". ' +
+    'Players use slang and abbreviations (e.g. "AK" = Assault Rifle, "bolty" = Bolt ' +
+    'Action Rifle, "full metal kit" = a gear loadout). If get_item does not find a ' +
+    'name, DO NOT give up: search_knowledge for "slang" or "kits" to translate the ' +
+    'term, and/or call search_items to find the real name, then retry get_item with ' +
+    'the corrected name. A "kit" or "set" is multiple items — look up each component ' +
+    'and sum the craft costs, multiplying by the requested quantity. Keep trying ' +
+    'alternative names a few times before concluding something cannot be found.';
 
 const IN_GAME_SYSTEM_PROMPT = RULES +
     ' Output plain text only (no markdown, no bullet lists). Keep it to one or two short sentences.';

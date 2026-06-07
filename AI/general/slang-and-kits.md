@@ -11,21 +11,24 @@ to the real name(s) here, then look up each item with get_item.
 - mp5 → MP5A4
 - tommy → Thompson
 - sar, semi → Semi-Automatic Rifle
-- p2, python, pythy → Python Revolver
+- p2, p250, semi pistol → Semi-Automatic Pistol   (NOTE: P2 is the semi-auto PISTOL, not the Python)
+- python, pythy → Python Revolver
+- revy, revvy → Revolver
 - m2, lmg → M249
 - m9, m92 → M92 Pistol
-- revy → Revolver
 - lr, lr300 → LR-300 Assault Rifle
 - m39 → M39 Rifle
 - sks → SKS
 - db, double barrel → Double Barrel Shotgun
-- pump → Pump Shotgun
+- pump, pumpy → Pump Shotgun
 - spas → Spas-12 Shotgun
 - waterpipe → Waterpipe Shotgun
 - eoka → Eoka Pistol
 - nailgun → Nailgun
+- crossy, crossbow → Crossbow
 - hmlmg → HMLMG
 - minigun → Minigun
+- prim → primitive gear (bow, eoka, crossbow, burlap)
 
 ## Weapon attachments slang → item name
 - holo, holosight → Holosight
@@ -72,10 +75,52 @@ to the real name(s) here, then look up each item with get_item.
 - scrap → Scrap
 - ore → Metal Ore / Sulfur Ore (by context)
 
-## Misc terms
+## Monument slang → monument name
+Used to interpret where events/players are (e.g. "heli at oil", "anyone at launch").
+- smoil, small oil, soil → Small Oil Rig
+- oil, loil, large oil, big oil → Large Oil Rig
+- launch, ls → Launch Site
+- ty, train, trainyard → Trainyard
+- power, pp, powerplant → Power Plant
+- water, wt, water treatment → Water Treatment Plant
+- dome → The Dome
+- sat, satdish, sat dish → Satellite Dish
+- af, airfield → Airfield
+- tuns, tunnels, mil tunnels, military tunnels → Military Tunnels
+- excav, excavator → Giant Excavator Pit
+- arctic, arctic base → Arctic Research Base
+- nuke, silo, missile silo → Missile Silo
+- amb, mil base → Abandoned Military Base
+- bandit, bandit camp → Bandit Camp
+- outpost, safezone, compound → Outpost
+- ferry, ferry terminal → Ferry Terminal
+- harbor, harbour → Harbor
+- sewer, sewers → Sewer Branch
+- junkyard, jy → Junkyard
+- gas, gas station, oxums → Oxum's Gas Station
+- super, supermarket, mini → mini monument (Supermarket)
+- fishing, fishing village → Fishing Village
+- stables → Stables
+
+## Event slang → marker / event
+- cargo, cs → Cargo Ship
+- heli, patrol, pheli → Patrol Helicopter
+- brad, bradley, tank → Bradley APC (Launch Site)
+- chinook, ch47, ch → CH47 Chinook (drops hackable crate)
+- crate, hack, hackable, locked crate → Hackable Locked Crate
+
+## Base / player / raiding slang
 - tc → Tool Cupboard
+- core → area around the TC
+- honeycomb, hc → extra wall layers around the core
+- bunker → sealed-core base technique
+- fob → forward/raid base
+- zerg → large clan
 - wb, workbench, wb1/wb2/wb3 → Workbench Level 1/2/3
 - bp → blueprint
+- full kit, geared, heavy → fully armoured (metal/heavy plate)
+- naked → no gear
+- grub → low-gear player
 - eco → cheap option (use cheapest method, NOT siege/eco-raid unless asked)
 - online/offline raid → raid timing, no item change
 

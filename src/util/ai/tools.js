@@ -285,7 +285,7 @@ const TOOLS = [
             type: 'function',
             function: {
                 name: 'get_map_markers',
-                description: 'Get active map markers. Use type "vending" to find vending machines and what they sell, or "cargo"/"heli"/"crate" for events.',
+                description: 'Get active map markers. Use type "vending" to see all vending machines and the exact items they SELL (with price and stock) — this is how to answer "who sells X", "anyone selling X", "where can I buy X", or any shopping question. Use "cargo"/"heli"/"crate"/"patrol" for events.',
                 parameters: {
                     type: 'object',
                     properties: { type: { type: 'string', description: 'Optional filter: vending, cargo, ch47, crate, patrol, explosion.' } }

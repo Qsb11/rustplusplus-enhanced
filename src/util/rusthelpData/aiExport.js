@@ -79,18 +79,60 @@ function buildItemExport(id, items, craft, research, recycle, stack, despawn, du
     if (despawnEntry) data.despawnTime = despawnEntry.timeString;
 
     const durabilityRecords = durability.items && durability.items[id];
-    if (Array.isArray(durabilityRecords) && durabilityRecords.length > 0) {
-        const sorted = durabilityRecords.slice()
-            .sort((a, b) => (a.sulfur ?? Infinity) - (b.sulfur ?? Infinity));
-        data.destroyOptions = sorted.slice(0, 10).map(record => ({
-            tool: nameOf(record.toolId),
-            variant: record.caption || undefined,
-            quantity: record.quantity,
-            time: record.timeString,
-            sulfurCost: record.sulfur ?? undefined,
-            side: record.which || undefined
-        }));
+    const destroy = buildDestroyOptions(durabilityRecords, nameOf);
+    if (destroy) data.destroyOptions = destroy;
+
+    return data;
+}
+
+/**
+ *  Split raid/destroy records into fast-explosive (preferred) and eco options.
+ *  @param {Array|undefined} records Durability records for the target.
+ *  @param {function} nameOf Resolve item id -> name.
+ *  @return {Object|null} { fast, eco } or null when no records.
+ */
+function buildDestroyOptions(records, nameOf) {
+    if (!Array.isArray(records) || records.length === 0) return null;
+
+    const toRow = (record) => ({
+        tool: nameOf(record.toolId),
+        variant: record.caption || undefined,
+        quantity: record.quantity,
+        time: record.timeString,
+        sulfurCost: record.sulfur ?? undefined,
+        side: record.which || undefined
+    });
+    const bySulfur = (a, b) => (a.sulfurCost ?? Infinity) - (b.sulfurCost ?? Infinity);
+
+    const rows = records.map(toRow);
+
+    /* Fast explosive methods used for normal raids (preferred). */
+    const fastTools = /(c4|timed explosive|rocket|satchel|explosive 5\.56|beancan|grenade|explosive ammo)/i;
+    const fast = rows.filter(r => fastTools.test(r.tool)).sort(bySulfur);
+    const eco = rows.filter(r => !fast.includes(r)).sort(bySulfur);
+
+    return { fast: fast.slice(0, 8), eco: eco.slice(0, 6) };
+}
+
+/**
+ *  Build an export entry for a building block / other entity (keyed by name).
+ *  @param {string} name Display name (e.g. "Stone Wall").
+ *  @param {Object} decaySection decayData[section] keyed by name.
+ *  @param {Object} durabilitySection durabilityData[section] keyed by name.
+ *  @param {function} nameOf Resolve item id -> name.
+ *  @return {Object} Export object.
+ */
+function buildNamedExport(name, decaySection, durabilitySection, nameOf) {
+    const data = { name, kind: 'buildingBlock' };
+
+    const decay = decaySection[name];
+    if (decay) {
+        data.hp = decay.hp;
+        if (decay.decayString) data.decay = decay.decayString;
     }
+
+    const destroy = buildDestroyOptions(durabilitySection[name], nameOf);
+    if (destroy) data.destroyOptions = destroy;
 
     return data;
 }
@@ -111,10 +153,13 @@ module.exports = {
         const stack = readStatic('rustlabsStackData.json', {});
         const despawn = readStatic('rustlabsDespawnData.json', {});
         const durability = readStatic('rustlabsDurabilityData.json', {});
+        const decay = readStatic('rustlabsDecayData.json', { items: {}, buildingBlocks: {}, other: {} });
 
         if (!Fs.existsSync(AI_ITEMS_DIR)) {
             Fs.mkdirSync(AI_ITEMS_DIR, { recursive: true });
         }
+
+        const nameOf = (id) => (items[id] && items[id].name) || String(id);
 
         let written = 0;
         let errors = 0;
@@ -131,7 +176,28 @@ module.exports = {
             }
         }
 
-        log('info', `AI items export: ${written} files written to AI/items/${errors > 0 ? `, ${errors} errors` : ''}`);
-        return { written, errors };
+        /* Building blocks (Stone Wall, Sheet Metal Door, etc.) live keyed by name,
+           not in items.json — export them so get_item can answer wall/door raids. */
+        const blockNames = new Set([
+            ...Object.keys(durability.buildingBlocks || {}),
+            ...Object.keys((decay && decay.buildingBlocks) || {})
+        ]);
+        let blocks = 0;
+        for (const name of blockNames) {
+            try {
+                const data = buildNamedExport(name, (decay && decay.buildingBlocks) || {},
+                    durability.buildingBlocks || {}, nameOf);
+                Fs.writeFileSync(Path.join(AI_ITEMS_DIR, `${safeFilename(name)}.json`),
+                    JSON.stringify(data, null, 2) + '\n', 'utf8');
+                blocks++;
+            }
+            catch (error) {
+                errors++;
+                log('warning', `AI export failed for building block ${name}: ${error.message}`);
+            }
+        }
+
+        log('info', `AI items export: ${written} items + ${blocks} building blocks written to AI/items/${errors > 0 ? `, ${errors} errors` : ''}`);
+        return { written, blocks, errors };
     }
 };

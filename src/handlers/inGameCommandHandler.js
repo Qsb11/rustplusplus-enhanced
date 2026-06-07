@@ -88,8 +88,13 @@ module.exports = {
         else if (commandLowerCase.startsWith(`${prefix}ai `)) {
             const Ai = require('../util/ai');
             const question = command.slice(`${prefix}ai `.length).trim();
-            /* Answer asynchronously — AI calls can take a while, don't block the handler. */
-            Ai.askAi(client, question, { source: 'ingame' }).then(result => {
+            /* In-game callers are team members — trusted for device control. */
+            Ai.askAi(client, question, {
+                source: 'ingame',
+                guildId: guildId,
+                callerSteamId: callerSteamId,
+                canControl: true
+            }).then(result => {
                 if (!rustplus.isDeleted && rustplus.isOperational) {
                     rustplus.sendInGameMessage(result.answer);
                 }

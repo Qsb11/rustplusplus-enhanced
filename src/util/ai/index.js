@@ -1,32 +1,39 @@
 /*
     AI assistant orchestrator.
 
-    askAi() builds a prompt from retrieved game data + knowledge documents and
-    queries the configured OpenAI-compatible endpoint. Used by the in-game
-    !ai command and the /ai Discord slash command.
+    askAi() runs an agentic loop: the model can call tools (live server data,
+    item/knowledge lookups, device control) before answering. Used by the
+    in-game !ai command and the /ai Discord slash command.
 */
 
+const Config = require('../../../config');
 const AiClient = require('./client.js');
 const Knowledge = require('./knowledge.js');
+const Tools = require('./tools.js');
 
-const IN_GAME_SYSTEM_PROMPT =
-    'You are a Rust (the survival game) expert assistant inside a team chat. ' +
-    'Answer using ONLY the provided context where possible; if data is missing say so briefly. ' +
-    'Be extremely concise: short sentences, no markdown, no lists with bullets — plain text only. ' +
-    'Maximum a few sentences. Quantities and sulfur costs matter most.';
+/* Shared behaviour rules baked into every system prompt. */
+const RULES =
+    'You are a Rust (the survival game) expert assistant. Use the tools to look ' +
+    'up live server data, item/raid data and knowledge before answering — do not ' +
+    'guess at numbers. Be as concise as possible: shortest sentences, plain language, ' +
+    'no filler, no preamble. State the answer directly. Quantities and sulfur costs ' +
+    'matter most. For raiding, recommend fast explosive methods (rockets, C4, ' +
+    'explosive ammo, satchels). Do NOT suggest catapults, siege weapons or eco/melee ' +
+    'raiding unless the user explicitly asks for the cheapest or eco option — they ' +
+    'are too slow for normal raids.';
 
-const DISCORD_SYSTEM_PROMPT =
-    'You are a Rust (the survival game) expert assistant for a Discord server. ' +
-    'Answer using ONLY the provided context where possible; if data is missing say so briefly. ' +
-    'Use compact Discord markdown. Keep answers under 300 words. ' +
-    'Quantities, sulfur costs and crafting chains matter most.';
+const IN_GAME_SYSTEM_PROMPT = RULES +
+    ' Output plain text only (no markdown, no bullet lists). Keep it to one or two short sentences.';
+
+const DISCORD_SYSTEM_PROMPT = RULES +
+    ' Compact Discord markdown allowed. Keep it under ~120 words.';
 
 module.exports = {
     /**
      * Ask the AI assistant a question.
      * @param {Object} client - Discord client
      * @param {string} question - The user's question
-     * @param {Object} [options] - { source: 'ingame' | 'discord' }
+     * @param {Object} [options] - { source, guildId, callerSteamId, callerDiscordId, canControl }
      * @returns {Promise<{success: boolean, answer: string}>}
      */
     askAi: async function (client, question, options = {}) {
@@ -38,27 +45,46 @@ module.exports = {
 
         const trimmedQuestion = (question ?? '').trim();
         if (trimmedQuestion === '') {
-            return { success: false, answer: 'Ask a question, e.g: what is the cheapest way to raid a stone wall?' };
-        }
-
-        let context = '';
-        try {
-            context = Knowledge.buildContext(client, trimmedQuestion);
-        }
-        catch (error) {
-            client.log(client.intlGet(null, 'warningCap'), `AI context retrieval failed: ${error.message}`);
+            return { success: false, answer: 'Ask a question, e.g: cheapest way to raid a stone wall?' };
         }
 
         const systemPrompt = source === 'ingame' ? IN_GAME_SYSTEM_PROMPT : DISCORD_SYSTEM_PROMPT;
-        const userContent = context !== ''
-            ? `CONTEXT:\n${context}\n\nQUESTION: ${trimmedQuestion}`
-            : `QUESTION: ${trimmedQuestion}`;
+
+        const ctx = {
+            client,
+            guildId: options.guildId ?? null,
+            caller: {
+                steamId: options.callerSteamId ?? null,
+                discordId: options.callerDiscordId ?? null,
+                canControl: options.canControl === true
+            }
+        };
+
+        const useTools = Config.ai.toolsEnabled && ctx.guildId !== null;
+
+        const messages = [{ role: 'system', content: systemPrompt }];
+
+        /* Static context as a fallback hint (also helps models with weak tool use).
+           Tools provide the authoritative live data. */
+        if (!useTools) {
+            let staticContext = '';
+            try { staticContext = Knowledge.buildContext(client, trimmedQuestion); }
+            catch (error) { /* non-fatal */ }
+            messages.push({
+                role: 'user',
+                content: staticContext !== ''
+                    ? `CONTEXT:\n${staticContext}\n\nQUESTION: ${trimmedQuestion}`
+                    : `QUESTION: ${trimmedQuestion}`
+            });
+        }
+        else {
+            messages.push({ role: 'user', content: trimmedQuestion });
+        }
 
         try {
-            const answer = await AiClient.chatCompletion([
-                { role: 'system', content: systemPrompt },
-                { role: 'user', content: userContent }
-            ]);
+            const answer = useTools
+                ? await runToolLoop(client, ctx, messages)
+                : await AiClient.chatCompletion(messages);
             return { success: true, answer: answer };
         }
         catch (error) {
@@ -70,3 +96,50 @@ module.exports = {
         }
     }
 };
+
+/**
+ * Run the tool-calling loop until the model produces a final answer or the
+ * iteration cap is hit.
+ * @returns {Promise<string>} Final answer text
+ */
+async function runToolLoop(client, ctx, messages) {
+    const toolDefs = Tools.getDefinitions();
+
+    for (let iteration = 0; iteration < Config.ai.maxToolIterations; iteration++) {
+        const { message } = await AiClient.createChatCompletion(messages, { tools: toolDefs });
+
+        const toolCalls = message.tool_calls;
+        if (!Array.isArray(toolCalls) || toolCalls.length === 0) {
+            /* Final answer. */
+            return (message.content || '').trim() || 'No answer produced.';
+        }
+
+        /* Record the assistant's tool-call turn, then append each tool result. */
+        messages.push(message);
+
+        for (const call of toolCalls) {
+            const name = call.function?.name;
+            let args = {};
+            try {
+                const raw = call.function?.arguments;
+                args = typeof raw === 'string' ? JSON.parse(raw || '{}') : (raw || {});
+            }
+            catch (error) {
+                args = {};
+            }
+
+            const result = await Tools.execute(name, args, ctx);
+            client.log(client.intlGet(null, 'infoCap'), `AI tool call: ${name}(${JSON.stringify(args)})`);
+
+            messages.push({
+                role: 'tool',
+                tool_call_id: call.id || name,
+                content: typeof result === 'string' ? result : JSON.stringify(result)
+            });
+        }
+    }
+
+    /* Iteration cap hit — ask once more for a plain answer without tools. */
+    const final = await AiClient.chatCompletion(messages);
+    return final || 'Could not complete the request.';
+}

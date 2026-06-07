@@ -34,7 +34,14 @@ module.exports = {
         await interaction.deferReply();
 
         const question = interaction.options.getString('question');
-        const result = await Ai.askAi(client, question, { source: 'discord' });
+        /* Discord device control restricted to admins. */
+        const canControl = client.isAdministrator(interaction);
+        const result = await Ai.askAi(client, question, {
+            source: 'discord',
+            guildId: guildId,
+            callerDiscordId: interaction.user.id,
+            canControl: canControl
+        });
 
         const embed = DiscordEmbeds.getEmbed({
             title: question.length > 250 ? `${question.slice(0, 250)}…` : question,

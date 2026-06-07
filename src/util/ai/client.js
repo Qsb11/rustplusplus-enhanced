@@ -17,6 +17,23 @@ module.exports = {
      * @throws {Error} On network/HTTP/format errors (caller handles user messaging)
      */
     chatCompletion: async function (messages) {
+        const choice = await module.exports.createChatCompletion(messages);
+        const content = choice.message?.content;
+        if (typeof content !== 'string' || content === '') {
+            throw new Error('AI endpoint returned an empty or malformed response');
+        }
+        return content.trim();
+    },
+
+    /**
+     * Low-level chat completion. Returns the raw assistant message so callers
+     * can handle tool calls. Optionally sends tool definitions.
+     * @param {Array<Object>} messages - Chat messages
+     * @param {Object} [opts] - { tools: Array<Object> }
+     * @returns {Promise<{message: Object, finishReason: string}>}
+     * @throws {Error} On network/HTTP/format errors
+     */
+    createChatCompletion: async function (messages, opts = {}) {
         const baseUrl = Config.ai.baseUrl.replace(/\/+$/, '');
 
         const headers = { 'Content-Type': 'application/json' };
@@ -24,23 +41,28 @@ module.exports = {
             headers['Authorization'] = `Bearer ${Config.ai.apiKey}`;
         }
 
-        const response = await Axios.post(`${baseUrl}/chat/completions`, {
+        const payload = {
             model: Config.ai.model,
             messages: messages,
             max_tokens: Config.ai.maxTokens,
             temperature: Config.ai.temperature,
             stream: false
-        }, {
+        };
+        if (Array.isArray(opts.tools) && opts.tools.length > 0) {
+            payload.tools = opts.tools;
+        }
+
+        const response = await Axios.post(`${baseUrl}/chat/completions`, payload, {
             headers: headers,
             timeout: Config.ai.requestTimeoutMs
         });
 
-        const content = response.data?.choices?.[0]?.message?.content;
-        if (typeof content !== 'string' || content === '') {
+        const choice = response.data?.choices?.[0];
+        if (!choice || !choice.message) {
             throw new Error('AI endpoint returned an empty or malformed response');
         }
 
-        return content.trim();
+        return { message: choice.message, finishReason: choice.finish_reason };
     },
 
     /**

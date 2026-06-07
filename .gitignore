@@ -12,3 +12,6 @@ src/util/rusthelpData/.cache
 
 # Generated AI knowledge files (rebuilt by scraper)
 AI/items/
+
+# Local Rust+ credential dump (contains live auth token)
+rustplus.config.json

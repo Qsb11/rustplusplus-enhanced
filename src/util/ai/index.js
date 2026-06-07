@@ -20,9 +20,9 @@ const RULES =
     'The "fastest" method is the one with the lowest "time" value, not the lowest ' +
     'sulfur. Be as concise as possible: shortest sentences, plain language, no filler, ' +
     'no preamble. State the answer directly. ' +
-    'For raiding, recommend the fastest method from destroyOptions.fast (rockets, C4, ' +
-    'explosive ammo, satchels). Do NOT mention catapults, siege weapons, MLRS, or ' +
-    'eco/melee raiding unless the user explicitly asks for the cheapest or eco option. ' +
+    'destroyOptions is a ranked list of real raid methods (cheapest sulfur first). ' +
+    'For a normal raid pick the FASTEST (lowest time). For "cheapest" pick the lowest ' +
+    'sulfurCost. Quote tool, quantity, time and sulfur exactly. ' +
     'To answer what is for sale, who sells an item, or where to buy something, call ' +
     'get_map_markers with type "vending" and read the "sells" lists — that is live ' +
     'vending machine data, not "player sales you cannot see".';

@@ -56,17 +56,30 @@ async function execGetItem(ctx, args) {
 
     if (!Fs.existsSync(AI_ITEMS_DIR)) return 'Item knowledge folder not found.';
 
-    const wanted = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+    const wantedWords = norm(name).split(' ').filter(Boolean);
+    const wantedJoined = wantedWords.join('');
+
     let best = null;
-    let bestScore = Infinity;
+    let bestScore = -Infinity;
     for (const file of Fs.readdirSync(AI_ITEMS_DIR)) {
         if (!file.endsWith('.json')) continue;
-        const base = file.slice(0, -5).toLowerCase().replace(/[^a-z0-9]/g, '');
-        if (base === wanted) { best = file; break; }
-        if (base.includes(wanted) || wanted.includes(base)) {
-            const score = Math.abs(base.length - wanted.length);
-            if (score < bestScore) { bestScore = score; best = file; }
+        const label = norm(file.slice(0, -5).replace(/_/g, ' '));
+        const labelWords = label.split(' ').filter(Boolean);
+        const labelJoined = labelWords.join('');
+
+        let score;
+        if (labelJoined === wantedJoined) { best = file; break; } /* exact */
+        else {
+            /* Word-overlap scoring: count query words present as whole words,
+               then prefer the most specific (fewest extra words). */
+            const matched = wantedWords.filter(w => labelWords.includes(w)).length;
+            if (matched === 0) continue;
+            const allWanted = matched === wantedWords.length;
+            score = matched * 100 - Math.abs(labelWords.length - wantedWords.length)
+                + (allWanted ? 50 : 0);
         }
+        if (score > bestScore) { bestScore = score; best = file; }
     }
 
     if (!best) return `No item file found for "${name}".`;
@@ -130,6 +143,7 @@ async function execGetMapMarkers(ctx, args) {
     const rustplus = getOperationalRustplus(ctx);
     if (!rustplus) return 'Not connected to a Rust server.';
     const filter = (args.type || '').toLowerCase();
+    const itemFilter = (args.item || '').toLowerCase().trim();
 
     const response = await rustplus.getMapMarkersAsync();
     if (!await rustplus.isResponseValid(response)) return 'Failed to read map markers.';
@@ -145,7 +159,7 @@ async function execGetMapMarkers(ctx, args) {
 
         if (marker.type === 3 && Array.isArray(marker.sellOrders)) {
             /* Vending machine — list in-stock sell orders. */
-            entry.sells = marker.sellOrders
+            let sells = marker.sellOrders
                 .filter(o => o.amountInStock > 0)
                 .map(o => ({
                     item: itemName(ctx, o.itemId) + (o.itemIsBlueprint ? ' (BP)' : ''),
@@ -153,11 +167,24 @@ async function execGetMapMarkers(ctx, args) {
                     cost: `${o.costPerItem} ${itemName(ctx, o.currencyId)}`,
                     stock: o.amountInStock
                 }));
+            /* When searching for a specific item, only keep machines that sell it. */
+            if (itemFilter) {
+                sells = sells.filter(s => s.item.toLowerCase().includes(itemFilter));
+                if (sells.length === 0) continue;
+            }
+            entry.sells = sells;
+        }
+        else if (itemFilter) {
+            /* Item search only cares about vending machines. */
+            continue;
         }
         out.push(entry);
     }
 
-    if (out.length === 0) return filter ? `No markers of type "${filter}".` : 'No active map markers.';
+    if (out.length === 0) {
+        if (itemFilter) return `No vending machine currently selling "${args.item}".`;
+        return filter ? `No markers of type "${filter}".` : 'No active map markers.';
+    }
     /* Cap to keep the tool result compact. */
     return JSON.stringify(out.slice(0, 40));
 }
@@ -285,10 +312,13 @@ const TOOLS = [
             type: 'function',
             function: {
                 name: 'get_map_markers',
-                description: 'Get active map markers. Use type "vending" to see all vending machines and the exact items they SELL (with price and stock) — this is how to answer "who sells X", "anyone selling X", "where can I buy X", or any shopping question. Use "cargo"/"heli"/"crate"/"patrol" for events.',
+                description: 'Get active map markers. To answer "who sells X", "anyone selling X", "where can I buy X", set type="vending" AND item="<item name>" to get only the machines selling that item (price, stock, grid). Omit item to list all vending machines. Use "cargo"/"heli"/"crate"/"patrol" for events.',
                 parameters: {
                     type: 'object',
-                    properties: { type: { type: 'string', description: 'Optional filter: vending, cargo, ch47, crate, patrol, explosion.' } }
+                    properties: {
+                        type: { type: 'string', description: 'Filter: vending, cargo, ch47, crate, patrol, explosion.' },
+                        item: { type: 'string', description: 'When type=vending, only return machines selling this item, e.g. "low grade fuel".' }
+                    }
                 }
             }
         },

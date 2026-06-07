@@ -94,24 +94,46 @@ function buildItemExport(id, items, craft, research, recycle, stack, despawn, du
 function buildDestroyOptions(records, nameOf) {
     if (!Array.isArray(records) || records.length === 0) return null;
 
-    const toRow = (record) => ({
-        tool: nameOf(record.toolId),
-        variant: record.caption || undefined,
-        quantity: record.quantity,
-        time: record.timeString,
-        sulfurCost: record.sulfur ?? undefined,
-        side: record.which || undefined
-    });
     const bySulfur = (a, b) => (a.sulfurCost ?? Infinity) - (b.sulfurCost ?? Infinity);
 
-    const rows = records.map(toRow);
+    /* Real raid tools only. RustHelp lists every theoretical method (torpedoes,
+       each firearm firing explosive ammo, melee soft-side, ...) which is noise.
+       Keep actual explosives + a single representative for explosive ammo. */
+    const rows = [];
+    let bestExplosiveAmmo = null;
+    for (const record of records) {
+        const tool = nameOf(record.toolId);
+        const row = {
+            tool,
+            variant: record.caption || undefined,
+            quantity: record.quantity,
+            time: record.timeString,
+            sulfurCost: record.sulfur ?? undefined,
+            side: record.which || undefined
+        };
 
-    /* Fast explosive methods used for normal raids (preferred). */
-    const fastTools = /(c4|timed explosive|rocket|satchel|explosive 5\.56|beancan|grenade|explosive ammo)/i;
-    const fast = rows.filter(r => fastTools.test(r.tool)).sort(bySulfur);
-    const eco = rows.filter(r => !fast.includes(r)).sort(bySulfur);
+        /* Explosive 5.56 fired from any gun is one method — keep the cheapest,
+           relabelled, and drop the per-weapon duplicates. */
+        if (/explosive 5\.56/i.test(`${tool} ${row.variant || ''}`)) {
+            const candidate = { ...row, tool: 'Explosive 5.56 Rifle Ammo', variant: undefined };
+            if (!bestExplosiveAmmo || (candidate.sulfurCost ?? Infinity) < (bestExplosiveAmmo.sulfurCost ?? Infinity)) {
+                bestExplosiveAmmo = candidate;
+            }
+            continue;
+        }
 
-    return { fast: fast.slice(0, 8), eco: eco.slice(0, 6) };
+        /* Keep only genuine explosive raiding tools. */
+        if (/(c4|timed explosive|^rocket|high velocity rocket|satchel|beancan|f1 grenade)/i.test(tool)) {
+            rows.push(row);
+        }
+        /* Everything else (torpedo, plain firearms, melee, MLRS, siege) is dropped. */
+    }
+
+    if (bestExplosiveAmmo) rows.push(bestExplosiveAmmo);
+    if (rows.length === 0) return null;
+
+    rows.sort(bySulfur);
+    return rows.slice(0, 8);
 }
 
 /**

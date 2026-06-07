@@ -1,2 +1,13 @@
+.git
+.github
+.claude
+.planning
 docs/
 node_modules/
+logs/
+maps/
+credentials/
+instances/
+*.log
+src/util/rusthelpData/.cache/
+test-scraper-fix.js

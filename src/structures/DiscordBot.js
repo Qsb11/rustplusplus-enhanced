@@ -185,13 +185,19 @@ class DiscordBot extends Discord.Client {
             const errorMessage = error.message || error.toString();
             const errorStack = error.stack || 'No stack trace';
 
-            switch (error.code) {
-                case 'TOKEN_INVALID': {
+            /* discord.js error codes differ by version (TOKEN_INVALID vs TokenInvalid);
+               match both so a bad token/intents fails fast instead of retrying. */
+            const code = String(error.code || '');
+            const fatalToken = ['TOKEN_INVALID', 'TokenInvalid'].includes(code);
+            const fatalIntents = ['DISALLOWED_INTENTS', 'DisallowedIntents'].includes(code);
+
+            switch (true) {
+                case fatalToken: {
                     this.log(this.intlGet(null, 'errorCap'), 'Invalid Discord token - cannot continue', 'error');
                     process.exit(1);
                 } break;
 
-                case 'DISALLOWED_INTENTS': {
+                case fatalIntents: {
                     this.log(this.intlGet(null, 'errorCap'), 'Discord intents not allowed - check bot permissions', 'error');
                     process.exit(1);
                 } break;

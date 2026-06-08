@@ -116,8 +116,9 @@ module.exports = {
             return { success: true, answer: answer };
         }
         catch (error) {
-            client.log(client.intlGet(null, 'errorCap'), `AI request failed: ${error.message}`, 'error');
             const status = error.response ? error.response.status : null;
+            const body = error.response?.data ? JSON.stringify(error.response.data).slice(0, 500) : '';
+            client.log(client.intlGet(null, 'errorCap'), `AI request failed (${status}): ${error.message} ${body}`, 'error');
             let answer = 'AI request failed — check that the configured endpoint is reachable.';
             if (status === 429) answer = 'AI is rate limited right now — try again in a moment.';
             else if (status && status >= 500) answer = 'AI service is busy/overloaded — try again in a moment.';
@@ -143,8 +144,13 @@ async function runToolLoop(client, ctx, messages) {
             return (message.content || '').trim() || 'No answer produced.';
         }
 
-        /* Record the assistant's tool-call turn, then append each tool result. */
-        messages.push(message);
+        /* Record the assistant's tool-call turn (sanitized — strip provider-specific
+           fields like gpt-oss "reasoning" that cause 400 when echoed back). */
+        messages.push({
+            role: 'assistant',
+            content: message.content ?? '',
+            tool_calls: message.tool_calls
+        });
 
         for (const call of toolCalls) {
             const name = call.function?.name;
@@ -168,7 +174,9 @@ async function runToolLoop(client, ctx, messages) {
         }
     }
 
-    /* Iteration cap hit — ask once more for a plain answer without tools. */
-    const final = await AiClient.chatCompletion(messages);
-    return final || 'Could not complete the request.';
+    /* Iteration cap hit — ask once more. Tools MUST still be passed: the message
+       history now contains tool-role messages, and most providers 400 if you send
+       tool messages without a tools definition. */
+    const { message } = await AiClient.createChatCompletion(messages, { tools: toolDefs });
+    return (message.content || '').trim() || 'Could not complete the request — try a simpler question.';
 }

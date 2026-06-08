@@ -30,9 +30,13 @@ const RULES =
     'Action Rifle, "full metal kit" = a gear loadout). If get_item does not find a ' +
     'name, DO NOT give up: search_knowledge for "slang" or "kits" to translate the ' +
     'term, and/or call search_items to find the real name, then retry get_item with ' +
-    'the corrected name. A "kit" or "set" is multiple items — look up each component ' +
-    'and sum the craft costs, multiplying by the requested quantity. Keep trying ' +
-    'alternative names a few times before concluding something cannot be found.';
+    'the corrected name. A "kit" or "set" is multiple items: first read its component ' +
+    'list from search_knowledge (the slang/kits doc), then call get_item for EACH ' +
+    'component to get real costs, and sum them multiplied by the requested quantity. ' +
+    'NEVER state a craft cost, recipe, or quantity from your own memory or "standard ' +
+    'recipes" — every number MUST come from a get_item result. If you have not called ' +
+    'get_item for an item yet, call it; do not guess. Keep trying alternative names a ' +
+    'few times before concluding something cannot be found.';
 
 const IN_GAME_SYSTEM_PROMPT = RULES +
     ' Output plain text only (no markdown, no bullet lists). Keep it to one or two short sentences.';

@@ -12,7 +12,7 @@ const Fs = require('fs');
 const Path = require('path');
 
 const KNOWLEDGE_DIR = Path.join(__dirname, '..', '..', '..', 'AI');
-const MAX_DOC_CHARS = 2500;
+const MAX_DOC_CHARS = 6000; /* Must exceed the slang/kits doc so kit component lists are not truncated. */
 const MAX_DOCS = 3;
 const MAX_TARGETS = 4;
 const MIN_NAME_LENGTH = 4;

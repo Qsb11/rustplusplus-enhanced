@@ -47,7 +47,7 @@ module.exports = {
         baseUrl: process.env.RPP_AI_BASE_URL || 'http://localhost:11434/v1',
         apiKey: process.env.RPP_AI_API_KEY || '',
         model: process.env.RPP_AI_MODEL || 'llama3.1',
-        maxTokens: parseInt(process.env.RPP_AI_MAX_TOKENS || '700', 10),
+        maxTokens: parseInt(process.env.RPP_AI_MAX_TOKENS || '1500', 10),
         temperature: parseFloat(process.env.RPP_AI_TEMPERATURE || '0.3'),
         requestTimeoutMs: parseInt(process.env.RPP_AI_TIMEOUT_MS || '120000', 10),
 

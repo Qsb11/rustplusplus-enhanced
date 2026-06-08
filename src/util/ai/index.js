@@ -36,7 +36,10 @@ const RULES =
     'NEVER state a craft cost, recipe, or quantity from your own memory or "standard ' +
     'recipes" — every number MUST come from a get_item result. If you have not called ' +
     'get_item for an item yet, call it; do not guess. Keep trying alternative names a ' +
-    'few times before concluding something cannot be found.';
+    'few times before concluding something cannot be found. ' +
+    'When costing a kit or multiple items, do NOT print a long per-item breakdown — ' +
+    'add the components up and report the TOTAL resources needed (and the per-kit total ' +
+    'if useful). Keep the final answer compact.';
 
 const IN_GAME_SYSTEM_PROMPT = RULES +
     ' Output plain text only (no markdown, no bullet lists). Keep it to one or two short sentences.';

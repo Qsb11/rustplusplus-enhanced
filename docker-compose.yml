@@ -11,6 +11,10 @@ services:
             - ./instances:/app/instances
             - ./logs:/app/logs
             - ./maps:/app/maps
+            # Optional: editable AI knowledge folder (slang, kits, strategy docs).
+            # Drop .md/.txt/.json files here and edit live — no rebuild. Files with
+            # the same name override the baked-in copies. Pair with RPP_AI_KNOWLEDGE_DIR.
+            - ./knowledge:/app/knowledge
         environment:
             # --- Required ---
             - RPP_DISCORD_CLIENT_ID=your_discord_client_id
@@ -25,7 +29,9 @@ services:
             - RPP_AI_BASE_URL=http://host.docker.internal:11434/v1
             - RPP_AI_API_KEY=
             - RPP_AI_MODEL=llama3.1
-            # - RPP_AI_MAX_TOKENS=700
+            # Editable knowledge folder (matches the ./knowledge volume above)
+            - RPP_AI_KNOWLEDGE_DIR=/app/knowledge
+            # - RPP_AI_MAX_TOKENS=1500
             # - RPP_AI_TEMPERATURE=0.3
             # - RPP_AI_TIMEOUT_MS=120000
 

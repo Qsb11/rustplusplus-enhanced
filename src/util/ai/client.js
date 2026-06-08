@@ -9,6 +9,14 @@ const Axios = require('axios');
 
 const Config = require('../../../config');
 
+/* Transient statuses worth retrying: rate limit + server overload/unavailable. */
+const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
+const MAX_RETRIES = 3;
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 module.exports = {
     /**
      * Send a chat completion request to the configured endpoint.
@@ -52,17 +60,35 @@ module.exports = {
             payload.tools = opts.tools;
         }
 
-        const response = await Axios.post(`${baseUrl}/chat/completions`, payload, {
-            headers: headers,
-            timeout: Config.ai.requestTimeoutMs
-        });
+        let lastError = null;
+        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+            try {
+                const response = await Axios.post(`${baseUrl}/chat/completions`, payload, {
+                    headers: headers,
+                    timeout: Config.ai.requestTimeoutMs
+                });
 
-        const choice = response.data?.choices?.[0];
-        if (!choice || !choice.message) {
-            throw new Error('AI endpoint returned an empty or malformed response');
+                const choice = response.data?.choices?.[0];
+                if (!choice || !choice.message) {
+                    throw new Error('AI endpoint returned an empty or malformed response');
+                }
+                return { message: choice.message, finishReason: choice.finish_reason };
+            }
+            catch (error) {
+                lastError = error;
+                const status = error.response ? error.response.status : null;
+                if (!status || !RETRYABLE_STATUS.has(status) || attempt === MAX_RETRIES) {
+                    throw error;
+                }
+                /* Honor Retry-After when present (rate limit), else exponential backoff. */
+                const retryAfter = parseInt(error.response?.headers?.['retry-after'], 10);
+                const backoff = (!isNaN(retryAfter) && retryAfter > 0)
+                    ? retryAfter * 1000
+                    : 1000 * Math.pow(2, attempt); /* 1s, 2s, 4s */
+                await sleep(backoff);
+            }
         }
-
-        return { message: choice.message, finishReason: choice.finish_reason };
+        throw lastError;
     },
 
     /**

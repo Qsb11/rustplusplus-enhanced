@@ -11,6 +11,8 @@
 const Fs = require('fs');
 const Path = require('path');
 
+const Config = require('../../../config');
+
 const KNOWLEDGE_DIR = Path.join(__dirname, '..', '..', '..', 'AI');
 const MAX_DOC_CHARS = 6000; /* Must exceed the slang/kits doc so kit component lists are not truncated. */
 const MAX_DOCS = 3;
@@ -82,16 +84,27 @@ module.exports = {
      * Load the most relevant documents from the AI/ knowledge folder.
      */
     loadRelevantDocuments: function (question) {
-        if (!Fs.existsSync(KNOWLEDGE_DIR)) return '';
-
-        const files = collectFiles(KNOWLEDGE_DIR);
+        /* Search the optional external (mounted, editable) knowledge dir first so
+           same-named files override the baked-in copies, then the baked-in AI/ dir. */
+        const files = [];
+        const seen = new Set();
+        const externalDir = Config.ai.knowledgeDir;
+        for (const [root, isExternal] of [[externalDir, true], [KNOWLEDGE_DIR, false]]) {
+            if (!root || !Fs.existsSync(root)) continue;
+            for (const file of collectFiles(root)) {
+                const key = Path.relative(root, file).toLowerCase();
+                if (seen.has(key)) continue; /* external version already taken */
+                seen.add(key);
+                files.push({ file, root, isExternal });
+            }
+        }
         if (files.length === 0) return '';
 
         const keywords = question.toLowerCase().split(/\W+/).filter(word => word.length >= 3);
         if (keywords.length === 0) return '';
 
         const scored = [];
-        for (const file of files) {
+        for (const { file, root } of files) {
             let content;
             try {
                 content = Fs.readFileSync(file, 'utf8');
@@ -102,13 +115,13 @@ module.exports = {
 
             const haystack = `${Path.basename(file)} ${content}`.toLowerCase();
             const score = keywords.reduce((sum, word) => sum + (haystack.includes(word) ? 1 : 0), 0);
-            if (score > 0) scored.push({ file, content, score });
+            if (score > 0) scored.push({ file, root, content, score });
         }
 
         scored.sort((a, b) => b.score - a.score);
 
         const parts = scored.slice(0, MAX_DOCS).map(doc =>
-            `--- ${Path.relative(KNOWLEDGE_DIR, doc.file)} ---\n${doc.content.slice(0, MAX_DOC_CHARS)}`);
+            `--- ${Path.relative(doc.root, doc.file)} ---\n${doc.content.slice(0, MAX_DOC_CHARS)}`);
 
         return parts.length === 0 ? '' : `KNOWLEDGE BASE:\n${parts.join('\n')}`;
     }

@@ -60,5 +60,10 @@ module.exports = {
            In-game callers are team members (trusted); Discord control is
            additionally restricted to admins. */
         controlEnabled: process.env.RPP_AI_CONTROL_ENABLED !== 'false',
+
+        /* Optional extra knowledge folder searched in addition to the baked-in AI/
+           folder. Mount a host dir here to edit slang/kit/strategy docs without
+           rebuilding the image. Files with the same name override the baked-in copy. */
+        knowledgeDir: process.env.RPP_AI_KNOWLEDGE_DIR || '',
     }
 };

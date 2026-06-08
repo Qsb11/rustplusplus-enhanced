@@ -108,10 +108,11 @@ module.exports = {
         }
         catch (error) {
             client.log(client.intlGet(null, 'errorCap'), `AI request failed: ${error.message}`, 'error');
-            return {
-                success: false,
-                answer: 'AI request failed — check that the configured endpoint is reachable.'
-            };
+            const status = error.response ? error.response.status : null;
+            let answer = 'AI request failed — check that the configured endpoint is reachable.';
+            if (status === 429) answer = 'AI is rate limited right now — try again in a moment.';
+            else if (status && status >= 500) answer = 'AI service is busy/overloaded — try again in a moment.';
+            return { success: false, answer: answer };
         }
     }
 };

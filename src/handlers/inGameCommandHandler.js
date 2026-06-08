@@ -93,7 +93,8 @@ module.exports = {
                 source: 'ingame',
                 guildId: guildId,
                 callerSteamId: callerSteamId,
-                canControl: true
+                canControl: true,
+                conversationId: `${guildId}:ingame`
             }).then(result => {
                 if (!rustplus.isDeleted && rustplus.isOperational) {
                     rustplus.sendInGameMessage(result.answer);

@@ -10,6 +10,7 @@ const Config = require('../../../config');
 const AiClient = require('./client.js');
 const Knowledge = require('./knowledge.js');
 const Tools = require('./tools.js');
+const Memory = require('./memory.js');
 
 /* Shared behaviour rules baked into every system prompt. */
 const RULES =
@@ -83,6 +84,13 @@ module.exports = {
 
         const messages = [{ role: 'system', content: systemPrompt }];
 
+        /* Inject short-term conversation history for follow-up questions. */
+        const now = Date.now();
+        const convId = options.conversationId ?? null;
+        for (const turn of Memory.getHistory(convId, now)) {
+            messages.push({ role: turn.role, content: turn.content });
+        }
+
         /* Static context as a fallback hint (also helps models with weak tool use).
            Tools provide the authoritative live data. */
         if (!useTools) {
@@ -104,6 +112,7 @@ module.exports = {
             const answer = useTools
                 ? await runToolLoop(client, ctx, messages)
                 : await AiClient.chatCompletion(messages);
+            Memory.append(convId, trimmedQuestion, answer, now);
             return { success: true, answer: answer };
         }
         catch (error) {

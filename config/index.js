@@ -65,5 +65,13 @@ module.exports = {
            folder. Mount a host dir here to edit slang/kit/strategy docs without
            rebuilding the image. Files with the same name override the baked-in copy. */
         knowledgeDir: process.env.RPP_AI_KNOWLEDGE_DIR || '',
+
+        /* Short-term conversation memory (follow-up questions). */
+        memoryTurns: parseInt(process.env.RPP_AI_MEMORY_TURNS || '6', 10),
+        memoryTtlMs: parseInt(process.env.RPP_AI_MEMORY_TTL_MS || '600000', 10),
+
+        /* Proactive AI commentary on notable events (raid alarms, etc.).
+           Default off — frequent events would cost tokens / spam. */
+        alertsEnabled: process.env.RPP_AI_ALERTS_ENABLED === 'true',
     }
 };

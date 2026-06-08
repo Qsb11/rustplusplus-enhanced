@@ -189,6 +189,10 @@ async function messageBroadcastEntityChangedSmartAlarm(rustplus, client, message
         if (instance.generalSettings.smartAlarmNotifyInGame) {
             rustplus.sendInGameMessage(`${server.alarms[entityId].name}: ${server.alarms[entityId].message}`);
         }
+
+        /* Optional AI tactical heads-up (RPP_AI_ALERTS_ENABLED). Fire-and-forget. */
+        require('../util/ai/alerts.js').onSmartAlarm(client, rustplus,
+            server.alarms[entityId].name, server.alarms[entityId].message);
     }
 
     DiscordMessages.sendSmartAlarmMessage(rustplus.guildId, rustplus.serverId, entityId);

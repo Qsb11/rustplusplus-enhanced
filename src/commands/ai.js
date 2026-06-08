@@ -40,7 +40,8 @@ module.exports = {
             source: 'discord',
             guildId: guildId,
             callerDiscordId: interaction.user.id,
-            canControl: canControl
+            canControl: canControl,
+            conversationId: `${guildId}:${interaction.channelId}`
         });
 
         const embed = DiscordEmbeds.getEmbed({

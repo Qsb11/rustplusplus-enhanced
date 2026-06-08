@@ -219,6 +219,40 @@ async function execGetMapMarkers(ctx, args) {
     return JSON.stringify(out.slice(0, 40));
 }
 
+async function execGetEvents(ctx, args) {
+    const rustplus = getOperationalRustplus(ctx);
+    if (!rustplus) return 'Not connected to a Rust server.';
+
+    /* Reuse the bot's existing in-game event-status commands (cargo/heli/chinook/oil
+       rig timers). They read tracked spawn/egress state and return ready strings. */
+    const sources = {
+        cargo: () => rustplus.getCommandCargo(),
+        heli: () => rustplus.getCommandHeli(),
+        chinook: () => rustplus.getCommandChinook(),
+        small_oil: () => rustplus.getCommandSmall(),
+        large_oil: () => rustplus.getCommandLarge()
+    };
+
+    const want = (args.event || 'all').toLowerCase();
+    const keys = want === 'all' ? Object.keys(sources) : [want];
+
+    const out = {};
+    for (const key of keys) {
+        const fn = sources[key];
+        if (!fn) continue;
+        try {
+            const result = fn();
+            out[key] = (typeof result === 'string' && result.trim() !== '') ? result : 'no current data';
+        }
+        catch (error) {
+            out[key] = `error: ${error.message}`;
+        }
+    }
+
+    if (Object.keys(out).length === 0) return `Unknown event "${args.event}". Use cargo, heli, chinook, small_oil, large_oil, or all.`;
+    return JSON.stringify(out);
+}
+
 async function execListDevices(ctx) {
     const instance = ctx.client.getInstance(ctx.guildId);
     const rustplus = getOperationalRustplus(ctx);
@@ -368,6 +402,20 @@ const TOOLS = [
             }
         },
         execute: execGetMapMarkers
+    },
+    {
+        definition: {
+            type: 'function',
+            function: {
+                name: 'get_events',
+                description: 'Get live status/timers for world events: Cargo Ship (when it entered, egress timer, location), Patrol Helicopter, CH47 Chinook, and Small/Large Oil Rig (last crate-call timers). Use for "when does cargo come", "is heli up", "when did oil get called".',
+                parameters: {
+                    type: 'object',
+                    properties: { event: { type: 'string', description: 'cargo, heli, chinook, small_oil, large_oil, or all (default).' } }
+                }
+            }
+        },
+        execute: execGetEvents
     },
     {
         definition: {

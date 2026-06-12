@@ -20,6 +20,24 @@
 
 const Constants = require("../util/constants");
 
+/* Characters Rust's team chat renders as '?' (or that read badly in-game), with safe
+   replacements. Semicolons are filtered by the game client; typographic punctuation
+   comes from AI answers. */
+const GAME_CHAT_CHAR_MAP = {
+    ';': ',',
+    '–': '-',  /* en dash */
+    '—': '-',  /* em dash */
+    '×': 'x',
+    '≈': '~',
+    '‘': "'",
+    '’': "'",
+    '“': '"',
+    '”': '"',
+    '•': '-',
+    '…': '...',
+    ' ': ' '
+};
+
 module.exports = {
     inGameChatHandler: async function (rustplus, client, message = null) {
         const guildId = rustplus.guildId;
@@ -76,9 +94,50 @@ module.exports = {
 function handleMessage(rustplus, message, trademarkString, maxLength) {
     if (typeof message !== 'string') return;
 
-    const strings = message.match(new RegExp(`.{1,${maxLength}}(\\s|$)`, 'g'));
-
-    for (const str of strings) {
+    for (const str of chunkForGameChat(sanitizeForGameChat(message), maxLength)) {
         rustplus.inGameChatQueue.push(`${trademarkString}${str}`);
     }
+}
+
+/**
+ *  Replace characters the in-game chat cannot render and flatten newlines (game chat
+ *  is single-line; AI answers may contain lists).
+ *  @param {string} message The raw message.
+ *  @return {string} The sanitized single-line message.
+ */
+function sanitizeForGameChat(message) {
+    let out = message.replace(/\s*\n+\s*/g, ' | ');
+    for (const [bad, good] of Object.entries(GAME_CHAT_CHAR_MAP)) {
+        out = out.split(bad).join(good);
+    }
+    return out.replace(/\s{2,}/g, ' ').trim();
+}
+
+/**
+ *  Split a message into game-chat-sized chunks at natural boundaries (sentence, list
+ *  item, word) instead of mid-item, so multi-part lists stay readable.
+ *  @param {string} message The sanitized message.
+ *  @param {number} maxLength Max characters per chunk.
+ *  @return {string[]} The chunks (never empty for non-empty input).
+ */
+function chunkForGameChat(message, maxLength) {
+    const chunks = [];
+    let rest = message;
+    while (rest.length > maxLength) {
+        const window = rest.slice(0, maxLength + 1);
+        let cut = -1;
+        /* Prefer the latest natural boundary, but not so early the chunk gets tiny. */
+        for (const sep of ['. ', ', ', ' | ', ' ']) {
+            const idx = window.lastIndexOf(sep);
+            if (idx >= Math.floor(maxLength * 0.5)) {
+                cut = sep === ' ' ? idx : idx + 1; /* Keep '.'/','/'|' with the left chunk. */
+                break;
+            }
+        }
+        if (cut <= 0) cut = maxLength; /* No boundary at all — hard cut. */
+        chunks.push(rest.slice(0, cut).trim());
+        rest = rest.slice(cut).replace(/^[|,.\s]+/, '');
+    }
+    if (rest.length > 0) chunks.push(rest);
+    return chunks;
 }

@@ -18,12 +18,16 @@ const RULES =
     'live server data, item/raid data and knowledge before answering. ' +
     'CRITICAL: report the EXACT numbers from tool results — never round, estimate, ' +
     'average, or invent quantities. If a tool says 4 satchels, say 4, not "2-3". ' +
-    'The "fastest" method is the one with the lowest "time" value, not the lowest ' +
-    'sulfur. Be as concise as possible: shortest sentences, plain language, no filler, ' +
+    'Be as concise as possible: shortest sentences, plain language, no filler, ' +
     'no preamble. State the answer directly. ' +
-    'destroyOptions is a ranked list of real raid methods (cheapest sulfur first). ' +
-    'For a normal raid pick the FASTEST (lowest time). For "cheapest" pick the lowest ' +
-    'sulfurCost. Quote tool, quantity, time and sulfur exactly. ' +
+    'destroyOptions has three groups: "explosives" (sulfur raiding, sorted cheapest ' +
+    'first), "gunsAndAmmo" (bullet/shell methods — quantities are for the listed ' +
+    'weapon, the most efficient one), and "meleeAndTools" (eco options, no sulfur). ' +
+    'The "fastest" method is the lowest timeSeconds; "cheapest" is the lowest ' +
+    'sulfurCost. Side matters: quantityHardSide = the strong side (raiding from ' +
+    'outside — DEFAULT to this), quantitySoftSide = the weak smooth side. Always say ' +
+    'which side your number is for. If a method is not listed, say the data does not ' +
+    'include it — do NOT claim the method cannot destroy the target. ' +
     'To answer what is for sale, who sells an item, or where to buy something, call ' +
     'get_map_markers with type "vending" and read the "sells" lists — that is live ' +
     'vending machine data, not "player sales you cannot see". ' +
@@ -40,10 +44,16 @@ const RULES =
     'few times before concluding something cannot be found. ' +
     'When costing a kit or multiple items, do NOT print a long per-item breakdown — ' +
     'add the components up and report the TOTAL resources needed (and the per-kit total ' +
-    'if useful). Keep the final answer compact.';
+    'if useful). Keep the final answer compact. ' +
+    'For monument questions (puzzles, keycards, fuses, what spawns where) and loot ' +
+    'questions (what is in a crate, what does an animal drop), use search_knowledge. ' +
+    'For time questions use get_time and quote its preformatted values: inGameTime is ' +
+    'the in-game clock (HH:MM), realTimeUntilNightfall/Daylight is the REAL-WORLD wait.';
 
 const IN_GAME_SYSTEM_PROMPT = RULES +
-    ' Output plain text only (no markdown, no bullet lists). Keep it to one or two short sentences.';
+    ' Output plain text only (no markdown, no bullet lists, no semicolons). Use plain ASCII ' +
+    'punctuation. For lists use the form "F7 - 1500 Sulfur Ore, M13 - 35 HQ Metal". Keep it ' +
+    'to one or two short sentences, or for lists at most ~10 entries.';
 
 const DISCORD_SYSTEM_PROMPT = RULES +
     ' Compact Discord markdown allowed. Keep it under ~120 words.';
@@ -155,15 +165,20 @@ async function runToolLoop(client, ctx, messages) {
         for (const call of toolCalls) {
             const name = call.function?.name;
             let args = {};
+            let argsValid = true;
             try {
                 const raw = call.function?.arguments;
                 args = typeof raw === 'string' ? JSON.parse(raw || '{}') : (raw || {});
             }
             catch (error) {
-                args = {};
+                argsValid = false;
+                client.log(client.intlGet(null, 'warningCap'),
+                    `AI tool call ${name}: malformed arguments JSON: ${String(call.function?.arguments).slice(0, 200)}`);
             }
 
-            const result = await Tools.execute(name, args, ctx);
+            const result = argsValid
+                ? await Tools.execute(name, args, ctx)
+                : 'Invalid tool arguments (malformed JSON). Re-issue the call with valid JSON.';
             client.log(client.intlGet(null, 'infoCap'), `AI tool call: ${name}(${JSON.stringify(args)})`);
 
             messages.push({

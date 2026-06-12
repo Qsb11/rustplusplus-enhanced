@@ -16,6 +16,7 @@ const Path = require('path');
 const Config = require('../../../config');
 const Knowledge = require('./knowledge.js');
 const Map = require('../map.js');
+const Timer = require('../timer.js');
 
 const AI_ITEMS_DIR = Path.join(__dirname, '..', '..', '..', 'AI', 'items');
 
@@ -62,6 +63,8 @@ async function execGetItem(ctx, args) {
 
     let best = null;
     let bestScore = -Infinity;
+    let bestConfident = false;
+    let exact = false;
     const partials = [];
     for (const file of Fs.readdirSync(AI_ITEMS_DIR)) {
         if (!file.endsWith('.json')) continue;
@@ -70,25 +73,28 @@ async function execGetItem(ctx, args) {
         const labelWords = label.split(' ').filter(Boolean);
         const labelJoined = labelWords.join('');
 
-        if (labelJoined === wantedJoined) { best = file; break; } /* exact */
+        if (labelJoined === wantedJoined) { best = file; exact = true; break; }
 
         /* Word-overlap scoring: count query words present as whole words,
            then prefer the most specific (fewest extra words). */
         const matched = wantedWords.filter(w => labelWords.includes(w)).length;
-        /* Substring fallback catches "ak" -> nothing-as-word but helps partials. */
-        const substr = labelJoined.includes(wantedJoined) || wantedJoined.includes(labelJoined);
+        /* Substring fallback catches partial words, but only when the label is at
+           least as specific as the query — otherwise the resource "Wood" outranks
+           "Wooden Floor" for the query "wood floor". */
+        const substr = (labelWords.length >= wantedWords.length) &&
+            (labelJoined.includes(wantedJoined) || wantedJoined.includes(labelJoined));
         if (matched === 0 && !substr) continue;
 
         const allWanted = matched === wantedWords.length;
         const score = matched * 100 - Math.abs(labelWords.length - wantedWords.length)
             + (allWanted ? 50 : 0) + (substr ? 5 : 0);
         partials.push({ display, score });
-        if (score > bestScore) { bestScore = score; best = file; }
+        if (score > bestScore) { bestScore = score; best = file; bestConfident = allWanted; }
     }
 
-    if (!best) {
-        /* No confident match — return suggestions so the model can retry with a
-           corrected name instead of giving up. */
+    /* Only auto-return confident matches (exact, or every query word present).
+       Anything weaker gets suggestions so the model retries with the right name. */
+    if (!best || (!exact && !bestConfident)) {
         const suggestions = partials.sort((a, b) => b.score - a.score).slice(0, 8).map(p => p.display);
         if (suggestions.length > 0) {
             return `No exact match for "${name}". Did you mean one of: ${suggestions.join(', ')}? ` +
@@ -97,7 +103,11 @@ async function execGetItem(ctx, args) {
         return `No item found for "${name}". Try search_items to find the correct name.`;
     }
     try {
-        return Fs.readFileSync(Path.join(AI_ITEMS_DIR, best), 'utf8');
+        const content = Fs.readFileSync(Path.join(AI_ITEMS_DIR, best), 'utf8');
+        if (exact) return content;
+        /* Confident-but-fuzzy match: tell the model what actually matched. */
+        const matchedName = best.slice(0, -5).replace(/_/g, ' ');
+        return `Matched item: ${matchedName}\n${content}`;
     }
     catch (error) {
         return `Failed to read item data: ${error.message}`;
@@ -118,7 +128,20 @@ async function execSearchItems(ctx, args) {
         if (words.every(w => hay.includes(w))) matches.push(display);
     }
     if (matches.length === 0) return `No item names matching "${args.query}".`;
-    return JSON.stringify(matches.slice(0, 25));
+
+    /* Most relevant first: fewest extra words, then shortest name — so "wall"
+       surfaces "Stone Wall" before "High External Stone Wall (Frozen)". */
+    matches.sort((a, b) => {
+        const wa = a.split(' ').length;
+        const wb = b.split(' ').length;
+        if (wa !== wb) return wa - wb;
+        return a.length - b.length;
+    });
+    const shown = matches.slice(0, 25);
+    const result = JSON.stringify(shown);
+    return matches.length > shown.length
+        ? `${result} ... (+${matches.length - shown.length} more matches, refine your query)`
+        : result;
 }
 
 async function execGetServerInfo(ctx) {
@@ -140,16 +163,25 @@ async function execGetServerInfo(ctx) {
 async function execGetTime(ctx) {
     const rustplus = getOperationalRustplus(ctx);
     if (!rustplus) return 'Not connected to a Rust server.';
-    const time = await rustplus.getTimeAsync();
-    if (!await rustplus.isResponseValid(time)) return 'Failed to read time.';
-    const t = time.time;
-    const isDay = t.time >= t.sunrise && t.time < t.sunset;
-    return JSON.stringify({
-        time: t.time.toFixed(2),
+    const t = rustplus.time;
+    if (!t || typeof t.time !== 'number') return 'Time data not available yet.';
+
+    /* Pre-formatted strings so the model cannot mangle decimal hours, plus the
+       REAL-WORLD countdown (the in-game clock runs much faster than real time). */
+    const isDay = t.isDay();
+    const out = {
+        inGameTime: Timer.convertDecimalToHoursMinutes(t.time),
         isDay,
-        sunrise: t.sunrise,
-        sunset: t.sunset
-    });
+        sunrise: Timer.convertDecimalToHoursMinutes(t.sunrise),
+        sunset: Timer.convertDecimalToHoursMinutes(t.sunset)
+    };
+    const till = t.getTimeTillDayOrNight();
+    if (till !== null) {
+        out[isDay ? 'realTimeUntilNightfall' : 'realTimeUntilDaylight'] = till;
+        out.note = 'realTimeUntil* is real-world time, NOT in-game hours. Use it to answer ' +
+            '"how long until night/day". Never convert in-game hours to seconds.';
+    }
+    return JSON.stringify(out);
 }
 
 async function execGetTeam(ctx) {

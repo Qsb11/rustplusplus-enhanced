@@ -120,19 +120,26 @@ module.exports = {
 
         scored.sort((a, b) => b.score - a.score);
 
-        const parts = scored.slice(0, MAX_DOCS).map(doc =>
-            `--- ${Path.relative(doc.root, doc.file)} ---\n${doc.content.slice(0, MAX_DOC_CHARS)}`);
+        const parts = scored.slice(0, MAX_DOCS).map(doc => {
+            const body = doc.content.length > MAX_DOC_CHARS
+                ? `${doc.content.slice(0, MAX_DOC_CHARS)}\n...[truncated]`
+                : doc.content;
+            return `--- ${Path.relative(doc.root, doc.file)} ---\n${body}`;
+        });
 
         return parts.length === 0 ? '' : `KNOWLEDGE BASE:\n${parts.join('\n')}`;
     }
 };
 
-function collectFiles(dir) {
+function collectFiles(dir, isRoot = true) {
     const result = [];
     for (const entry of Fs.readdirSync(dir, { withFileTypes: true })) {
         const fullPath = Path.join(dir, entry.name);
         if (entry.isDirectory()) {
-            result.push(...collectFiles(fullPath));
+            /* Skip the per-item JSONs: they are served by get_item/search_items, and
+               reading 1300+ files per query crowds curated docs out of the doc slots. */
+            if (isRoot && entry.name === 'items') continue;
+            result.push(...collectFiles(fullPath, false));
         }
         else if (/\.(md|txt|json)$/i.test(entry.name)) {
             result.push(fullPath);

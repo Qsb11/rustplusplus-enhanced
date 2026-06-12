@@ -30,7 +30,7 @@ module.exports = {
             conversations.delete(convId);
             return [];
         }
-        return entry.turns;
+        return [...entry.turns];
     },
 
     /**
@@ -42,6 +42,9 @@ module.exports = {
      */
     append: function (convId, question, answer, now) {
         if (!convId) return;
+        /* Stamp with the actual append time — `now` may be minutes old after a slow
+           tool loop, which would prematurely age the TTL. */
+        now = Date.now();
         const entry = conversations.get(convId) || { turns: [], lastUsed: now };
         entry.turns.push({ role: 'user', content: question });
         entry.turns.push({ role: 'assistant', content: answer });

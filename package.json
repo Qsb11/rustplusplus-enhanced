@@ -42,6 +42,9 @@
   },
   "resolutions": {
     "jpeg-js": "0.4.4",
-    "protobufjs": "7.2.4"
+    "protobufjs": "7.6.4"
+  },
+  "overrides": {
+    "protobufjs": "7.6.4"
   }
 }

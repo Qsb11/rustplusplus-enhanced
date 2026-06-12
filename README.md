@@ -44,7 +44,8 @@ This NodeJS Discord Bot uses the [rustplus.js](https://github.com/liamcottle/rus
 * **Optimization Tools** - Performance enhancements and resource optimization
 * **TypeScript Support** - Full TypeScript implementation for better code quality
 * **Enhanced Error Handling** - Improved error management and logging systems
-* **🆕 Automated Item Database Updates** - Weekly automated scraping of latest Rust item data with manual controls
+* **🆕 Automated Item Database Updates** - Weekly automated scraping of the latest Rust item data from rusthelp.com (no API key needed) with manual controls via `/updatedatabase`
+* **🆕 AI Assistant** - Ask game questions in-game (`!ai`) or via `/ai` — answers from live server state + the scraped item/monument database; works with any OpenAI-compatible endpoint (Ollama, GROQ, Gemini)
 
 ## **Quick Start**
 
@@ -125,7 +126,7 @@ update.bat
 ## **Running via Docker**
 
 ```bash
-docker run --rm -it -v ${pwd}/credentials:/app/credentials -v ${pwd}/instances:/app/instances -v ${pwd}/logs:/app/logs -e RPP_DISCORD_CLIENT_ID=111....1111 -e RPP_DISCORD_TOKEN=token -e RPP_FIRECRAWL_API_KEY=your_api_key --name rpp nuallan/rustplusplus-forked
+docker run --rm -it -v ${pwd}/credentials:/app/credentials -v ${pwd}/instances:/app/instances -v ${pwd}/logs:/app/logs -e RPP_DISCORD_CLIENT_ID=111....1111 -e RPP_DISCORD_TOKEN=token --name rpp nuallan/rustplusplus-forked
 ```
 
 or
@@ -139,7 +140,17 @@ Make sure you use the correct values for DISCORD_CLIENT_ID as well as DISCORD_TO
 ### **Environment Variables**
 - `RPP_DISCORD_CLIENT_ID` - Discord application client ID
 - `RPP_DISCORD_TOKEN` - Discord bot token
-- `RPP_FIRECRAWL_API_KEY` - (Optional) Firecrawl API key for automated item database updates
+- `RPP_SCRAPER_CRON` - (Optional) Cron override for the scheduled item scraper (default: `0 5 * * 5`, Friday 05:00)
+- `RPP_AI_ENABLED` - (Optional) Enable/disable the AI assistant (default: `true`; set `false` to disable)
+- `RPP_AI_BASE_URL` - (Optional) OpenAI-compatible endpoint, e.g. `http://host.docker.internal:11434/v1` for Ollama (default: `http://localhost:11434/v1`)
+- `RPP_AI_API_KEY` - (Optional) API key for the AI endpoint (leave empty for Ollama)
+- `RPP_AI_MODEL` - (Optional) Model name (default: `llama3.1`)
+- `RPP_AI_KNOWLEDGE_DIR` - (Optional) Extra editable AI knowledge folder, e.g. `/app/knowledge` mounted as a volume
+- `RPP_AI_MAX_TOKENS` - (Optional) Max answer tokens (default: `1500`)
+- `RPP_AI_TEMPERATURE` - (Optional) Sampling temperature (default: `0.3`)
+- `RPP_AI_TIMEOUT_MS` - (Optional) AI request timeout in ms (default: `120000`)
+
+See `docker-compose.yml` for a fully commented example and the `ai` block of `config/index.js` for the complete `RPP_AI_*` list (tool calling, device control, memory, alerts).
 
 ## **Project Structure**
 
@@ -173,27 +184,25 @@ rustplusplus-enhanced/
 
 ## **New Features: Automated Item Database Updates**
 
-### **Firecrawl Integration**
-The bot now includes an automated system for keeping Rust item data up-to-date:
+### **RustHelp Data Pipeline**
+The bot includes an automated, keyless system for keeping Rust item data up-to-date by scraping [rusthelp.com](https://rusthelp.com) — no API key required:
 
-- **Weekly Automation**: Every Thursday at 20:00 UTC, the bot automatically checks for new items
-- **Manual Control**: Use `/update-database` command for immediate updates
-- **Rate Limiting**: Built-in API rate limiting and credit management
-- **Resume Capability**: Automatically resumes after API credit restoration
+- **Weekly Automation**: Runs every Friday at 05:00 by default (the morning after Thursday wipes/force wipes); override the schedule with the `RPP_SCRAPER_CRON` environment variable
+- **Manual Control**: Use the `/updatedatabase` command for immediate updates (admin only)
+- **Polite Scraping**: Built-in rate limiting (stays under rusthelp.com's ~1 req/s limit, backs off on 429s) plus an on-disk HTML cache so unchanged pages are not re-fetched
 
 ### **Commands**
-- `/update-database ALL` - Full database refresh (admin only)
-- `/update-database NEW` - Check for new items only
-- `/update-database ITEM <name>` - Update specific item
+The `/updatedatabase` command takes a required `target` option and an optional `item-name`:
+- `/updatedatabase target:ALL` - Full database refresh (admin only)
+- `/updatedatabase target:NEW` - Check for new items only
+- `/updatedatabase target:ITEM item-name:<name>` - Update a specific item
 
 ### **Setup**
-1. Get a Firecrawl API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set `RPP_FIRECRAWL_API_KEY` environment variable
-3. The bot will automatically start weekly updates on restart
+No setup needed — the scraper is keyless. The bot automatically starts the weekly schedule on startup.
 
 ### **Data Output**
-- **Bot Format**: Updates existing static files (`items.json`, `rustlabsCraftData.json`, etc.)
-- **Human-Readable**: Organized JSON files in `src/humanReadableItems/` by category
+- **Bot Format**: Updates existing static files in `src/staticFiles/` (`items.json`, `rustlabsCraftData.json`, etc.) plus the new `rusthelpExtras.json`, `rusthelpBuildingExtras.json`, `rusthelpMonuments.json` and `rusthelpWorldEntities.json`
+- **AI Knowledge Export**: Per-item/monument/world-entity JSON files in `AI/items/`, `AI/monuments/` and `AI/world/` (gitignored, regenerated after each scrape) used by the AI assistant
 
 ## **Thanks to**
 

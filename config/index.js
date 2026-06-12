@@ -29,12 +29,13 @@ module.exports = {
         reconnectBackoffMultiplier: process.env.RPP_RECONNECT_BACKOFF_MULTIPLIER || 2,
         resetRetriesAfterSuccess: process.env.RPP_RESET_RETRIES_AFTER_SUCCESS || 60000,
         connectionHealthCheckInterval: process.env.RPP_CONNECTION_HEALTH_CHECK_INTERVAL || 30000,
+        reconnectExhaustedCooldown: parseInt(process.env.RPP_RECONNECT_EXHAUSTED_COOLDOWN) || 300000,
     },
     discord: {
         username: process.env.RPP_DISCORD_USERNAME || 'rustplusplus',
         clientId: process.env.RPP_DISCORD_CLIENT_ID || '',
         token: process.env.RPP_DISCORD_TOKEN || '',
-        needAdminPrivileges: process.env.RPP_NEED_ADMIN_PRIVILEGES || true, /* If true, only admins can delete (server, switch..), manage credentials and reset a channel */
+        needAdminPrivileges: process.env.RPP_NEED_ADMIN_PRIVILEGES !== 'false', /* If true, only admins can delete (server, switch..), manage credentials and reset a channel */
     },
     ai: {
         /* Any OpenAI-compatible chat completions endpoint works:
@@ -56,10 +57,11 @@ module.exports = {
            model that supports OpenAI tool calling (llama3.1, qwen2.5, ...). */
         toolsEnabled: process.env.RPP_AI_TOOLS_ENABLED !== 'false',
         maxToolIterations: parseInt(process.env.RPP_AI_MAX_TOOL_ITERATIONS || '8', 10),
-        /* Control tools (toggle smart switches) — destructive, so gated.
-           In-game callers are team members (trusted); Discord control is
-           additionally restricted to admins. */
-        controlEnabled: process.env.RPP_AI_CONTROL_ENABLED !== 'false',
+        /* Control tools (toggle smart switches) — destructive, so OPT-IN: set
+           RPP_AI_CONTROL_ENABLED=true to allow the AI to physically toggle devices.
+           In-game callers are team members; Discord control is additionally
+           restricted to admins. */
+        controlEnabled: process.env.RPP_AI_CONTROL_ENABLED === 'true',
 
         /* Optional extra knowledge folder searched in addition to the baked-in AI/
            folder. Mount a host dir here to edit slang/kit/strategy docs without

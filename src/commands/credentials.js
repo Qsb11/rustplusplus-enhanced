@@ -18,7 +18,6 @@
 
 */
 
-const _ = require('lodash');
 const Builder = require('@discordjs/builders');
 
 const Config = require('../../config');

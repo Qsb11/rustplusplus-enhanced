@@ -29,6 +29,8 @@ services:
             - RPP_AI_BASE_URL=http://host.docker.internal:11434/v1
             - RPP_AI_API_KEY=
             - RPP_AI_MODEL=llama3.1
+            # Allow the AI to physically toggle smart switches (OFF by default — opt in deliberately)
+            # - RPP_AI_CONTROL_ENABLED=true
             # Editable knowledge folder (matches the ./knowledge volume above)
             - RPP_AI_KNOWLEDGE_DIR=/app/knowledge
             # - RPP_AI_MAX_TOKENS=1500

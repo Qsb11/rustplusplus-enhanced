@@ -6,6 +6,8 @@ maps
 logs
 temp
 
+tmp_*
+
 src/util/scraper.log
 src/util/rusthelpData/scraper.log
 src/util/rusthelpData/.cache

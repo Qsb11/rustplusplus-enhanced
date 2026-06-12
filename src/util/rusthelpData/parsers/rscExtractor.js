@@ -229,10 +229,41 @@ function resolveReference(payload, ref) {
     return walkRscPath(row, parts.slice(1));
 }
 
+/**
+ *  Find the "data" values of RSC component rows identified by a literal marker (e.g.
+ *  '"columnName":"Build Cost"'). Building-page build cost / upkeep / repair tables are
+ *  streamed as sibling component props rather than fields of the building object; their
+ *  shape is { ..., "data": <value>, ..., <marker> } so the nearest preceding "data": key
+ *  before each marker occurrence carries the payload.
+ *  @param {string} payload The decoded RSC payload.
+ *  @param {string} marker The literal marker to search for.
+ *  @return {Array} Parsed data values, one per marker occurrence (unparsable ones skipped).
+ */
+function findComponentData(payload, marker) {
+    const results = [];
+    let idx = 0;
+    while ((idx = payload.indexOf(marker, idx)) !== -1) {
+        const dataIdx = payload.lastIndexOf('"data":', idx);
+        idx += marker.length;
+        if (dataIdx === -1) continue;
+        const valueStart = dataIdx + '"data":'.length;
+        const raw = extractBalancedValue(payload, valueStart);
+        if (!raw) continue;
+        try {
+            results.push(JSON.parse(raw));
+        } catch (error) {
+            /* Component data containing unresolved $refs is not standalone JSON; skip. */
+        }
+    }
+    return results;
+}
+
 module.exports = {
     decodeRscPayload,
     extractBalancedObject,
+    extractBalancedValue,
     findObjectByMarker,
+    findComponentData,
     extractItemObject,
     extractBuildingObject,
     resolveReference

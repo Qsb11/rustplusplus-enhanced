@@ -21,18 +21,8 @@
 
 const Cheerio = require('cheerio');
 const Rsc = require('./rscExtractor.js');
-const TimeFormat = require('./timeFormat.js');
-
-/* Map a rusthelp raid damageType to the bot durability group. */
-const DAMAGE_GROUP_MAP = {
-    'explosive': 'explosive',
-    'melee': 'melee',
-    'throw': 'throw',
-    'gun': 'guns',
-    'guns': 'guns',
-    'torpedo': 'torpedo',
-    'turret': 'turret'
-};
+const RaidTable = require('./raidTable.js');
+const ItemExtras = require('./itemExtras.js');
 
 /**
  *  Derive the display name and slug for a building/world page.
@@ -49,47 +39,69 @@ function parseNameAndSlug(html, pageUrl) {
 }
 
 /**
- *  Build durability records (explosive/raid) from a building's raidingTable data.
- *  @param {Object} building The extracted building object (with raidingTable.data).
- *  @param {Object} resolver The IdResolver.
- *  @return {Array<Object>} An array of durability records (may be empty).
+ *  Extract the per-day upkeep cost component ([{ itemLink, min, max }]).
+ *  @param {string} payload The decoded RSC payload.
+ *  @return {Array|null} [{ name, min, max }] or null.
  */
-function buildDurabilityRecords(building, resolver) {
-    const records = [];
-    const data = building && building.raidingTable && Array.isArray(building.raidingTable.data)
-        ? building.raidingTable.data : [];
-    for (const row of data) {
-        const toolId = resolver.resolve(row.itemLink || { id: row.itemId });
-        if (!toolId) continue;
-        const group = DAMAGE_GROUP_MAP[row.damageType] || 'explosive';
-        let sulfur = null;
-        if (Array.isArray(row.rawCraftCost)) {
-            const s = row.rawCraftCost.find(c => c.itemLink && c.itemLink.displayName === 'Sulfur');
-            if (s) sulfur = s.amount;
+function parseUpkeep(payload) {
+    const datas = Rsc.findComponentData(payload, '"columnName":"Upkeep Cost (per day)"');
+    for (const data of datas) {
+        if (!Array.isArray(data)) continue;
+        const entries = [];
+        for (const row of data) {
+            const name = ItemExtras.linkName(row && row.itemLink);
+            if (name && typeof row.min === 'number') {
+                entries.push({ name, min: row.min, max: typeof row.max === 'number' ? row.max : row.min });
+            }
         }
-        const time = typeof row.secondsTaken === 'number' ? row.secondsTaken : 0;
-        records.push({
-            group,
-            which: null,
-            toolId,
-            caption: null,
-            quantity: typeof row.requiredItems === 'number' ? row.requiredItems : 0,
-            quantityTypeId: null,
-            time,
-            timeString: TimeFormat.formatDurabilityTime(time),
-            fuel: null,
-            sulfur
-        });
+        if (entries.length > 0) return entries;
     }
-    return records;
+    return null;
 }
 
 /**
- *  Parse a building page.
+ *  Extract the build cost component ([{ itemLink, amount }]).
+ *  @param {string} payload The decoded RSC payload.
+ *  @return {Array|null} [{ name, quantity }] or null.
+ */
+function parseBuildCost(payload) {
+    const datas = Rsc.findComponentData(payload, '"columnName":"Build Cost"');
+    for (const data of datas) {
+        const cost = ItemExtras.mapCosts(data);
+        if (cost) return cost;
+    }
+    return null;
+}
+
+/**
+ *  Extract the repair component ({ repairItemLink, hammerSwings, maxRepairCost, ... }).
+ *  @param {string} payload The decoded RSC payload.
+ *  @return {Object|null} { tool, cost, conditionLossPercent?, needsBlueprint? } or null.
+ */
+function parseRepair(payload) {
+    const datas = Rsc.findComponentData(payload, '"columnName":"Max Repair Cost"');
+    for (const data of datas) {
+        if (!data || typeof data !== 'object') continue;
+        const cost = ItemExtras.mapCosts(data.maxRepairCost);
+        if (!cost) continue;
+        return {
+            tool: ItemExtras.linkName(data.repairItemLink) || data.repairItemId || 'Hammer',
+            cost,
+            conditionLossPercent: typeof data.maxConditionLostPercent === 'number'
+                ? data.maxConditionLostPercent : undefined,
+            needsBlueprint: data.needBlueprint === true ? true : undefined
+        };
+    }
+    return null;
+}
+
+/**
+ *  Parse a building page into name/slug, hp, rich durability records and extras
+ *  (build cost, per-day upkeep, repair cost).
  *  @param {string} html The page HTML.
  *  @param {string} pageUrl The page URL/path.
  *  @param {Object} resolver The IdResolver.
- *  @return {Object|null} { name, slug, hp, durability } or null.
+ *  @return {Object|null} { name, slug, hp, durability, buildCost, upkeep, repair } or null.
  */
 function parseBuildingPage(html, pageUrl, resolver) {
     const meta = parseNameAndSlug(html, pageUrl);
@@ -98,16 +110,29 @@ function parseBuildingPage(html, pageUrl, resolver) {
     const payload = Rsc.decodeRscPayload(html);
     const building = payload ? Rsc.extractBuildingObject(payload) : null;
 
-    const result = { name: meta.name, slug: meta.slug, hp: null, durability: [] };
+    const result = {
+        name: meta.name,
+        slug: meta.slug,
+        hp: null,
+        durability: [],
+        buildCost: null,
+        upkeep: null,
+        repair: null
+    };
 
     if (building && typeof building.maxHealth === 'number' && building.maxHealth > 0) {
         result.hp = building.maxHealth;
     }
-    if (building) {
-        result.durability = buildDurabilityRecords(building, resolver);
+    if (building && building.raidingTable) {
+        result.durability = RaidTable.buildDurabilityRecords(building.raidingTable, resolver, payload);
+    }
+    if (payload) {
+        result.buildCost = parseBuildCost(payload);
+        result.upkeep = parseUpkeep(payload);
+        result.repair = parseRepair(payload);
     }
 
     return result;
 }
 
-module.exports = { parseBuildingPage, parseNameAndSlug, buildDurabilityRecords };
+module.exports = { parseBuildingPage, parseNameAndSlug };

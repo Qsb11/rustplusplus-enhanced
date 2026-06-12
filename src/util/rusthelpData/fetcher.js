@@ -50,10 +50,15 @@ class Fetcher {
     /**
      *  @param {Object} [options] Optional configuration.
      *  @param {boolean} [options.useCache=true] Whether to read/write the on-disk cache.
+     *  @param {number|null} [options.cacheMaxAgeMs=null] Max cache entry age; older entries
+     *      are re-fetched (stale copy still used as fallback when the re-fetch fails).
+     *      null = entries never expire.
      *  @param {function} [options.log] Logging callback (level, message).
      */
     constructor(options = {}) {
         this.useCache = options.useCache !== false;
+        this.cacheMaxAgeMs = typeof options.cacheMaxAgeMs === 'number' && options.cacheMaxAgeMs > 0
+            ? options.cacheMaxAgeMs : null;
         this.log = typeof options.log === 'function' ? options.log : (() => { });
         this._lastRequestTime = 0;
         this._rateLimitMs = RATE_LIMIT_MS;
@@ -90,7 +95,20 @@ class Fetcher {
      *  @return {Promise<string[]>} Array of URLs.
      */
     async fetchSitemap() {
-        const xml = await this.fetchRaw(`${BASE_URL}/sitemap.xml`, 'sitemap.xml');
+        let xml = await this.fetchRaw(`${BASE_URL}/sitemap.xml`, 'sitemap.xml');
+        if (!xml && this.useCache) {
+            /* Network down or rusthelp unreachable — fall back to the last cached sitemap
+               so a warm-cache run can still proceed offline. */
+            const cachePath = this._cachePath('sitemap.xml');
+            if (Fs.existsSync(cachePath)) {
+                try {
+                    xml = Fs.readFileSync(cachePath, 'utf8');
+                    this.log('warning', 'Sitemap fetch failed; using cached sitemap.');
+                } catch (error) {
+                    this.log('warning', `Failed to read cached sitemap: ${error.message}`);
+                }
+            }
+        }
         if (!xml) return [];
         const urls = [];
         const re = /<loc>\s*([^<\s]+)\s*<\/loc>/g;
@@ -110,18 +128,42 @@ class Fetcher {
         const url = pathOrUrl.startsWith('http') ? pathOrUrl : `${BASE_URL}${pathOrUrl}`;
         const cacheKey = url.replace(`${BASE_URL}/`, '').replace(/\/$/, '') || 'index';
 
+        let staleCachePath = null;
         if (this.useCache) {
             const cachePath = this._cachePath(cacheKey);
             if (Fs.existsSync(cachePath)) {
-                try {
-                    return Fs.readFileSync(cachePath, 'utf8');
-                } catch (error) {
-                    this.log('warning', `Failed to read cache for ${url}: ${error.message}`);
+                let fresh = true;
+                if (this.cacheMaxAgeMs !== null) {
+                    try {
+                        const age = Date.now() - Fs.statSync(cachePath).mtimeMs;
+                        fresh = age <= this.cacheMaxAgeMs;
+                    } catch (error) {
+                        fresh = false;
+                    }
+                }
+                if (fresh) {
+                    try {
+                        return Fs.readFileSync(cachePath, 'utf8');
+                    } catch (error) {
+                        this.log('warning', `Failed to read cache for ${url}: ${error.message}`);
+                    }
+                }
+                else {
+                    staleCachePath = cachePath;
                 }
             }
         }
 
         const html = await this.fetchRaw(url, cacheKey);
+        if (!html && staleCachePath) {
+            /* Re-fetch of an expired entry failed — serve the stale copy over nothing. */
+            try {
+                this.log('warning', `Re-fetch failed for ${url}; using stale cached copy.`);
+                return Fs.readFileSync(staleCachePath, 'utf8');
+            } catch (error) {
+                this.log('warning', `Failed to read stale cache for ${url}: ${error.message}`);
+            }
+        }
         return html;
     }
 

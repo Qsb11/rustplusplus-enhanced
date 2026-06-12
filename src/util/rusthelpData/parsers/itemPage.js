@@ -22,6 +22,8 @@
 const Cheerio = require('cheerio');
 const Rsc = require('./rscExtractor.js');
 const TimeFormat = require('./timeFormat.js');
+const RaidTable = require('./raidTable.js');
+const ItemExtras = require('./itemExtras.js');
 
 /* Map a rusthelp recycler id to the bot recycle data key. */
 const RECYCLER_KEY_MAP = {
@@ -286,6 +288,30 @@ function parseItemPage(html, resolver, existingItems = {}) {
             time: item.despawnTimeSeconds,
             timeString: TimeFormat.formatDespawnTime(item.despawnTimeSeconds)
         };
+    }
+
+    const extras = ItemExtras.buildExtrasEntry(item, payload);
+    if (extras) result.extras = extras;
+
+    /* Deployables embed the same raid/destruction table as building pages directly in
+       their item page payload — extract it so durability data refreshes per item. */
+    const building = Rsc.extractBuildingObject(payload);
+    if (building && building.raidingTable) {
+        const records = RaidTable.buildDurabilityRecords(building.raidingTable, resolver, payload);
+        if (records.length > 0) result.durability = records;
+    }
+    if (!result.durability && item.deployableInfo && Array.isArray(item.deployableInfo.durability)) {
+        const records = RaidTable.buildDurabilityRecords(item.deployableInfo.durability, resolver, payload);
+        if (records.length > 0) result.durability = records;
+    }
+
+    /* The Mixing Table / Cooking Workbench pages carry every mixing recipe; contribute
+       them keyed by the produced item's numeric id. */
+    if (item.mixingTableRecipes) {
+        const itemName = (item.translated && item.translated.displayName) ||
+            (existingItems[numericId] && existingItems[numericId].name) || item.displayName || item.id;
+        const mixing = ItemExtras.buildMixingContributions(item, payload, resolver, itemName);
+        if (Object.keys(mixing).length > 0) result.mixing = mixing;
     }
 
     return result;

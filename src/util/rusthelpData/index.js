@@ -37,8 +37,10 @@ const { IdResolver } = require('./parsers/idResolver.js');
 const ItemPage = require('./parsers/itemPage.js');
 const BuildingPage = require('./parsers/buildingPage.js');
 const WorldPage = require('./parsers/worldPage.js');
+const MonumentPage = require('./parsers/monumentPage.js');
 
 const LOG_FILE = Path.join(__dirname, 'scraper.log');
+const LOG_MAX_BYTES = 5 * 1024 * 1024; /* Rotate scraper.log past this size. */
 
 /* A small curated set used by --test mode; covers the validation-critical items + a building. */
 const TEST_SLUGS = {
@@ -50,7 +52,8 @@ const TEST_SLUGS = {
         'wooden-door'
     ],
     building: ['stone-wall'],
-    world: []
+    world: [],
+    monuments: ['launch-site']
 };
 
 /**
@@ -61,11 +64,18 @@ const TEST_SLUGS = {
 function createLogger(progress) {
     let stream = null;
     try {
+        /* Size-based rotation: keep one previous generation as scraper.log.old. */
+        try {
+            if (Fs.statSync(LOG_FILE).size > LOG_MAX_BYTES) {
+                Fs.rmSync(`${LOG_FILE}.old`, { force: true });
+                Fs.renameSync(LOG_FILE, `${LOG_FILE}.old`);
+            }
+        } catch (error) { /* no log file yet */ }
         stream = Fs.createWriteStream(LOG_FILE, { flags: 'a' });
     } catch (error) {
         stream = null;
     }
-    return (level, message) => {
+    const log = (level, message) => {
         const line = `[${new Date().toISOString()}] [${String(level).toUpperCase()}] ${message}`;
         if (stream) {
             try { stream.write(line + '\n'); } catch (error) { /* ignore */ }
@@ -74,6 +84,13 @@ function createLogger(progress) {
             try { progress(level, message); } catch (error) { /* ignore */ }
         }
     };
+    log.close = () => {
+        if (stream) {
+            try { stream.end(); } catch (error) { /* ignore */ }
+            stream = null;
+        }
+    };
+    return log;
 }
 
 /**
@@ -82,13 +99,46 @@ function createLogger(progress) {
  *  @return {{ items: string[], building: string[], world: string[] }}
  */
 function categorizeUrls(urls) {
-    const buckets = { items: [], building: [], world: [] };
+    const buckets = { items: [], building: [], world: [], monuments: [] };
     for (const url of urls) {
+        /* /browse/... category listing pages are not entity pages — they only inflate
+           parse-error counts when fed through the entity parsers. */
+        if (/\/browse\//.test(url)) continue;
         if (/\/items\//.test(url)) buckets.items.push(url);
         else if (/\/building\//.test(url)) buckets.building.push(url);
         else if (/\/world\//.test(url)) buckets.world.push(url);
+        else if (/\/monument\//.test(url)) buckets.monuments.push(url);
     }
     return buckets;
+}
+
+/**
+ *  Filter durability contributions so a scrape can only replace an existing record set
+ *  when the new one is comparably complete (>= half the records). A page that parsed
+ *  thin (layout change, partial payload) must never wipe rich legacy data.
+ *  @param {Object} contrib { items, buildingBlocks, other } keyed sections of record arrays.
+ *  @param {function} log The logger.
+ *  @return {Object|null} The guarded contributions, or null when nothing remains.
+ */
+function guardDurability(contrib, log) {
+    const existing = Writers.readStatic('rustlabsDurabilityData.json',
+        { items: {}, buildingBlocks: {}, other: {} });
+    const guarded = { items: {}, buildingBlocks: {}, other: {} };
+    let kept = 0;
+    for (const section of ['items', 'buildingBlocks', 'other']) {
+        for (const [key, records] of Object.entries(contrib[section] || {})) {
+            if (!Array.isArray(records) || records.length === 0) continue;
+            const old = existing[section] && existing[section][key];
+            if (Array.isArray(old) && old.length > records.length * 2) {
+                log('warning', `durability ${section}/${key}: scraped ${records.length} records ` +
+                    `but legacy has ${old.length} — keeping legacy data`);
+                continue;
+            }
+            guarded[section][key] = records;
+            kept++;
+        }
+    }
+    return kept > 0 ? guarded : null;
 }
 
 /**
@@ -104,10 +154,29 @@ function categorizeUrls(urls) {
  */
 async function runFullUpdate(client = null, options = {}) {
     const log = createLogger(options.progress);
+    try {
+        return await runFullUpdateInner(client, options, log);
+    } finally {
+        log.close();
+    }
+}
+
+/**
+ *  The actual update implementation; see runFullUpdate for the public contract.
+ *  @param {Object|null} client Optional Discord client.
+ *  @param {Object} options Options (see runFullUpdate).
+ *  @param {function} log Logger from createLogger.
+ *  @return {Promise<Object>} A result summary.
+ */
+async function runFullUpdateInner(client, options, log) {
     const test = options.test === true;
     const limit = typeof options.limit === 'number' ? options.limit : null;
     const dryRun = options.dryRun === true;
-    const fetcher = new Fetcher({ useCache: options.useCache !== false, log });
+    const fetcher = new Fetcher({
+        useCache: options.useCache !== false,
+        cacheMaxAgeMs: typeof options.cacheMaxAgeMs === 'number' ? options.cacheMaxAgeMs : null,
+        log
+    });
 
     log('info', `Starting rusthelp data update (test=${test}, limit=${limit}, dryRun=${dryRun})`);
 
@@ -118,6 +187,7 @@ async function runFullUpdate(client = null, options = {}) {
     let itemUrls = [];
     let buildingUrls = [];
     let worldUrls = [];
+    let monumentUrls = [];
 
     if (Array.isArray(options.itemSlugs) && options.itemSlugs.length > 0) {
         /* Explicit single/few item update (e.g. /updatedatabase ITEM). */
@@ -126,22 +196,28 @@ async function runFullUpdate(client = null, options = {}) {
         itemUrls = TEST_SLUGS.items.map(s => `/items/${s}`);
         buildingUrls = TEST_SLUGS.building.map(s => `/building/${s}`);
         worldUrls = TEST_SLUGS.world.map(s => `/world/${s}`);
+        monumentUrls = TEST_SLUGS.monuments.map(s => `/monument/${s}`);
     } else {
         const sitemap = await fetcher.fetchSitemap();
         const buckets = categorizeUrls(sitemap);
         itemUrls = buckets.items;
         buildingUrls = buckets.building;
         worldUrls = buckets.world;
-        log('info', `Sitemap: ${itemUrls.length} items, ${buildingUrls.length} buildings, ${worldUrls.length} world`);
+        monumentUrls = buckets.monuments;
+        log('info', `Sitemap: ${itemUrls.length} items, ${buildingUrls.length} buildings, ` +
+            `${worldUrls.length} world, ${monumentUrls.length} monuments`);
     }
 
     if (limit !== null) itemUrls = itemUrls.slice(0, limit);
 
     const out = {
-        items: {}, craft: {}, research: {}, recycle: {}, stack: {}, despawn: {}
+        items: {}, craft: {}, research: {}, recycle: {}, stack: {}, despawn: {},
+        extras: {}, durabilityItems: {}
     };
-    const buildingContrib = { name2slug: {}, hpByName: {}, durabilityByName: {} };
-    const worldContrib = { name2slug: {}, durabilityByName: {} };
+    const buildingContrib = {
+        name2slug: {}, hpByName: {}, durabilityByName: {}, extrasByName: {}, upkeepByName: {}
+    };
+    const worldContrib = { name2slug: {}, durabilityByName: {}, entitiesByName: {} };
 
     let itemErrors = 0;
     let itemOk = 0;
@@ -167,6 +243,16 @@ async function runFullUpdate(client = null, options = {}) {
             if (parsed.recycle) out.recycle[parsed.id] = parsed.recycle;
             if (parsed.stack) out.stack[parsed.id] = parsed.stack;
             if (parsed.despawn) out.despawn[parsed.id] = parsed.despawn;
+            if (parsed.extras) {
+                out.extras[parsed.id] = { ...(out.extras[parsed.id] || {}), ...parsed.extras };
+            }
+            if (parsed.durability) out.durabilityItems[parsed.id] = parsed.durability;
+            if (parsed.mixing) {
+                /* Mixing recipes are keyed by the PRODUCED item's id, not this page's. */
+                for (const [producedId, recipe] of Object.entries(parsed.mixing)) {
+                    out.extras[producedId] = { ...(out.extras[producedId] || {}), mixing: recipe };
+                }
+            }
             itemOk++;
         } catch (error) {
             itemErrors++;
@@ -188,6 +274,15 @@ async function runFullUpdate(client = null, options = {}) {
             if (parsed.durability && parsed.durability.length > 0) {
                 buildingContrib.durabilityByName[parsed.name] = parsed.durability;
             }
+            const blockExtras = {};
+            if (parsed.hp !== null) blockExtras.hp = parsed.hp;
+            if (parsed.buildCost) blockExtras.buildCost = parsed.buildCost;
+            if (parsed.upkeep) blockExtras.upkeep = parsed.upkeep;
+            if (parsed.repair) blockExtras.repair = parsed.repair;
+            if (Object.keys(blockExtras).length > 0) {
+                buildingContrib.extrasByName[parsed.name] = blockExtras;
+            }
+            if (parsed.upkeep) buildingContrib.upkeepByName[parsed.name] = parsed.upkeep;
             buildingOk++;
         } catch (error) {
             log('warning', `Failed to parse building ${url}: ${error.message}`);
@@ -206,9 +301,34 @@ async function runFullUpdate(client = null, options = {}) {
             if (parsed.durability && parsed.durability.length > 0) {
                 worldContrib.durabilityByName[parsed.name] = parsed.durability;
             }
+            const entity = {};
+            if (parsed.hp !== null) entity.hp = parsed.hp;
+            if (parsed.loot) entity.loot = parsed.loot;
+            if (parsed.harvest) entity.harvest = parsed.harvest;
+            if (parsed.contains) entity.contains = parsed.contains;
+            if (parsed.foundAt) entity.foundAt = parsed.foundAt;
+            if (Object.keys(entity).length > 0) {
+                worldContrib.entitiesByName[parsed.name] = { slug: parsed.slug, ...entity };
+            }
             worldOk++;
         } catch (error) {
             log('warning', `Failed to parse world ${url}: ${error.message}`);
+        }
+    }
+
+    /* ---- Monument pages (puzzle requirements, features, loot spawns) ---- */
+    const monumentsByName = {};
+    let monumentOk = 0;
+    for (const url of monumentUrls) {
+        const html = await fetcher.fetchPage(url);
+        if (!html) continue;
+        try {
+            const parsed = MonumentPage.parseMonumentPage(html, url);
+            if (!parsed) continue;
+            monumentsByName[parsed.name] = parsed;
+            monumentOk++;
+        } catch (error) {
+            log('warning', `Failed to parse monument ${url}: ${error.message}`);
         }
     }
 
@@ -249,6 +369,82 @@ async function runFullUpdate(client = null, options = {}) {
         if (!dryRun) Writers.writeStaticAtomic('rustlabsDecayData.json', decay);
     }
 
+    /* ---- Durability (raid/destroy) data ----
+       Replace an existing record set only when the scrape produced a comparably complete
+       one, so a thin parse can never silently downgrade rich legacy data. */
+    const durabilityContrib = guardDurability({
+        items: out.durabilityItems,
+        buildingBlocks: buildingContrib.durabilityByName,
+        other: worldContrib.durabilityByName
+    }, log);
+    if (durabilityContrib) {
+        Writers.mergeSectionedFile('rustlabsDurabilityData.json', durabilityContrib, mergeOpts);
+    }
+
+    /* ---- Item extras (repair/loot/vending/consumable/... for the AI export) ---- */
+    if (Object.keys(out.extras).length > 0 && !dryRun) {
+        const existingExtras = Writers.readStatic('rusthelpExtras.json', {});
+        const mergedExtras = { ...existingExtras };
+        for (const [id, entry] of Object.entries(out.extras)) {
+            mergedExtras[id] = { ...(existingExtras[id] || {}), ...entry };
+        }
+        Writers.writeStaticAtomic('rusthelpExtras.json', mergedExtras);
+        log('info', `rusthelpExtras.json: ${Object.keys(out.extras).length} entries merged, ` +
+            `${Object.keys(mergedExtras).length} total`);
+    }
+
+    /* ---- Building-block extras (build cost / upkeep / repair, keyed by display name) ---- */
+    if (Object.keys(buildingContrib.extrasByName).length > 0 && !dryRun) {
+        const existingBlocks = Writers.readStatic('rusthelpBuildingExtras.json', {});
+        const mergedBlocks = { ...existingBlocks };
+        for (const [name, entry] of Object.entries(buildingContrib.extrasByName)) {
+            mergedBlocks[name] = { ...(existingBlocks[name] || {}), ...entry };
+        }
+        Writers.writeStaticAtomic('rusthelpBuildingExtras.json', mergedBlocks);
+        log('info', `rusthelpBuildingExtras.json: ${Object.keys(buildingContrib.extrasByName).length} entries merged`);
+    }
+
+    /* ---- World entities (loot tables / harvesting / pickups, keyed by display name) ---- */
+    if (Object.keys(worldContrib.entitiesByName).length > 0 && !dryRun) {
+        const existingEntities = Writers.readStatic('rusthelpWorldEntities.json', {});
+        const mergedEntities = { ...existingEntities };
+        for (const [name, entry] of Object.entries(worldContrib.entitiesByName)) {
+            mergedEntities[name] = { ...(existingEntities[name] || {}), ...entry };
+        }
+        Writers.writeStaticAtomic('rusthelpWorldEntities.json', mergedEntities);
+        log('info', `rusthelpWorldEntities.json: ${Object.keys(worldContrib.entitiesByName).length} entities merged`);
+    }
+
+    /* ---- Monuments (puzzles/features/spawns, keyed by display name) ---- */
+    if (Object.keys(monumentsByName).length > 0 && !dryRun) {
+        const existingMonuments = Writers.readStatic('rusthelpMonuments.json', {});
+        const mergedMonuments = { ...existingMonuments };
+        for (const [name, entry] of Object.entries(monumentsByName)) {
+            mergedMonuments[name] = { ...(existingMonuments[name] || {}), ...entry };
+        }
+        Writers.writeStaticAtomic('rusthelpMonuments.json', mergedMonuments);
+        log('info', `rusthelpMonuments.json: ${Object.keys(monumentsByName).length} monuments merged`);
+    }
+
+    /* ---- Upkeep refresh (legacy shape: [{ id, quantity: "1" | "1–4" }]) ---- */
+    const upkeepContrib = {};
+    for (const [name, entries] of Object.entries(buildingContrib.upkeepByName)) {
+        const legacy = [];
+        for (const entry of entries) {
+            const id = resolver.resolve({ displayName: entry.name });
+            if (!id) continue;
+            legacy.push({
+                id,
+                quantity: entry.min === entry.max ? String(entry.min) : `${entry.min}–${entry.max}`
+            });
+        }
+        if (legacy.length > 0) upkeepContrib[name] = legacy;
+    }
+    if (Object.keys(upkeepContrib).length > 0) {
+        Writers.mergeSectionedFile('rustlabsUpkeepData.json',
+            { items: {}, buildingBlocks: upkeepContrib, other: {} }, mergeOpts);
+    }
+
     if (client && typeof client.reloadItemData === 'function' && !dryRun) {
         try { client.reloadItemData(); } catch (error) { log('warning', `reloadItemData failed: ${error.message}`); }
     }
@@ -270,9 +466,14 @@ async function runFullUpdate(client = null, options = {}) {
         itemErrors,
         buildingsScraped: buildingOk,
         worldScraped: worldOk,
+        monumentsScraped: monumentOk,
         totalItems: results.items ? Object.keys(results.items.merged).length : 0,
         newItems: results.items ? results.items.added : 0,
         updatedItems: results.items ? results.items.updated : 0,
+        extrasEntries: Object.keys(out.extras).length,
+        durabilityEntries: Object.keys(out.durabilityItems).length +
+            Object.keys(buildingContrib.durabilityByName).length +
+            Object.keys(worldContrib.durabilityByName).length,
         shapeIssues,
         dryRun
     };

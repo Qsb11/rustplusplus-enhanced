@@ -1,0 +1,2770 @@
+{
+    "Abandoned Cabins": {
+        "name": "Abandoned Cabins",
+        "slug": "abandoned-cabins",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 1
+            },
+            {
+                "name": "Wall Frame Shopfront Metal Static",
+                "amount": 1
+            },
+            {
+                "name": "Poker Table",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate",
+                "amount": 2,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate / Normal Crate - Food",
+                "amount": 2,
+                "respawnMinutes": "28-30"
+            }
+        ]
+    },
+    "Airfield": {
+        "name": "Airfield",
+        "slug": "airfield",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 2
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Blue Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Timer",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 16
+            },
+            {
+                "name": "Heat Source",
+                "amount": 5
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 4
+            },
+            {
+                "name": "Sofa",
+                "amount": 3
+            },
+            {
+                "name": "Recycler",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 18,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 8
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 6,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 5,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate - Cave",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Arctic Research Base": {
+        "name": "Arctic Research Base",
+        "slug": "arctic-research-base",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Blue Keycard",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Heat Source",
+                "amount": 25
+            },
+            {
+                "name": "Light Switch",
+                "amount": 11
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 2
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Sofa",
+                "amount": 1
+            },
+            {
+                "name": "Toilet",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 14
+            },
+            {
+                "name": "Underwater Lab - Normal Crate 1 / Underwater Lab - Normal Crate 2",
+                "amount": 6
+            },
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 5
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 5
+            },
+            {
+                "name": "Underwater Lab - Tier 3 Components / Underwater Lab - Ammunition Crate",
+                "amount": 5
+            },
+            {
+                "name": "Underwater Lab - Food Crate 1",
+                "amount": 4
+            },
+            {
+                "name": "Underwater Lab - Fuel Crate",
+                "amount": 4
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 4
+            }
+        ]
+    },
+    "Bandit Camp": {
+        "name": "Bandit Camp",
+        "slug": "bandit-camp",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 12
+            },
+            {
+                "name": "Poker Table",
+                "amount": 5
+            },
+            {
+                "name": "Slot Machine",
+                "amount": 3
+            },
+            {
+                "name": "Recycler",
+                "amount": 2
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Wall Frame Shopfront Metal Static",
+                "amount": 1
+            },
+            {
+                "name": "Workbench Level 1",
+                "amount": 1
+            },
+            {
+                "name": "Clantable Static",
+                "amount": 1
+            },
+            {
+                "name": "Big Gambling Wheel",
+                "amount": 1
+            },
+            {
+                "name": "Drone Marketplace Terminal",
+                "amount": 1
+            }
+        ]
+    },
+    "Outpost": {
+        "name": "Outpost",
+        "slug": "outpost",
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 6
+            },
+            {
+                "name": "Recycler",
+                "amount": 3
+            },
+            {
+                "name": "Workbench Level 1",
+                "amount": 2
+            },
+            {
+                "name": "Drone Marketplace Terminal",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            },
+            {
+                "name": "Clantable Static",
+                "amount": 1
+            },
+            {
+                "name": "Blackjack Machine",
+                "amount": 1
+            },
+            {
+                "name": "Xylophone Static",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Heat Source",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Piano Static",
+                "amount": 1
+            },
+            {
+                "name": "Drumkit Static",
+                "amount": 1
+            },
+            {
+                "name": "Bbq Static",
+                "amount": 1
+            },
+            {
+                "name": "Water Catcher Small Static",
+                "amount": 1
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Roadsign",
+                "amount": 10
+            }
+        ]
+    },
+    "Floating City 1": {
+        "name": "Floating City 1",
+        "slug": "floating-city-1",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 8
+            },
+            {
+                "name": "Slot Machine",
+                "amount": 4
+            },
+            {
+                "name": "Boombox Static",
+                "amount": 4
+            },
+            {
+                "name": "Recycler",
+                "amount": 3
+            },
+            {
+                "name": "Water Catcher Small Static",
+                "amount": 2
+            },
+            {
+                "name": "Poker Table",
+                "amount": 2
+            },
+            {
+                "name": "Chippyarcademachine Static",
+                "amount": 2
+            },
+            {
+                "name": "Piano Static",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Drumkit Static",
+                "amount": 1
+            },
+            {
+                "name": "Workbench Level 1",
+                "amount": 1
+            },
+            {
+                "name": "Xylophone Static",
+                "amount": 1
+            },
+            {
+                "name": "Elevator Dilapidated Lift Static",
+                "amount": 1
+            },
+            {
+                "name": "Blackjack Machine",
+                "amount": 1
+            },
+            {
+                "name": "Big Gambling Wheel",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Pumpkin Plant / Corn Plant",
+                "amount": 42,
+                "respawnMinutes": "10"
+            }
+        ]
+    },
+    "Floating City 2": {
+        "name": "Floating City 2",
+        "slug": "floating-city-2",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 8
+            },
+            {
+                "name": "Slot Machine",
+                "amount": 4
+            },
+            {
+                "name": "Boombox Static",
+                "amount": 4
+            },
+            {
+                "name": "Recycler",
+                "amount": 3
+            },
+            {
+                "name": "Water Catcher Small Static",
+                "amount": 2
+            },
+            {
+                "name": "Poker Table",
+                "amount": 2
+            },
+            {
+                "name": "Chippyarcademachine Static",
+                "amount": 2
+            },
+            {
+                "name": "Piano Static",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Drumkit Static",
+                "amount": 1
+            },
+            {
+                "name": "Workbench Level 1",
+                "amount": 1
+            },
+            {
+                "name": "Xylophone Static",
+                "amount": 1
+            },
+            {
+                "name": "Elevator Dilapidated Lift Static",
+                "amount": 1
+            },
+            {
+                "name": "Blackjack Machine",
+                "amount": 1
+            },
+            {
+                "name": "Big Gambling Wheel",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Pumpkin Plant / Corn Plant",
+                "amount": 42,
+                "respawnMinutes": "10"
+            }
+        ]
+    },
+    "Floating City 3": {
+        "name": "Floating City 3",
+        "slug": "floating-city-3",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 9
+            },
+            {
+                "name": "Slot Machine",
+                "amount": 4
+            },
+            {
+                "name": "Boombox Static",
+                "amount": 4
+            },
+            {
+                "name": "Recycler",
+                "amount": 3
+            },
+            {
+                "name": "Water Catcher Small Static",
+                "amount": 2
+            },
+            {
+                "name": "Workbench Level 1",
+                "amount": 2
+            },
+            {
+                "name": "Poker Table",
+                "amount": 2
+            },
+            {
+                "name": "Chippyarcademachine Static",
+                "amount": 2
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Drumkit Static",
+                "amount": 1
+            },
+            {
+                "name": "Xylophone Static",
+                "amount": 1
+            },
+            {
+                "name": "Elevator Dilapidated Lift Static",
+                "amount": 1
+            },
+            {
+                "name": "Blackjack Machine",
+                "amount": 1
+            },
+            {
+                "name": "Big Gambling Wheel",
+                "amount": 1
+            },
+            {
+                "name": "Piano Static",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Pumpkin Plant / Corn Plant",
+                "amount": 42,
+                "respawnMinutes": "10"
+            }
+        ]
+    },
+    "Floating City 4": {
+        "name": "Floating City 4",
+        "slug": "floating-city-4",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 8
+            },
+            {
+                "name": "Slot Machine",
+                "amount": 4
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Recycler",
+                "amount": 3
+            },
+            {
+                "name": "Zipline Launch Point",
+                "amount": 3
+            },
+            {
+                "name": "Boombox Static",
+                "amount": 3
+            },
+            {
+                "name": "Poker Table",
+                "amount": 2
+            },
+            {
+                "name": "Water Catcher Small Static",
+                "amount": 2
+            },
+            {
+                "name": "Chippyarcademachine Static",
+                "amount": 2
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Workbench Level 1",
+                "amount": 1
+            },
+            {
+                "name": "Xylophone Static",
+                "amount": 1
+            },
+            {
+                "name": "Elevator Dilapidated Lift Static",
+                "amount": 1
+            },
+            {
+                "name": "Blackjack Machine",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Piano Static",
+                "amount": 1
+            },
+            {
+                "name": "Big Gambling Wheel",
+                "amount": 1
+            },
+            {
+                "name": "Drumkit Static",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Pumpkin Plant / Corn Plant",
+                "amount": 42,
+                "respawnMinutes": "10"
+            }
+        ]
+    },
+    "Ghostship A": {
+        "name": "Ghostship A",
+        "slug": "ghostship-a",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 11
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 8
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 4,
+                "respawnMinutes": "40-60"
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 3,
+                "respawnMinutes": "30-60"
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 2
+            },
+            {
+                "name": "Locked Crate - Ghostship",
+                "amount": 1
+            }
+        ]
+    },
+    "Ghostship B": {
+        "name": "Ghostship B",
+        "slug": "ghostship-b",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 2
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 11
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 6
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 4,
+                "respawnMinutes": "30-60"
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 2
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 2,
+                "respawnMinutes": "30-60"
+            },
+            {
+                "name": "Locked Crate - Ghostship",
+                "amount": 1
+            }
+        ]
+    },
+    "Ghostship C": {
+        "name": "Ghostship C",
+        "slug": "ghostship-c",
+        "spawns": [
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 11
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 11
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 4,
+                "respawnMinutes": "30-60"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 4,
+                "respawnMinutes": "30-60"
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 2
+            },
+            {
+                "name": "Locked Crate - Ghostship",
+                "amount": 1
+            }
+        ]
+    },
+    "Ghostship D": {
+        "name": "Ghostship D",
+        "slug": "ghostship-d",
+        "spawns": [
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 11
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 11
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 4,
+                "respawnMinutes": "30-60"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 4,
+                "respawnMinutes": "30-60"
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 2
+            },
+            {
+                "name": "Locked Crate - Ghostship",
+                "amount": 1
+            }
+        ]
+    },
+    "Tropical Island 1": {
+        "name": "Tropical Island 1",
+        "slug": "tropical-island-1",
+        "features": [
+            {
+                "name": "Cannon Land Static",
+                "amount": 5
+            },
+            {
+                "name": "Boatbuildingstation Static",
+                "amount": 1
+            },
+            {
+                "name": "Supply Drop Signal Computer",
+                "amount": 0.4489
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Cannon Crate",
+                "amount": 5,
+                "respawnMinutes": "40-60"
+            }
+        ]
+    },
+    "Tropical Island 2": {
+        "name": "Tropical Island 2",
+        "slug": "tropical-island-2",
+        "features": [
+            {
+                "name": "Cannon Land Static",
+                "amount": 4
+            },
+            {
+                "name": "Boatbuildingstation Static",
+                "amount": 1
+            },
+            {
+                "name": "Supply Drop Signal Computer",
+                "amount": 0.625
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Cannon Crate",
+                "amount": 4,
+                "respawnMinutes": "40-60"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 3
+            },
+            {
+                "name": "Shore Crate",
+                "amount": 3
+            },
+            {
+                "name": "Shore Crate",
+                "amount": 2,
+                "respawnMinutes": "20-40"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 1,
+                "respawnMinutes": "30-60"
+            }
+        ]
+    },
+    "Tropical Island 3": {
+        "name": "Tropical Island 3",
+        "slug": "tropical-island-3",
+        "features": [
+            {
+                "name": "Cannon Land Static",
+                "amount": 4
+            },
+            {
+                "name": "Boatbuildingstation Static",
+                "amount": 1
+            },
+            {
+                "name": "Supply Drop Signal Computer",
+                "amount": 0.25
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Cannon Crate",
+                "amount": 4,
+                "respawnMinutes": "40-60"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 3
+            },
+            {
+                "name": "Shore Crate",
+                "amount": 3
+            },
+            {
+                "name": "Shore Crate",
+                "amount": 2,
+                "respawnMinutes": "20-40"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 1,
+                "respawnMinutes": "30-60"
+            }
+        ]
+    },
+    "Tropical Island 4": {
+        "name": "Tropical Island 4",
+        "slug": "tropical-island-4",
+        "features": [
+            {
+                "name": "Cannon Land Static",
+                "amount": 3
+            },
+            {
+                "name": "Boatbuildingstation Static",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Cannon Crate",
+                "amount": 3,
+                "respawnMinutes": "40-60"
+            }
+        ]
+    },
+    "Abandoned Military Base": {
+        "name": "Abandoned Military Base",
+        "slug": "abandoned-military-base",
+        "features": [
+            {
+                "name": "Boombox Static",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 6,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 4,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Underwater Lab - Medical Crate",
+                "amount": 1,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Underwater Lab - Food Crate 1 / Underwater Lab - Food Crate 2",
+                "amount": 1,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Underwater Lab - Fuel Crate",
+                "amount": 1,
+                "respawnMinutes": "20-30"
+            }
+        ]
+    },
+    "Giant Excavator Pit": {
+        "name": "Giant Excavator Pit",
+        "slug": "giant-excavator-pit",
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Sofa",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            },
+            {
+                "name": "Supply Drop Signal Computer",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Basic Crate / Normal Crate / Military Crate",
+                "amount": 10,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Foodbox",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate - Cave / Basic Crate",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Ferry Terminal": {
+        "name": "Ferry Terminal",
+        "slug": "ferry-terminal",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Modularcarlift Static",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            },
+            {
+                "name": "Heat Source",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 26,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 10,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 9,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 6,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 2
+            }
+        ]
+    },
+    "Large Fishing Village": {
+        "name": "Large Fishing Village",
+        "slug": "large-fishing-village",
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 2
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Roadsign",
+                "amount": 1
+            }
+        ]
+    },
+    "Fishing Village": {
+        "name": "Fishing Village",
+        "slug": "fishing-village-c",
+        "features": [
+            {
+                "name": "Sofa",
+                "amount": 3
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 1
+            }
+        ]
+    },
+    "Oxum's Gas Station": {
+        "name": "Oxum's Gas Station",
+        "slug": "oxums-gas-station",
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 2
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Toilet",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Foodbox",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Basic Crate / Normal Crate / Military Crate",
+                "amount": 5,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 5,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 5,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Vehicle Parts",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate - Cave / Basic Crate",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate - Cave",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Military Crate",
+                "amount": 1
+            }
+        ]
+    },
+    "Harbor Large": {
+        "name": "Harbor Large",
+        "slug": "harbor-large",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 4
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Sofa",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 35,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 11,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 10,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 9,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 2
+            }
+        ]
+    },
+    "Harbor Small": {
+        "name": "Harbor Small",
+        "slug": "harbor-small",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 6
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 5
+            },
+            {
+                "name": "Zipline Launch Point",
+                "amount": 3
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Sofa",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 30,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 10,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 10,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 8,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 2
+            }
+        ]
+    },
+    "Jungle Ruin": {
+        "name": "Jungle Ruin",
+        "slug": "jungle-ruins-a",
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Jungle ruin": {
+        "name": "Jungle ruin",
+        "slug": "jungle-ruins-e",
+        "features": [
+            {
+                "name": "Zipline Launch Point",
+                "amount": 1
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Jungle Ziggurat": {
+        "name": "Jungle Ziggurat",
+        "slug": "jungle-ziggurat",
+        "features": [
+            {
+                "name": "Recycler",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 6,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 6,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Crate Basic Jungle",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Junkyard": {
+        "name": "Junkyard",
+        "slug": "junkyard",
+        "features": [
+            {
+                "name": "Modularcarlift Static",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Carshredder",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate",
+                "amount": 10,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 10,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel / Diesel Fuel",
+                "amount": 10,
+                "respawnMinutes": "15-20"
+            }
+        ]
+    },
+    "Launch Site": {
+        "name": "Launch Site",
+        "slug": "launch-site",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 2
+                },
+                {
+                    "name": "Red Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 2
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 10
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 4
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 56,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 30,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 20
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 15,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 8,
+                "respawnMinutes": "10-15"
+            },
+            {
+                "name": "Military Crate",
+                "amount": 5,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 4
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 3
+            }
+        ]
+    },
+    "Lighthouse": {
+        "name": "Lighthouse",
+        "slug": "lighthouse",
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Light Switch",
+                "amount": 2
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel / Normal Crate - Food",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 4,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 1
+            }
+        ]
+    },
+    "Military Tunnel": {
+        "name": "Military Tunnel",
+        "slug": "military-tunnel",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Blue Keycard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Red Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Timer",
+                    "quantity": 2
+                },
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Toilet",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 14,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 6
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 6,
+                "respawnMinutes": "30-46"
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 4
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate - Food",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Sulfur Quarry": {
+        "name": "Sulfur Quarry",
+        "slug": "sulfur-quarry"
+    },
+    "Stone Quarry": {
+        "name": "Stone Quarry",
+        "slug": "stone-quarry"
+    },
+    "HQM Quarry": {
+        "name": "HQM Quarry",
+        "slug": "hqm-quarry"
+    },
+    "Missile Silo": {
+        "name": "Missile Silo",
+        "slug": "missile-silo",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Red Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Button",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Toilet",
+                "amount": 9
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Sofa",
+                "amount": 1
+            },
+            {
+                "name": "Computerstation Static",
+                "amount": 1
+            },
+            {
+                "name": "Heat Source",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 12
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 10
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 9
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 4
+            }
+        ]
+    },
+    "Large Oil Rig": {
+        "name": "Large Oil Rig",
+        "slug": "large-oil-rig",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Red Keycard",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 65
+        },
+        "features": [
+            {
+                "name": "Heat Source",
+                "amount": 2
+            },
+            {
+                "name": "Bbq Static",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Toilet",
+                "amount": 1
+            },
+            {
+                "name": "Monument Cctv Desk Static",
+                "amount": 1
+            },
+            {
+                "name": "Boombox Static",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 18,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 15,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Military Crate",
+                "amount": 8
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 7,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate - Food",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 3
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 2
+            },
+            {
+                "name": "Locked Crate - Oilrig",
+                "amount": 1
+            }
+        ]
+    },
+    "Oil Rig": {
+        "name": "Oil Rig",
+        "slug": "oil-rig",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Blue Keycard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Red Keycard",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 65
+        },
+        "features": [
+            {
+                "name": "Heat Source",
+                "amount": 2
+            },
+            {
+                "name": "Boombox Static",
+                "amount": 1
+            },
+            {
+                "name": "Monument Cctv Desk Static",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Oil Barrel / Diesel Fuel",
+                "amount": 8,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 7,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 4,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate - Food",
+                "amount": 4,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 3
+            },
+            {
+                "name": "Military Crate",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Military Crate",
+                "amount": 2
+            },
+            {
+                "name": "Locked Crate - Oilrig",
+                "amount": 1
+            },
+            {
+                "name": "Elite Crate",
+                "amount": 1
+            }
+        ]
+    },
+    "Power Plant": {
+        "name": "Power Plant",
+        "slug": "power-plant",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Blue Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 3
+                },
+                {
+                    "name": "Timer",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 7
+            },
+            {
+                "name": "Recycler",
+                "amount": 3
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 2
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Pumpjack Static",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 15,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 10,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 8
+            },
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 5
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate - Food",
+                "amount": 4,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Radtown": {
+        "name": "Radtown",
+        "slug": "radtown",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Toilet",
+                "amount": 4
+            },
+            {
+                "name": "Heat Source",
+                "amount": 3
+            },
+            {
+                "name": "Sofa",
+                "amount": 2
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 15,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Foodbox",
+                "amount": 12,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 12,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 10,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 8,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Vehicle Parts",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Military Crate",
+                "amount": 2
+            }
+        ]
+    },
+    "Satellite Dish": {
+        "name": "Satellite Dish",
+        "slug": "satellite-dish",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Research Table",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 10,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 7,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 7,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 7,
+                "respawnMinutes": "15-36"
+            },
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 5,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 3,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 2
+            }
+        ]
+    },
+    "Sewer Branch": {
+        "name": "Sewer Branch",
+        "slug": "sewer-branch",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 4
+            },
+            {
+                "name": "Recycler",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 9,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 9
+            },
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 4,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate - Food",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "The Dome": {
+        "name": "The Dome",
+        "slug": "the-dome",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Green Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 4
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 2
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 10,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 9,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 6,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Oil Barrel / Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 4,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Military Crate",
+                "amount": 4,
+                "respawnMinutes": "36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 2
+            }
+        ]
+    },
+    "Ranch": {
+        "name": "Ranch",
+        "slug": "ranch",
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Sofa",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Toilet",
+                "amount": 1
+            }
+        ]
+    },
+    "Large Barn": {
+        "name": "Large Barn",
+        "slug": "large-barn",
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            }
+        ]
+    },
+    "Abandoned Supermarket": {
+        "name": "Abandoned Supermarket",
+        "slug": "abandoned-supermarket",
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 2
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Basic Crate / Normal Crate / Military Crate",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Foodbox",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Yellow Loot Barrel / Blue Loot Barrel",
+                "amount": 3,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Vehicle Parts",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Military Crate",
+                "amount": 1
+            }
+        ]
+    },
+    "Train Yard": {
+        "name": "Train Yard",
+        "slug": "train-yard",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Blue Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Switch",
+                    "quantity": 3
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 9
+            },
+            {
+                "name": "Zipline Target Point",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Pumpjack Static",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            },
+            {
+                "name": "Coaling Tower",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 15,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 11,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Military Crate / Normal Crate",
+                "amount": 10
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate - Food",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 4
+            }
+        ]
+    },
+    "Underwater Lab": {
+        "name": "Underwater Lab",
+        "slug": "underwater-lab",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Red Keycard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 2
+                }
+            ],
+            "use": [
+                {
+                    "name": "Timer",
+                    "quantity": 1
+                },
+                {
+                    "name": "Button",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Computerstation Static",
+                "amount": 2
+            },
+            {
+                "name": "Bbq Static Hidden",
+                "amount": 1
+            },
+            {
+                "name": "Chippyarcademachine Static",
+                "amount": 1
+            },
+            {
+                "name": "Toilet",
+                "amount": 1
+            },
+            {
+                "name": "Poker Table",
+                "amount": 1
+            },
+            {
+                "name": "Boombox Static",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Underwater Lab - Normal Crate 1 / Underwater Lab - Normal Crate 2",
+                "amount": 6
+            },
+            {
+                "name": "Underwater Lab - Food Crate 1 / Underwater Lab - Food Crate 2",
+                "amount": 3,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Underwater Lab - Ammunition Crate",
+                "amount": 3
+            },
+            {
+                "name": "Underwater Lab - Medical Crate",
+                "amount": 3
+            },
+            {
+                "name": "Underwater Lab - Food Crate 1 / Underwater Lab - Food Crate 2",
+                "amount": 3
+            },
+            {
+                "name": "Oil Barrel",
+                "amount": 2,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Underwater Lab - Elite Crate",
+                "amount": 2
+            },
+            {
+                "name": "Underwater Lab - Tools Crate",
+                "amount": 2
+            },
+            {
+                "name": "Underwater Lab - Fuel Crate",
+                "amount": 1,
+                "respawnMinutes": "15-30"
+            },
+            {
+                "name": "Underwater Lab - Normal Crate 1 / Underwater Lab - Normal Crate 2",
+                "amount": 1,
+                "respawnMinutes": "20-30"
+            },
+            {
+                "name": "Underwater Lab - Food Crate 2",
+                "amount": 1
+            }
+        ]
+    },
+    "Mining Outpost": {
+        "name": "Mining Outpost",
+        "slug": "mining-outpost",
+        "features": [
+            {
+                "name": "Light Switch",
+                "amount": 2
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Basic Crate",
+                "amount": 4,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 4,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 4,
+                "respawnMinutes": "15-20"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 2,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Vehicle Parts",
+                "amount": 2,
+                "respawnMinutes": "15-20"
+            }
+        ]
+    },
+    "Water Treatment Plant": {
+        "name": "Water Treatment Plant",
+        "slug": "water-treatment-plant",
+        "puzzle": {
+            "bring": [
+                {
+                    "name": "Electric Fuse",
+                    "quantity": 1
+                },
+                {
+                    "name": "Blue Keycard",
+                    "quantity": 1
+                }
+            ],
+            "use": [
+                {
+                    "name": "Garage Door",
+                    "quantity": 1
+                },
+                {
+                    "name": "Timer",
+                    "quantity": 1
+                }
+            ],
+            "resetMinutes": 30
+        },
+        "features": [
+            {
+                "name": "Zipline Target Point",
+                "amount": 3
+            },
+            {
+                "name": "Repair Bench",
+                "amount": 2
+            },
+            {
+                "name": "Small Oil Refinery",
+                "amount": 2
+            },
+            {
+                "name": "Telephone",
+                "amount": 1
+            },
+            {
+                "name": "Pumpjack Static",
+                "amount": 1
+            },
+            {
+                "name": "Recycler",
+                "amount": 1
+            },
+            {
+                "name": "Elevator",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 15,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Blue Loot Barrel / Yellow Loot Barrel",
+                "amount": 13,
+                "respawnMinutes": "30-36"
+            },
+            {
+                "name": "Normal Crate / Military Crate",
+                "amount": 10
+            },
+            {
+                "name": "Normal Crate - Medical / Normal Crate - Food",
+                "amount": 5,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Water Well A": {
+        "name": "Water Well A",
+        "slug": "water-well-a",
+        "features": [
+            {
+                "name": "Fresh Water Pump",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Pumpkin Plant / Corn Plant",
+                "amount": 3,
+                "respawnMinutes": "30"
+            }
+        ]
+    },
+    "Water Well B": {
+        "name": "Water Well B",
+        "slug": "water-well-b",
+        "features": [
+            {
+                "name": "Fresh Water Pump",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Food Cache 4 / Food Cache 5 / Food Cache 1",
+                "amount": 1,
+                "respawnMinutes": "30-3"
+            }
+        ]
+    },
+    "Water Well C": {
+        "name": "Water Well C",
+        "slug": "water-well-c",
+        "features": [
+            {
+                "name": "Fresh Water Pump",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Food Cache 4 / Food Cache 5 / Food Cache 1",
+                "amount": 1,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Water Well D": {
+        "name": "Water Well D",
+        "slug": "water-well-d",
+        "features": [
+            {
+                "name": "Fresh Water Pump",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Food Cache 4 / Food Cache 5 / Food Cache 1",
+                "amount": 1,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    },
+    "Water Well E": {
+        "name": "Water Well E",
+        "slug": "water-well-e",
+        "features": [
+            {
+                "name": "Fresh Water Pump",
+                "amount": 1
+            }
+        ],
+        "spawns": [
+            {
+                "name": "Food Cache 4 / Food Cache 5 / Food Cache 1",
+                "amount": 1,
+                "respawnMinutes": "30-36"
+            }
+        ]
+    }
+}

@@ -1,0 +1,2918 @@
+{
+    "Armored Block Stair Lshape": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Block Stair Spiral": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Block Stair Spiral Triangle": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 25
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Block Stair Ushape": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Floor": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Floor Frame": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Floor Triangle": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 7
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 0,
+                "max": 2
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 7
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Floor Triangle Frame": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 7
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 0,
+                "max": 2
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 7
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Foundation": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Foundation Steps": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Foundation Triangle": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Ramp": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Roof": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Roof Triangle": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Wall": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Wall Doorway": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 18
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 5
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 18
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Wall Frame": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Wall Half": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Wall Low": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Armored Wall Window": {
+        "hp": 2000,
+        "buildCost": [
+            {
+                "name": "High Quality Metal",
+                "quantity": 18
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "High Quality Metal",
+                "min": 1,
+                "max": 5
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "High Quality Metal",
+                    "quantity": 18
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Floor": {
+        "hp": 50,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 150
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 150
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 8
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Floor Frame": {
+        "hp": 50,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 150
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 150
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 8
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Floor Triangle": {
+        "hp": 25,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 75
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 75
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 4
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Floor Triangle Frame": {
+        "hp": 25,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 75
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 75
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 4
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Hull": {
+        "hp": 75,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 300
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 15
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 300
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 15
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Hull Triangle": {
+        "hp": 25,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 150
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 150
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 8
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Stair": {
+        "hp": 50,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 300
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 15
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 300
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 15
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Wall": {
+        "hp": 50,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 300
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 15
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 300
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 15
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Wall Doorway": {
+        "hp": 50,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 210
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 11
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 210
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 11
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Wall Low": {
+        "hp": 25,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 150
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 150
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 8
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Wall Low Barrier": {
+        "hp": 25,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 150
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 150
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 8
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Wall Low Cannon": {
+        "hp": 25,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 150
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 150
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 8
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Boat Wall Window": {
+        "hp": 50,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 210
+            },
+            {
+                "name": "Low Grade Fuel",
+                "quantity": 11
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 210
+                },
+                {
+                    "name": "Low Grade Fuel",
+                    "quantity": 11
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Block Stair Lshape": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Block Stair Spiral": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Block Stair Spiral Triangle": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 200
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Block Stair Ushape": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Floor": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Floor Frame": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Floor Triangle": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Floor Triangle Frame": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Foundation": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Foundation Steps": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Foundation Triangle": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Ramp": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Roof": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Roof Triangle": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Wall": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Wall Doorway": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 140
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 14,
+                "max": 46
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 140
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Wall Frame": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Wall Half": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Wall Low": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Metal Wall Window": {
+        "hp": 1000,
+        "buildCost": [
+            {
+                "name": "Metal Fragments",
+                "quantity": 140
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Metal Fragments",
+                "min": 14,
+                "max": 46
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Metal Fragments",
+                    "quantity": 140
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Block Stair Lshape": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 300
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 30,
+                "max": 99
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 300
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Block Stair Spiral": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 300
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 30,
+                "max": 99
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 300
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Block Stair Spiral Triangle": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 300
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 300
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Block Stair Ushape": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 300
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 30,
+                "max": 99
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 300
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Floor": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Floor Frame": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Floor Triangle": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 75
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 7,
+                "max": 24
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 75
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Floor Triangle Frame": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 75
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 7,
+                "max": 24
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 75
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Foundation": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 300
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 30,
+                "max": 99
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 300
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Foundation Steps": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Foundation Triangle": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Ramp": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Roof": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Roof Triangle": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Wall": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 300
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 30,
+                "max": 99
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 300
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Wall Doorway": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 210
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 21,
+                "max": 69
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 210
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Wall Frame": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Wall Half": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 300
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 30,
+                "max": 99
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 300
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Wall Low": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 150
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 15,
+                "max": 49
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 150
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Stone Wall Window": {
+        "hp": 500,
+        "buildCost": [
+            {
+                "name": "Stones",
+                "quantity": 210
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Stones",
+                "min": 21,
+                "max": 69
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Stones",
+                    "quantity": 210
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Block Stair Lshape": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Block Stair Spiral": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Block Stair Spiral Triangle": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Block Stair Ushape": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Floor": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Floor Frame": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Floor Triangle": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Floor Triangle Frame": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 13
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 1,
+                "max": 4
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 13
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Foundation": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Foundation Steps": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Foundation Triangle": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Ramp": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Roof": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Roof Triangle": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Wall": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Wall Doorway": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 35
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 3,
+                "max": 11
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 35
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Wall Frame": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Wall Half": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Wall Low": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 25
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 2,
+                "max": 8
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 25
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Twig Wall Window": {
+        "hp": 10,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 35
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 3,
+                "max": 11
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 35
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Block Stair Lshape": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Block Stair Spiral": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Block Stair Spiral Triangle": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 200
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Block Stair Ushape": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Floor": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Floor Frame": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Floor Triangle": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Floor Triangle Frame": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 50
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 5,
+                "max": 16
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 50
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Foundation": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Foundation Steps": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Foundation Triangle": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Ramp": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Roof": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Roof Triangle": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Wall": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Wall Doorway": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 140
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 14,
+                "max": 46
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 140
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Wall Frame": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Wall Half": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 200
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 20,
+                "max": 66
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 200
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Wall Low": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 100
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 10,
+                "max": 33
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 100
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    },
+    "Wood Wall Window": {
+        "hp": 250,
+        "buildCost": [
+            {
+                "name": "Wood",
+                "quantity": 140
+            }
+        ],
+        "upkeep": [
+            {
+                "name": "Wood",
+                "min": 14,
+                "max": 46
+            }
+        ],
+        "repair": {
+            "tool": "Hammer",
+            "cost": [
+                {
+                    "name": "Wood",
+                    "quantity": 140
+                }
+            ],
+            "conditionLossPercent": 0
+        }
+    }
+}

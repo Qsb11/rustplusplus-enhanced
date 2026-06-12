@@ -15,3 +15,7 @@ AI/items/
 
 # Local Rust+ credential dump (contains live auth token)
 rustplus.config.json
+
+AI/monuments/
+AI/world/
+.claude/

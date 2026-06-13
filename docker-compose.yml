@@ -1,6 +1,6 @@
 services:
     app:
-        image: nuallan/rustplusplus-forked:latest
+        build: .
         container_name: rpp
         restart: unless-stopped
         # Lets RPP_AI_BASE_URL use host.docker.internal to reach a service on the host (e.g. Ollama)

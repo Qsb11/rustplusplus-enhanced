@@ -17,8 +17,8 @@ services:
             - ./knowledge:/app/knowledge
         environment:
             # --- Required ---
-            - RPP_DISCORD_CLIENT_ID=your_discord_client_id
-            - RPP_DISCORD_TOKEN=your_discord_bot_token
+            - RPP_DISCORD_CLIENT_ID
+            - RPP_DISCORD_TOKEN
 
             # --- AI assistant (!ai / /ai). OpenAI-compatible endpoint. ---
             # Disable entirely with RPP_AI_ENABLED=false
